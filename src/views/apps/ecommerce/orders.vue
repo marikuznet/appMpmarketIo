@@ -883,7 +883,7 @@ export default {
                       </div>
 
                       <div class="mb-3">
-                        <label for="customername-field" class="form-label">Customer Name</label>
+                        <label for="edtcustomername" class="form-label">Customer Name</label>
                         <input type="text" id="edtcustomername" class="form-control" placeholder="Enter Name"
                                required/>
                       </div>
@@ -928,7 +928,7 @@ export default {
                       </div>
 
                       <div class="mb-3">
-                        <label for="date-field" class="form-label">Order Date</label>
+                        <label for="edtorderdate" class="form-label">Order Date</label>
                         <flat-pickr placeholder="Select date" v-model="date2" :config="timeConfig"
                                     class="form-control flatpickr-input" id="edtorderdate"></flat-pickr>
                       </div>
@@ -936,14 +936,14 @@ export default {
                       <div class="row gy-4 mb-3">
                         <div class="col-md-6">
                           <div>
-                            <label for="amount-field" class="form-label">Amount</label>
+                            <label for="edtamount" class="form-label">Amount</label>
                             <input type="text" id="edtamount" class="form-control" placeholder="Total amount"
                                    required/>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div>
-                            <label for="payment-field" class="form-label">Payment Method</label>
+                            <label for="edtpayment" class="form-label">Payment Method</label>
                             <select class="form-control" data-trigger name="payment-method" id="edtpayment">
                               <option value="">Payment Method</option>
                               <option value="Mastercard">Mastercard</option>
@@ -956,7 +956,7 @@ export default {
                       </div>
 
                       <div>
-                        <label for="delivered-status" class="form-label">{{ $t('t-table-orders-sort.delivery-status') }}</label>
+                        <label for="edtdelivered" class="form-label">{{ $t('t-table-orders-sort.delivery-status') }}</label>
                         <select class="form-control" data-trigger name="delivered-status" id="edtdelivered">
                           <option value="">{{ $t('t-table-orders-sort.delivery-status') }}</option>
                           <option value="Ожидает">Ожидает</option>
