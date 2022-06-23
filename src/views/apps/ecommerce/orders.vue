@@ -14,7 +14,7 @@ import Lottie from "@/components/widgets/lottie.vue";
 
 export default {
   page: {
-    title: "Orders",
+    title: "Заказы",
     meta: [{
       name: "description",
       content: appConfig.description,
@@ -54,7 +54,7 @@ export default {
         orderDate: "20 Dec, 2021",
         amount: "$654",
         payment: "Mastercard",
-        status: "Pending",
+        status: "Ожидает",
         statusClass: "warning",
       },
         {
@@ -65,7 +65,7 @@ export default {
           orderDate: "16 Dec, 2021",
           amount: "$354",
           payment: "Paypal",
-          status: "Cancelled",
+          status: "Архив",
           statusClass: "danger",
         },
         {
@@ -76,7 +76,7 @@ export default {
           orderDate: "28 Nov, 2021",
           amount: "$829",
           payment: "Visa",
-          status: "Inprogress",
+          status: "На сборке",
           statusClass: "secondary",
         },
         {
@@ -87,7 +87,7 @@ export default {
           orderDate: "22 Nov, 2021",
           amount: "$142",
           payment: "COD",
-          status: "Pending",
+          status: "Ожидает",
           statusClass: "warning",
         },
         {
@@ -109,7 +109,7 @@ export default {
           orderDate: "05 Nov, 2021",
           amount: "$1240",
           payment: "Visa",
-          status: "Inprogress",
+          status: "На сборке",
           statusClass: "secondary",
         },
         {
@@ -131,7 +131,7 @@ export default {
           orderDate: "25 Oct, 2021",
           amount: "$247",
           payment: "Paypal",
-          status: "Delivered",
+          status: "Собрано",
           statusClass: "success",
         },
         {
@@ -153,7 +153,7 @@ export default {
           orderDate: "13 Oct, 2021",
           amount: "$342",
           payment: "Mastercard",
-          status: "Inprogress",
+          status: "На сборке",
           statusClass: "secondary",
         },
         {
@@ -164,7 +164,7 @@ export default {
           orderDate: "01 Oct, 2021",
           amount: "$874",
           payment: "Visa",
-          status: "Delivered",
+          status: "Собрано",
           statusClass: "success",
         },
         {
@@ -175,7 +175,7 @@ export default {
           orderDate: "29 Sep, 2021",
           amount: "$1021",
           payment: "Mastercard",
-          status: "Cancelled",
+          status: "Архив",
           statusClass: "danger",
         },
       ],
@@ -343,15 +343,15 @@ export default {
       this.orders[result].payment = document.getElementById('edtpayment').value;
       this.orders[result].status = document.getElementById('edtdelivered').value;
 
-      if (this.orders[result].status == 'Pending') {
+      if (this.orders[result].status == 'Ожидает') {
         this.orders[result].statusClass = 'warning'
-      } else if (this.orders[result].status == 'Inprogress') {
+      } else if (this.orders[result].status == 'На сборке') {
         this.orders[result].statusClass = 'secondary'
-      } else if (this.orders[result].status == 'Cancelled') {
+      } else if (this.orders[result].status == 'Архив') {
         this.orders[result].statusClass = 'danger'
       } else if (this.orders[result].status == 'Pickups') {
         this.orders[result].statusClass = 'info'
-      } else if (this.orders[result].status == 'Delivered') {
+      } else if (this.orders[result].status == 'Собрано') {
         this.orders[result].statusClass = 'success'
       } else {
         this.orders[result].statusClass = 'danger'
@@ -436,15 +436,15 @@ export default {
       var payment = document.getElementById('payment').value;
       var delivered = document.getElementById('delivered').value;
       var statuscolor;
-      if (delivered == 'Pending') {
+      if (delivered == 'Ожидает') {
         statuscolor = 'warning'
-      } else if (delivered == 'Inprogress') {
+      } else if (delivered == 'На сборке') {
         statuscolor = 'secondary'
-      } else if (delivered == 'Cancelled') {
+      } else if (delivered == 'Архив') {
         statuscolor = 'danger'
       } else if (delivered == 'Pickups') {
         statuscolor = 'info'
-      } else if (delivered == 'Delivered') {
+      } else if (delivered == 'Собрано') {
         statuscolor = 'success'
       } else {
         statuscolor = 'danger'
@@ -537,12 +537,12 @@ export default {
                                  :create-option="true" @input="onChangePayment" :options="[
                         { value: '', label: 'Status' },
                         { value: 'All', label: 'All' },
-                        { value: 'Pending', label: 'Pending' },
-                        { value: 'Inprogress', label: 'Inprogress' },
-                        { value: 'Cancelled', label: 'Cancelled' },
+                        { value: 'Ожидает', label: 'Ожидает' },
+                        { value: 'На сборке', label: 'На сборке' },
+                        { value: 'Архив', label: 'Архив' },
                         { value: 'Pickups', label: 'Pickups' },
                         { value: 'Returns', label: 'Returns' },
-                        { value: 'Delivered', label: 'Delivered' },
+                        { value: 'Собрано', label: 'Собрано' },
                       ]"/>
                   </div>
                 </div>
@@ -605,10 +605,10 @@ export default {
                   </a>
                 </li>
                 <li class="nav-item" v-if="false">
-                  <a class="nav-link py-3 Delivered" data-bs-toggle="tab" id="Delivered" href="#delivered" role="tab"
-                     @click="changecategory('Delivered')" aria-selected="false">
+                  <a class="nav-link py-3 Собрано" data-bs-toggle="tab" id="Собрано" href="#delivered" role="tab"
+                     @click="changecategory('Собрано')" aria-selected="false">
                     <i class="ri-checkbox-circle-line me-1 align-bottom"></i>
-                    Delivered
+                    Собрано
                   </a>
                 </li>
                 <li class="nav-item" v-if="false">
@@ -626,10 +626,10 @@ export default {
                   </a>
                 </li>
                 <li class="nav-item" v-if="false">
-                  <a class="nav-link py-3 Cancelled" data-bs-toggle="tab" id="Cancelled" href="#cancelled" role="tab"
-                     @click="changecategory('Cancelled')" aria-selected="false">
+                  <a class="nav-link py-3 Архив" data-bs-toggle="tab" id="Архив" href="#Архив" role="tab"
+                     @click="changecategory('Архив')" aria-selected="false">
                     <i class="ri-close-circle-line me-1 align-bottom"></i>
-                    Cancelled
+                    Архив
                   </a>
                 </li>
               </ul>
@@ -675,12 +675,12 @@ export default {
                     <td class="payment">{{ data.payment }}</td>
                     <td class="status">
                         <span class="badge text-uppercase" :class="{
-                          'badge-soft-primary': data.status == 'Inprogress',
+                          'badge-soft-primary': data.status == 'На сборке',
                           'badge-soft-info': data.status == 'Pickups',
-                          'badge-soft-success': data.status == 'Delivered',
-                          'badge-soft-danger': data.status == 'Cancelled',
+                          'badge-soft-success': data.status == 'Собрано',
+                          'badge-soft-danger': data.status == 'Архив',
                           'badge-soft-secondary': data.status == 'Returns',
-                          'badge-soft-warning': data.status == 'Pending',
+                          'badge-soft-warning': data.status == 'Ожидает',
                         }">{{ data.status }}</span>
 
                     </td>
@@ -835,14 +835,14 @@ export default {
                       </div>
 
                       <div>
-                        <label for="delivered-status" class="form-label">Delivery Status</label>
+                        <label for="delivered-status" class="form-label">{{ $t('t-table-orders-sort.delivery-status') }}</label>
                         <select class="form-control" data-trigger name="delivered-status" id="delivered">
-                          <option value="">Delivery Status</option>
-                          <option value="Pending">Pending</option>
-                          <option value="Inprogress">Inprogress</option>
-                          <option value="Cancelled">Cancelled</option>
+                          <option value="">{{ $t('t-table-orders-sort.delivery-status') }}</option>
+                          <option value="Ожидает">Ожидает</option>
+                          <option value="На сборке">На сборке</option>
+                          <option value="Архив">Архив</option>
                           <option value="Pickups">Pickups</option>
-                          <option value="Delivered">Delivered</option>
+                          <option value="Собрано">Собрано</option>
                           <option value="Returns">Returns</option>
                         </select>
                       </div>
@@ -956,14 +956,14 @@ export default {
                       </div>
 
                       <div>
-                        <label for="delivered-status" class="form-label">Delivery Status</label>
+                        <label for="delivered-status" class="form-label">{{ $t('t-table-orders-sort.delivery-status') }}</label>
                         <select class="form-control" data-trigger name="delivered-status" id="edtdelivered">
-                          <option value="">Delivery Status</option>
-                          <option value="Pending">Pending</option>
-                          <option value="Inprogress">Inprogress</option>
-                          <option value="Cancelled">Cancelled</option>
+                          <option value="">{{ $t('t-table-orders-sort.delivery-status') }}</option>
+                          <option value="Ожидает">Ожидает</option>
+                          <option value="На сборке">На сборке</option>
+                          <option value="Архив">Архив</option>
                           <option value="Pickups">Pickups</option>
-                          <option value="Delivered">Delivered</option>
+                          <option value="Собрано">Собрано</option>
                           <option value="Returns">Returns</option>
                         </select>
                       </div>
