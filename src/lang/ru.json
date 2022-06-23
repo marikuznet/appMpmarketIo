@@ -231,6 +231,14 @@
         "delivery-status": "Статус заказа",
         "action": "Действия"
     },
+    "t-table-products-sort": {
+        "product": "Товар",
+        "stock": "Склад",
+        "price": "Сумма",
+        "orders": "Заказы",
+        "rating": "Рейтинг",
+        "published": "Опубликовано"
+    },
     "t-next": "Следующая",
     "t-prev": "Предыдущая"
 }

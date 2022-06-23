@@ -786,7 +786,7 @@
                   <ul class="nav nav-tabs-custom card-header-tabs border-bottom-0" role="tablist">
                     <li class="nav-item">
                       <a class="nav-link active fw-semibold" data-bs-toggle="tab" href="#productnav-all" role="tab">
-                        All
+                        Все
                         <span class="badge badge-soft-danger align-middle rounded-pill ms-1">12</span>
                       </a>
                     </li>
@@ -817,12 +817,12 @@
                           <th scope="col" style="width: 50px">
                             <input class="form-check-input" type="checkbox" id="checkAll" value="option" />
                           </th>
-                          <th>Product</th>
-                          <th>Stock</th>
-                          <th>Price</th>
-                          <th>Orders</th>
-                          <th>Rating</th>
-                          <th>Published</th>
+                          <th>{{ $t('t-table-products-sort.product') }}</th>
+                          <th>{{ $t('t-table-products-sort.stock') }}</th>
+                          <th>{{ $t('t-table-products-sort.price') }}</th>
+                          <th>{{ $t('t-table-products-sort.orders') }}</th>
+                          <th>{{ $t('t-table-products-sort.rating') }}</th>
+                          <th>{{ $t('t-table-products-sort.published') }}</th>
                           <th scope="col">Action</th>
                         </tr>
                       </thead>
@@ -910,7 +910,7 @@
                     <div class="d-flex justify-content-end m-3">
                       <div class="pagination-wrap hstack gap-2">
                         <a class="page-item pagination-prev disabled" href="#" v-if="page != 1" @click="page--">
-                          Previous
+                          {{ $t('t-prev') }}
                         </a>
                         <ul class="pagination listjs-pagination mb-0">
                           <li v-for="(pageNumber, index) in pages.slice(
@@ -924,7 +924,7 @@
                           </li>
                         </ul>
                         <a class="page-item pagination-next" href="#" @click="page++" v-if="page < pages.length">
-                          Next
+                          {{ $t('t-next') }}
                         </a>
                       </div>
                     </div>

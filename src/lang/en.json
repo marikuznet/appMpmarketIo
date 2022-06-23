@@ -231,6 +231,14 @@
     "delivery-status": "Delivery Status",
     "action": "Action"
   },
+  "t-table-products-sort": {
+    "product": "Product",
+    "stock": "Stock",
+    "price": "Price",
+    "orders": "Orders",
+    "rating": "Rating",
+    "published": "Published"
+  },
   "t-next": "Next",
   "t-prev": "Previous"
 }
