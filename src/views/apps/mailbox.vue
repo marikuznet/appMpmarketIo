@@ -1100,11 +1100,11 @@
                                 <div class="simplebar-height-auto-observer-wrapper">
                                     <div class="simplebar-height-auto-observer"></div>
                                 </div>
-                                <div class="simplebar-mask">
+                                <div class="simplebar-mask" style="overflow: visible !important;">
                                     <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
                                         <div class="simplebar-content-wrapper" tabindex="0" role="region"
                                             aria-label="scrollable content"
-                                            style="height: 100%; overflow: hidden scroll;">
+                                            style="height: 100%; overflow: visible !important;">
                                             <div class="simplebar-content" style="padding: 16px;">
                                                 <ul class="list-unstyled chat-conversation-list chat-sm"
                                                     id="users-conversation">
