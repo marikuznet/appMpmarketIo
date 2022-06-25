@@ -1,6 +1,6 @@
 <script>
-import Slider from "@vueform/slider";
-import Multiselect from "@vueform/multiselect";
+// import Slider from "@vueform/slider";
+// import Multiselect from "@vueform/multiselect";
 import Swal from "sweetalert2";
 import Layout from "../../../layouts/main.vue";
 import appConfig from "../../../../app.config";
@@ -12,7 +12,7 @@ import Lottie from "@/components/widgets/lottie.vue";
 
 export default {
   page: {
-    title: "Purchases",
+    title: "Закупки",
     meta: [{
       name: "description",
       content: appConfig.description,
@@ -20,7 +20,7 @@ export default {
   },
   data() {
     return {
-      title: "Purchases",
+      title: "Закупки",
       // items: [
       //   {
       //     text: "Purchases",
@@ -372,8 +372,8 @@ export default {
     Layout,
     PageHeader,
     lottie: Lottie,
-    Slider,
-    Multiselect,
+    // Slider,
+    // Multiselect,
   },
 };
 </script>
@@ -382,410 +382,414 @@ export default {
   <Layout>
     <PageHeader :title="title"/>
     <div class="row">
-      <div class="col-xl-3 col-lg-4">
-        <div class="card">
-          <div class="card-header">
-            <div class="d-flex mb-3">
-              <div class="flex-grow-1">
-                <h5 class="fs-16">Filters</h5>
-              </div>
-              <div class="flex-shrink-0">
-                <a href="#" class="text-decoration-underline">Clear All</a>
-              </div>
-            </div>
+      <!--      <div class="col-xl-3 col-lg-4">-->
+      <!--        <div class="card">-->
+      <!--          <div class="card-header">-->
+      <!--            <div class="d-flex mb-3">-->
+      <!--              <div class="flex-grow-1">-->
+      <!--                <h5 class="fs-16">Filters</h5>-->
+      <!--              </div>-->
+      <!--              <div class="flex-shrink-0">-->
+      <!--                <a href="#" class="text-decoration-underline">Clear All</a>-->
+      <!--              </div>-->
+      <!--            </div>-->
 
-            <div class="filter-choices-input">
-              <Multiselect v-model="value" mode="tags" :close-on-select="true" :searchable="true" :create-option="true"
-                           :options="[
-                  { value: 'Watches', label: 'Watches' },
-                  { value: 'Headset', label: 'Headset' },
-                  { value: 'Sweatshirt', label: 'Sweatshirt' },
-                  { value: '20% Off', label: '20% Off' },
-                  { value: '4 Star', label: '4 Star' },
-                ]"/>
-            </div>
-          </div>
+      <!--            <div class="filter-choices-input">-->
+      <!--              <Multiselect v-model="value" mode="tags" :close-on-select="true" :searchable="true" :create-option="true"-->
+      <!--                           :options="[-->
+      <!--                  { value: 'Watches', label: 'Watches' },-->
+      <!--                  { value: 'Headset', label: 'Headset' },-->
+      <!--                  { value: 'Sweatshirt', label: 'Sweatshirt' },-->
+      <!--                  { value: '20% Off', label: '20% Off' },-->
+      <!--                  { value: '4 Star', label: '4 Star' },-->
+      <!--                ]"/>-->
+      <!--            </div>-->
+      <!--          </div>-->
 
-          <div class="accordion accordion-flush">
-            <div class="card-body border-bottom">
-              <div>
-                <p class="text-muted text-uppercase fs-12 fw-medium mb-2">
-                  Products
-                </p>
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#" class="d-flex py-1">
-                      <div class="flex-grow-1">
-                        <h5 class="fs-13 mb-0">Grocery</h5>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="d-flex py-1" data-bs-toggle="collapse" href="#filterlist-fashion" role="button"
-                       aria-expanded="true" aria-controls="filterlist-fashion">
-                      <div class="flex-grow-1">
-                        <h5 class="fs-13 mb-0">Fashion</h5>
-                      </div>
-                      <div class="flex-shrink-0 ms-2">
-                        <span class="badge bg-light text-muted">5</span>
-                      </div>
-                    </a>
+      <!--          <div class="accordion accordion-flush">-->
+      <!--            <div class="card-body border-bottom">-->
+      <!--              <div>-->
+      <!--                <p class="text-muted text-uppercase fs-12 fw-medium mb-2">-->
+      <!--                  Products-->
+      <!--                </p>-->
+      <!--                <ul class="list-unstyled mb-0">-->
+      <!--                  <li>-->
+      <!--                    <a href="#" class="d-flex py-1">-->
+      <!--                      <div class="flex-grow-1">-->
+      <!--                        <h5 class="fs-13 mb-0">Grocery</h5>-->
+      <!--                      </div>-->
+      <!--                    </a>-->
+      <!--                  </li>-->
+      <!--                  <li>-->
+      <!--                    <a class="d-flex py-1" data-bs-toggle="collapse" href="#filterlist-fashion" role="button"-->
+      <!--                       aria-expanded="true" aria-controls="filterlist-fashion">-->
+      <!--                      <div class="flex-grow-1">-->
+      <!--                        <h5 class="fs-13 mb-0">Fashion</h5>-->
+      <!--                      </div>-->
+      <!--                      <div class="flex-shrink-0 ms-2">-->
+      <!--                        <span class="badge bg-light text-muted">5</span>-->
+      <!--                      </div>-->
+      <!--                    </a>-->
 
-                    <div class="collapse show" id="filterlist-fashion">
-                      <ul class="ps-4">
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Men's Wear</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Women Western Wear</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Footwear</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Watches</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Kids</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li>
-                    <a href="#" class="d-flex py-1">
-                      <div class="flex-grow-1">
-                        <h5 class="fs-13 mb-0">Mobiles</h5>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="d-flex py-1" data-bs-toggle="collapse" href="#filterlist-electronics" role="button"
-                       aria-expanded="false" aria-controls="filterlist-electronics">
-                      <div class="flex-grow-1">
-                        <h5 class="fs-13 mb-0">Electronics</h5>
-                      </div>
-                      <div class="flex-shrink-0 ms-2">
-                        <span class="badge bg-light text-muted">5</span>
-                      </div>
-                    </a>
+      <!--                    <div class="collapse show" id="filterlist-fashion">-->
+      <!--                      <ul class="ps-4">-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Men's Wear</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Women Western Wear</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Footwear</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Watches</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Kids</a>-->
+      <!--                        </li>-->
+      <!--                      </ul>-->
+      <!--                    </div>-->
+      <!--                  </li>-->
+      <!--                  <li>-->
+      <!--                    <a href="#" class="d-flex py-1">-->
+      <!--                      <div class="flex-grow-1">-->
+      <!--                        <h5 class="fs-13 mb-0">Mobiles</h5>-->
+      <!--                      </div>-->
+      <!--                    </a>-->
+      <!--                  </li>-->
+      <!--                  <li>-->
+      <!--                    <a class="d-flex py-1" data-bs-toggle="collapse" href="#filterlist-electronics" role="button"-->
+      <!--                       aria-expanded="false" aria-controls="filterlist-electronics">-->
+      <!--                      <div class="flex-grow-1">-->
+      <!--                        <h5 class="fs-13 mb-0">Electronics</h5>-->
+      <!--                      </div>-->
+      <!--                      <div class="flex-shrink-0 ms-2">-->
+      <!--                        <span class="badge bg-light text-muted">5</span>-->
+      <!--                      </div>-->
+      <!--                    </a>-->
 
-                    <div class="collapse" id="filterlist-electronics">
-                      <ul class="ps-4">
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Audio</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Computer</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Laptop</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Gaming</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Tablets</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
+      <!--                    <div class="collapse" id="filterlist-electronics">-->
+      <!--                      <ul class="ps-4">-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Audio</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Computer</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Laptop</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Gaming</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Tablets</a>-->
+      <!--                        </li>-->
+      <!--                      </ul>-->
+      <!--                    </div>-->
+      <!--                  </li>-->
 
-                  <li>
-                    <a class="d-flex py-1" data-bs-toggle="collapse" href="#filterlist-furniture" role="button"
-                       aria-expanded="false" aria-controls="filterlist-furniture">
-                      <div class="flex-grow-1">
-                        <h5 class="fs-13 mb-0">Home & Furniture</h5>
-                      </div>
-                      <div class="flex-shrink-0 ms-2">
-                        <span class="badge bg-light text-muted">6</span>
-                      </div>
-                    </a>
+      <!--                  <li>-->
+      <!--                    <a class="d-flex py-1" data-bs-toggle="collapse" href="#filterlist-furniture" role="button"-->
+      <!--                       aria-expanded="false" aria-controls="filterlist-furniture">-->
+      <!--                      <div class="flex-grow-1">-->
+      <!--                        <h5 class="fs-13 mb-0">Home & Furniture</h5>-->
+      <!--                      </div>-->
+      <!--                      <div class="flex-shrink-0 ms-2">-->
+      <!--                        <span class="badge bg-light text-muted">6</span>-->
+      <!--                      </div>-->
+      <!--                    </a>-->
 
-                    <div class="collapse" id="filterlist-furniture">
-                      <ul class="ps-4">
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Home Furnishing</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Living rooms</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Kitchen & Dining</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Bedroom Room</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Home Decor</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Tools & Utility</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
+      <!--                    <div class="collapse" id="filterlist-furniture">-->
+      <!--                      <ul class="ps-4">-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Home Furnishing</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Living rooms</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Kitchen & Dining</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Bedroom Room</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Home Decor</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Tools & Utility</a>-->
+      <!--                        </li>-->
+      <!--                      </ul>-->
+      <!--                    </div>-->
+      <!--                  </li>-->
 
-                  <li>
-                    <a class="d-flex py-1" data-bs-toggle="collapse" href="#filterlist-appliances" role="button"
-                       aria-expanded="false" aria-controls="filterlist-appliances">
-                      <div class="flex-grow-1">
-                        <h5 class="fs-13 mb-0">Appliances</h5>
-                      </div>
-                      <div class="flex-shrink-0 ms-2">
-                        <span class="badge bg-light text-muted">7</span>
-                      </div>
-                    </a>
+      <!--                  <li>-->
+      <!--                    <a class="d-flex py-1" data-bs-toggle="collapse" href="#filterlist-appliances" role="button"-->
+      <!--                       aria-expanded="false" aria-controls="filterlist-appliances">-->
+      <!--                      <div class="flex-grow-1">-->
+      <!--                        <h5 class="fs-13 mb-0">Appliances</h5>-->
+      <!--                      </div>-->
+      <!--                      <div class="flex-shrink-0 ms-2">-->
+      <!--                        <span class="badge bg-light text-muted">7</span>-->
+      <!--                      </div>-->
+      <!--                    </a>-->
 
-                    <div class="collapse" id="filterlist-appliances">
-                      <ul class="ps-4">
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Televisions</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Washing Machines</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Air Conditioners</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Refrigerator</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Kitchen Appliances</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Home Appliances</a>
-                        </li>
-                        <li>
-                          <a href="#" class="d-block py-1 text-muted">Premium Appliances</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
+      <!--                    <div class="collapse" id="filterlist-appliances">-->
+      <!--                      <ul class="ps-4">-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Televisions</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Washing Machines</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Air Conditioners</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Refrigerator</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Kitchen Appliances</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Home Appliances</a>-->
+      <!--                        </li>-->
+      <!--                        <li>-->
+      <!--                          <a href="#" class="d-block py-1 text-muted">Premium Appliances</a>-->
+      <!--                        </li>-->
+      <!--                      </ul>-->
+      <!--                    </div>-->
+      <!--                  </li>-->
 
-                  <li>
-                    <a href="#" class="d-flex py-1">
-                      <div class="flex-grow-1">
-                        <h5 class="fs-13 mb-0">Kids</h5>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+      <!--                  <li>-->
+      <!--                    <a href="#" class="d-flex py-1">-->
+      <!--                      <div class="flex-grow-1">-->
+      <!--                        <h5 class="fs-13 mb-0">Kids</h5>-->
+      <!--                      </div>-->
+      <!--                    </a>-->
+      <!--                  </li>-->
+      <!--                </ul>-->
+      <!--              </div>-->
+      <!--            </div>-->
 
-            <div class="card-body border-bottom">
-              <p class="text-muted text-uppercase fs-12 fw-medium mb-5">
-                Price
-              </p>
+      <!--            <div class="card-body border-bottom">-->
+      <!--              <p class="text-muted text-uppercase fs-12 fw-medium mb-5">-->
+      <!--                Price-->
+      <!--              </p>-->
 
-              <div id="product-price-range"></div>
-              <Slider v-model="sliderCustomzie" :min="0" :max="5000"/>
-            </div>
+      <!--              <div id="product-price-range"></div>-->
+      <!--              <Slider v-model="sliderCustomzie" :min="0" :max="5000"/>-->
+      <!--            </div>-->
 
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingBrands">
-                <button class="accordion-button bg-transparent shadow-none" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseBrands" aria-expanded="true"
-                        aria-controls="flush-collapseBrands">
-                  <span class="text-muted text-uppercase fs-12 fw-medium">Brands</span>
-                  <span class="badge bg-success rounded-pill align-middle ms-1">2</span>
-                </button>
-              </h2>
+      <!--            <div class="accordion-item">-->
+      <!--              <h2 class="accordion-header" id="flush-headingBrands">-->
+      <!--                <button class="accordion-button bg-transparent shadow-none" type="button" data-bs-toggle="collapse"-->
+      <!--                        data-bs-target="#flush-collapseBrands" aria-expanded="true"-->
+      <!--                        aria-controls="flush-collapseBrands">-->
+      <!--                  <span class="text-muted text-uppercase fs-12 fw-medium">Brands</span>-->
+      <!--                  <span class="badge bg-success rounded-pill align-middle ms-1">2</span>-->
+      <!--                </button>-->
+      <!--              </h2>-->
 
-              <div id="flush-collapseBrands" class="accordion-collapse collapse show"
-                   aria-labelledby="flush-headingBrands">
-                <div class="accordion-body text-body pt-0">
-                  <div class="search-box search-box-sm">
-                    <input type="text" class="form-control bg-light border-0" placeholder="Search Brands..."/>
-                    <i class="ri-search-line search-icon"></i>
-                  </div>
-                  <div class="d-flex flex-column gap-2 mt-3">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio5" checked/>
-                      <label class="form-check-label" for="productBrandRadio5">Boat</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio4"/>
-                      <label class="form-check-label" for="productBrandRadio4">OnePlus</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio3"/>
-                      <label class="form-check-label" for="productBrandRadio3">Realme</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio2"/>
-                      <label class="form-check-label" for="productBrandRadio2">Sony</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio1" checked/>
-                      <label class="form-check-label" for="productBrandRadio1">JBL</label>
-                    </div>
+      <!--              <div id="flush-collapseBrands" class="accordion-collapse collapse show"-->
+      <!--                   aria-labelledby="flush-headingBrands">-->
+      <!--                <div class="accordion-body text-body pt-0">-->
+      <!--                  <div class="search-box search-box-sm">-->
+      <!--                    <input type="text" class="form-control bg-light border-0" placeholder="Search Brands..."/>-->
+      <!--                    <i class="ri-search-line search-icon"></i>-->
+      <!--                  </div>-->
+      <!--                  <div class="d-flex flex-column gap-2 mt-3">-->
+      <!--                    <div class="form-check">-->
+      <!--                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio5" checked/>-->
+      <!--                      <label class="form-check-label" for="productBrandRadio5">Boat</label>-->
+      <!--                    </div>-->
+      <!--                    <div class="form-check">-->
+      <!--                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio4"/>-->
+      <!--                      <label class="form-check-label" for="productBrandRadio4">OnePlus</label>-->
+      <!--                    </div>-->
+      <!--                    <div class="form-check">-->
+      <!--                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio3"/>-->
+      <!--                      <label class="form-check-label" for="productBrandRadio3">Realme</label>-->
+      <!--                    </div>-->
+      <!--                    <div class="form-check">-->
+      <!--                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio2"/>-->
+      <!--                      <label class="form-check-label" for="productBrandRadio2">Sony</label>-->
+      <!--                    </div>-->
+      <!--                    <div class="form-check">-->
+      <!--                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio1" checked/>-->
+      <!--                      <label class="form-check-label" for="productBrandRadio1">JBL</label>-->
+      <!--                    </div>-->
 
-                    <div>
-                      <button type="button" class="btn btn-link text-decoration-none text-uppercase fw-medium p-0">
-                        1,235 More
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end accordion-item -->
+      <!--                    <div>-->
+      <!--                      <button type="button" class="btn btn-link text-decoration-none text-uppercase fw-medium p-0">-->
+      <!--                        1,235 More-->
+      <!--                      </button>-->
+      <!--                    </div>-->
+      <!--                  </div>-->
+      <!--                </div>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--            &lt;!&ndash; end accordion-item &ndash;&gt;-->
 
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingDiscount">
-                <button class="accordion-button bg-transparent shadow-none collapsed" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#flush-collapseDiscount" aria-expanded="true"
-                        aria-controls="flush-collapseDiscount">
-                  <span class="text-muted text-uppercase fs-12 fw-medium">Discount</span>
-                  <span class="badge bg-success rounded-pill align-middle ms-1">1</span>
-                </button>
-              </h2>
-              <div id="flush-collapseDiscount" class="accordion-collapse collapse"
-                   aria-labelledby="flush-headingDiscount">
-                <div class="accordion-body text-body pt-1">
-                  <div class="d-flex flex-column gap-2">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio6"/>
-                      <label class="form-check-label" for="productdiscountRadio6">
-                        50% or more
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio5"/>
-                      <label class="form-check-label" for="productdiscountRadio5">
-                        40% or more
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio4"/>
-                      <label class="form-check-label" for="productdiscountRadio4">
-                        30% or more
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio3" checked/>
-                      <label class="form-check-label" for="productdiscountRadio3">
-                        20% or more
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio2"/>
-                      <label class="form-check-label" for="productdiscountRadio2">
-                        10% or more
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio1"/>
-                      <label class="form-check-label" for="productdiscountRadio1">
-                        Less than 10%
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end accordion-item -->
+      <!--            <div class="accordion-item">-->
+      <!--              <h2 class="accordion-header" id="flush-headingDiscount">-->
+      <!--                <button class="accordion-button bg-transparent shadow-none collapsed" type="button"-->
+      <!--                        data-bs-toggle="collapse" data-bs-target="#flush-collapseDiscount" aria-expanded="true"-->
+      <!--                        aria-controls="flush-collapseDiscount">-->
+      <!--                  <span class="text-muted text-uppercase fs-12 fw-medium">Discount</span>-->
+      <!--                  <span class="badge bg-success rounded-pill align-middle ms-1">1</span>-->
+      <!--                </button>-->
+      <!--              </h2>-->
+      <!--              <div id="flush-collapseDiscount" class="accordion-collapse collapse"-->
+      <!--                   aria-labelledby="flush-headingDiscount">-->
+      <!--                <div class="accordion-body text-body pt-1">-->
+      <!--                  <div class="d-flex flex-column gap-2">-->
+      <!--                    <div class="form-check">-->
+      <!--                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio6"/>-->
+      <!--                      <label class="form-check-label" for="productdiscountRadio6">-->
+      <!--                        50% or more-->
+      <!--                      </label>-->
+      <!--                    </div>-->
+      <!--                    <div class="form-check">-->
+      <!--                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio5"/>-->
+      <!--                      <label class="form-check-label" for="productdiscountRadio5">-->
+      <!--                        40% or more-->
+      <!--                      </label>-->
+      <!--                    </div>-->
+      <!--                    <div class="form-check">-->
+      <!--                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio4"/>-->
+      <!--                      <label class="form-check-label" for="productdiscountRadio4">-->
+      <!--                        30% or more-->
+      <!--                      </label>-->
+      <!--                    </div>-->
+      <!--                    <div class="form-check">-->
+      <!--                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio3" checked/>-->
+      <!--                      <label class="form-check-label" for="productdiscountRadio3">-->
+      <!--                        20% or more-->
+      <!--                      </label>-->
+      <!--                    </div>-->
+      <!--                    <div class="form-check">-->
+      <!--                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio2"/>-->
+      <!--                      <label class="form-check-label" for="productdiscountRadio2">-->
+      <!--                        10% or more-->
+      <!--                      </label>-->
+      <!--                    </div>-->
+      <!--                    <div class="form-check">-->
+      <!--                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio1"/>-->
+      <!--                      <label class="form-check-label" for="productdiscountRadio1">-->
+      <!--                        Less than 10%-->
+      <!--                      </label>-->
+      <!--                    </div>-->
+      <!--                  </div>-->
+      <!--                </div>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--            &lt;!&ndash; end accordion-item &ndash;&gt;-->
 
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingRating">
-                <button class="accordion-button bg-transparent shadow-none collapsed" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#flush-collapseRating" aria-expanded="false"
-                        aria-controls="flush-collapseRating">
-                  <span class="text-muted text-uppercase fs-12 fw-medium">Rating</span>
-                  <span class="badge bg-success rounded-pill align-middle ms-1">1</span>
-                </button>
-              </h2>
+      <!--            <div class="accordion-item">-->
+      <!--              <h2 class="accordion-header" id="flush-headingRating">-->
+      <!--                <button class="accordion-button bg-transparent shadow-none collapsed" type="button"-->
+      <!--                        data-bs-toggle="collapse" data-bs-target="#flush-collapseRating" aria-expanded="false"-->
+      <!--                        aria-controls="flush-collapseRating">-->
+      <!--                  <span class="text-muted text-uppercase fs-12 fw-medium">Rating</span>-->
+      <!--                  <span class="badge bg-success rounded-pill align-middle ms-1">1</span>-->
+      <!--                </button>-->
+      <!--              </h2>-->
 
-              <div id="flush-collapseRating" class="accordion-collapse collapse" aria-labelledby="flush-headingRating">
-                <div class="accordion-body text-body">
-                  <div class="d-flex flex-column gap-2">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio4" checked/>
-                      <label class="form-check-label" for="productratingRadio4">
-                        <span class="text-muted">
-                          <i class="mdi mdi-star text-warning"></i>
-                          <i class="mdi mdi-star text-warning"></i>
-                          <i class="mdi mdi-star text-warning"></i>
-                          <i class="mdi mdi-star text-warning"></i>
-                          <i class="mdi mdi-star"></i>
-                        </span>
-                        4 & Above
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio3"/>
-                      <label class="form-check-label" for="productratingRadio3">
-                        <span class="text-muted">
-                          <i class="mdi mdi-star text-warning"></i>
-                          <i class="mdi mdi-star text-warning"></i>
-                          <i class="mdi mdi-star text-warning"></i>
-                          <i class="mdi mdi-star"></i>
-                          <i class="mdi mdi-star"></i>
-                        </span>
-                        3 & Above
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio2"/>
-                      <label class="form-check-label" for="productratingRadio2">
-                        <span class="text-muted">
-                          <i class="mdi mdi-star text-warning"></i>
-                          <i class="mdi mdi-star text-warning"></i>
-                          <i class="mdi mdi-star"></i>
-                          <i class="mdi mdi-star"></i>
-                          <i class="mdi mdi-star"></i>
-                        </span>
-                        2 & Above
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio1"/>
-                      <label class="form-check-label" for="productratingRadio1">
-                        <span class="text-muted">
-                          <i class="mdi mdi-star text-warning"></i>
-                          <i class="mdi mdi-star"></i>
-                          <i class="mdi mdi-star"></i>
-                          <i class="mdi mdi-star"></i>
-                          <i class="mdi mdi-star"></i>
-                        </span>
-                        1
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end accordion-item -->
-          </div>
-        </div>
-        <!-- end card -->
-      </div>
+      <!--              <div id="flush-collapseRating" class="accordion-collapse collapse" aria-labelledby="flush-headingRating">-->
+      <!--                <div class="accordion-body text-body">-->
+      <!--                  <div class="d-flex flex-column gap-2">-->
+      <!--                    <div class="form-check">-->
+      <!--                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio4" checked/>-->
+      <!--                      <label class="form-check-label" for="productratingRadio4">-->
+      <!--                        <span class="text-muted">-->
+      <!--                          <i class="mdi mdi-star text-warning"></i>-->
+      <!--                          <i class="mdi mdi-star text-warning"></i>-->
+      <!--                          <i class="mdi mdi-star text-warning"></i>-->
+      <!--                          <i class="mdi mdi-star text-warning"></i>-->
+      <!--                          <i class="mdi mdi-star"></i>-->
+      <!--                        </span>-->
+      <!--                        4 & Above-->
+      <!--                      </label>-->
+      <!--                    </div>-->
+      <!--                    <div class="form-check">-->
+      <!--                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio3"/>-->
+      <!--                      <label class="form-check-label" for="productratingRadio3">-->
+      <!--                        <span class="text-muted">-->
+      <!--                          <i class="mdi mdi-star text-warning"></i>-->
+      <!--                          <i class="mdi mdi-star text-warning"></i>-->
+      <!--                          <i class="mdi mdi-star text-warning"></i>-->
+      <!--                          <i class="mdi mdi-star"></i>-->
+      <!--                          <i class="mdi mdi-star"></i>-->
+      <!--                        </span>-->
+      <!--                        3 & Above-->
+      <!--                      </label>-->
+      <!--                    </div>-->
+      <!--                    <div class="form-check">-->
+      <!--                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio2"/>-->
+      <!--                      <label class="form-check-label" for="productratingRadio2">-->
+      <!--                        <span class="text-muted">-->
+      <!--                          <i class="mdi mdi-star text-warning"></i>-->
+      <!--                          <i class="mdi mdi-star text-warning"></i>-->
+      <!--                          <i class="mdi mdi-star"></i>-->
+      <!--                          <i class="mdi mdi-star"></i>-->
+      <!--                          <i class="mdi mdi-star"></i>-->
+      <!--                        </span>-->
+      <!--                        2 & Above-->
+      <!--                      </label>-->
+      <!--                    </div>-->
+      <!--                    <div class="form-check">-->
+      <!--                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio1"/>-->
+      <!--                      <label class="form-check-label" for="productratingRadio1">-->
+      <!--                        <span class="text-muted">-->
+      <!--                          <i class="mdi mdi-star text-warning"></i>-->
+      <!--                          <i class="mdi mdi-star"></i>-->
+      <!--                          <i class="mdi mdi-star"></i>-->
+      <!--                          <i class="mdi mdi-star"></i>-->
+      <!--                          <i class="mdi mdi-star"></i>-->
+      <!--                        </span>-->
+      <!--                        1-->
+      <!--                      </label>-->
+      <!--                    </div>-->
+      <!--                  </div>-->
+      <!--                </div>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--            &lt;!&ndash; end accordion-item &ndash;&gt;-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--        &lt;!&ndash; end card &ndash;&gt;-->
+      <!--      </div>-->
       <!-- end col -->
 
-      <div class="col-xl-9 col-lg-8">
+      <div class="col-xl-12 col-lg-12">
         <div>
           <div class="card">
             <div class="card-header border-0">
-              <div class="row g-4">
-                <div class="col-sm-auto">
-                  <div>
-                    <router-link to="/ecommerce/add-product" class="btn btn-success"><i
-                        class="ri-add-line align-bottom me-1"></i> Add
-                      Product
-                    </router-link>
-                  </div>
-                </div>
-                <div class="col-sm">
-                  <div class="d-flex justify-content-sm-end">
-                    <div class="search-box ms-2">
-                      <input type="text" class="form-control" placeholder="Search Products..."/>
-                      <i class="ri-search-line search-icon"></i>
-                    </div>
-                  </div>
-                </div>
+              <div class="search-box ms-2">
+                <input v-model="searchQuery" type="text" class="form-control" placeholder="Найти..."/>
+                <i class="ri-search-line search-icon"></i>
               </div>
+              <!--              <div class="row g-4">-->
+              <!--                <div class="col-sm-auto">-->
+              <!--                  <div>-->
+              <!--                    <router-link to="/ecommerce/add-product" class="btn btn-success"><i-->
+              <!--                        class="ri-add-line align-bottom me-1"></i> Add-->
+              <!--                      Product-->
+              <!--                    </router-link>-->
+              <!--                  </div>-->
+              <!--                </div>-->
+              <!--                <div class="col-sm">-->
+              <!--                  <div class="d-flex justify-content-sm-end">-->
+              <!--                    <div class="search-box ms-2">-->
+              <!--                      <input type="text" class="form-control" placeholder="Search Products..."/>-->
+              <!--                      <i class="ri-search-line search-icon"></i>-->
+              <!--                    </div>-->
+              <!--                  </div>-->
+              <!--                </div>-->
+              <!--              </div>-->
             </div>
 
             <div class="card-header">
@@ -822,23 +826,23 @@ export default {
                     <table class="table align-middle table-nowrap mb-0" id="customerTable">
                       <thead class="table-light">
                       <tr class="text-muted">
-                        <th scope="col" style="width: 50px">
-                          <input class="form-check-input" type="checkbox" id="checkAll" value="option"/>
-                        </th>
+<!--                        <th scope="col" style="width: 50px">-->
+<!--                          <input class="form-check-input" type="checkbox" id="checkAll" value="option"/>-->
+<!--                        </th>-->
                         <th>Product</th>
                         <th>Stock</th>
                         <th>Price</th>
                         <th>Orders</th>
                         <th>Rating</th>
                         <th>Published</th>
-                        <th scope="col">Action</th>
+                        <!--                        <th scope="col">Action</th>-->
                       </tr>
                       </thead>
                       <tbody class="list form-check-all">
                       <tr class="gridjs-tr" v-for="(data, index) of resultQuery" :key="index">
-                        <td data-column-id="productListAllCheckbox" class="gridjs-td">
-                          <input type="checkbox" name="chk_child" class="form-check-input"/>
-                        </td>
+<!--                        <td data-column-id="productListAllCheckbox" class="gridjs-td">-->
+<!--                          <input type="checkbox" name="chk_child" class="form-check-input"/>-->
+<!--                        </td>-->
                         <td class="id" hidden>
                           <a href="">{{ data.id }}</a>
                         </td>
@@ -879,40 +883,41 @@ export default {
                                 class="mdi mdi-star text-warning me-1"></i>{{ data.rating }}</span></span>
                         </td>
                         <td data-column-id="published" class="gridjs-td">
-                            <span>{{
-                                data.publishedDate
-                              }}<small class="text-muted ms-1">{{
-                                  data.publishedtime
-                                }}</small></span>
-                        </td>
-                        <td data-column-id="action" class="gridjs-td">
                             <span>
-                              <div class="dropdown">
-                                <button class="btn btn-soft-secondary btn-sm dropdown" type="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                  <i class="ri-more-fill"></i>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                  <li>
-                                    <router-link class="dropdown-item" to="/ecommerce/product-details"><i
-                                        class="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                      View</router-link>
-                                  </li>
-                                  <li>
-                                    <router-link class="dropdown-item" to="/ecommerce/add-product"><i
-                                        class="ri-pencil-fill align-bottom me-2 text-muted"></i>
-                                      Edit</router-link>
-                                  </li>
-                                  <li class="dropdown-divider"></li>
-                                  <li>
-                                    <a class="dropdown-item" @click="deletedata(data)">
-                                      <i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
-                                      Delete</a>
-                                  </li>
-                                </ul>
-                              </div>
+                              {{data.publishedDate}}
+                              <small class="text-muted ms-1">
+                                {{data.publishedtime }}
+                              </small>
                             </span>
                         </td>
+                        <!--                        <td data-column-id="action" class="gridjs-td">-->
+                        <!--                            <span>-->
+                        <!--                              <div class="dropdown">-->
+                        <!--                                <button class="btn btn-soft-secondary btn-sm dropdown" type="button"-->
+                        <!--                                        data-bs-toggle="dropdown" aria-expanded="false">-->
+                        <!--                                  <i class="ri-more-fill"></i>-->
+                        <!--                                </button>-->
+                        <!--                                <ul class="dropdown-menu dropdown-menu-end">-->
+                        <!--                                  <li>-->
+                        <!--                                    <router-link class="dropdown-item" to="/ecommerce/product-details"><i-->
+                        <!--                                        class="ri-eye-fill align-bottom me-2 text-muted"></i>-->
+                        <!--                                      View</router-link>-->
+                        <!--                                  </li>-->
+                        <!--                                  <li>-->
+                        <!--                                    <router-link class="dropdown-item" to="/ecommerce/add-product"><i-->
+                        <!--                                        class="ri-pencil-fill align-bottom me-2 text-muted"></i>-->
+                        <!--                                      Edit</router-link>-->
+                        <!--                                  </li>-->
+                        <!--                                  <li class="dropdown-divider"></li>-->
+                        <!--                                  <li>-->
+                        <!--                                    <a class="dropdown-item" @click="deletedata(data)">-->
+                        <!--                                      <i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i>-->
+                        <!--                                      Delete</a>-->
+                        <!--                                  </li>-->
+                        <!--                                </ul>-->
+                        <!--                              </div>-->
+                        <!--                            </span>-->
+                        <!--                        </td>-->
                       </tr>
                       </tbody>
                     </table>
