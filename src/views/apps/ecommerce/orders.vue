@@ -198,12 +198,15 @@ export default {
       if (this.searchQuery) {
         const search = this.searchQuery.toLowerCase();
         return this.displayedPosts.filter((data) => {
+          console.log(data.product.toLowerCase())
+          console.log(data.product.toLowerCase().includes(search))
+
           return (
               data.orderId.toLowerCase().includes(search) ||
               data.customer.toLowerCase().includes(search) ||
               data.product.toLowerCase().includes(search) ||
               data.orderDate.toLowerCase().includes(search) ||
-              data.amount.toLowerCase().includes(search) ||
+              //data.amount.toLowerCase().includes(search) ||
               data.payment.toLowerCase().includes(search) ||
               data.status.toLowerCase().includes(search)
           );
@@ -474,6 +477,7 @@ export default {
       document.getElementById("addform").reset();
     },
     SearchData() {
+      console.log(this.resultQuery);
       this.resultQuery;
       // var isstatus = document.getElementById("idStatus").value;
       //   var payment = document.getElementById("idPayment").value;
@@ -517,8 +521,7 @@ export default {
               <div class="row g-3">
                 <div class="col-xxl-5 col-sm-6">
                   <div class="search-box">
-                    <input type="text" class="form-control search"
-                           placeholder="Поиск..."/>
+                    <input type="text" class="form-control search" placeholder="Поиск..." v-model="searchQuery"/>
                     <!--Search for order ID, customer, order status or something!-->
                     <i class="ri-search-line search-icon"></i>
                   </div>
@@ -835,7 +838,9 @@ export default {
                       </div>
 
                       <div>
-                        <label for="delivered-status" class="form-label">{{ $t('t-table-orders-sort.delivery-status') }}</label>
+                        <label for="delivered-status" class="form-label">{{
+                            $t('t-table-orders-sort.delivery-status')
+                          }}</label>
                         <select class="form-control" data-trigger name="delivered-status" id="delivered">
                           <option value="">{{ $t('t-table-orders-sort.delivery-status') }}</option>
                           <option value="Ожидает">Ожидает</option>
@@ -879,7 +884,6 @@ export default {
                         <label for="orderId" class="form-label">ID</label>
                         <input type="text" pattern="\d*" id="edtorderId" class="form-control" placeholder="ID"
                                maxlength="3" readonly/>
-
                       </div>
 
                       <div class="mb-3">
@@ -956,7 +960,9 @@ export default {
                       </div>
 
                       <div>
-                        <label for="edtdelivered" class="form-label">{{ $t('t-table-orders-sort.delivery-status') }}</label>
+                        <label for="edtdelivered" class="form-label">{{
+                            $t('t-table-orders-sort.delivery-status')
+                          }}</label>
                         <select class="form-control" data-trigger name="delivered-status" id="edtdelivered">
                           <option value="">{{ $t('t-table-orders-sort.delivery-status') }}</option>
                           <option value="Ожидает">Ожидает</option>
@@ -984,7 +990,7 @@ export default {
             </div>
 
             <!-- Modal -->
-            <divm class="modal fade flip" id="deleteOrder" tabindex="-1" aria-hidden="true">
+            <div class="modal fade flip" id="deleteOrder" tabindex="-1" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-body p-5 text-center">
@@ -1009,7 +1015,7 @@ export default {
                   </div>
                 </div>
               </div>
-            </divm>
+            </div>
             <!--end modal -->
           </div>
         </div>
