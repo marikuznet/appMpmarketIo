@@ -48,7 +48,7 @@ export default {
       },
       orders: [{
         id: 1,
-        orderId: "#VZ2101",
+        orderId: "#MP2101",
         customer: "Frank Hook",
         product: "Puma Tshirt",
         orderDate: "20 Dec, 2021",
@@ -59,7 +59,7 @@ export default {
       },
         {
           id: 2,
-          orderId: "#VZ2102",
+          orderId: "#MP2102",
           customer: "Rickey Teran",
           product: "Adidas Sneakers",
           orderDate: "16 Dec, 2021",
@@ -70,7 +70,7 @@ export default {
         },
         {
           id: 3,
-          orderId: "#VZ2103",
+          orderId: "#MP2103",
           customer: "James Price",
           product: "350 ml Glass Grocery Container",
           orderDate: "28 Nov, 2021",
@@ -81,7 +81,7 @@ export default {
         },
         {
           id: 4,
-          orderId: "#VZ2104",
+          orderId: "#MP2104",
           customer: "Nettie Deloatch",
           product: "American egale outfitters Shirt",
           orderDate: "22 Nov, 2021",
@@ -92,7 +92,7 @@ export default {
         },
         {
           id: 5,
-          orderId: "#VZ2105",
+          orderId: "#MP2105",
           customer: "Thomas Taylor",
           product: "Galaxy Watch4",
           orderDate: "12 Nov, 2021",
@@ -103,7 +103,7 @@ export default {
         },
         {
           id: 6,
-          orderId: "#VZ2106",
+          orderId: "#MP2106",
           customer: "James Price",
           product: "Apple iPhone 12",
           orderDate: "05 Nov, 2021",
@@ -114,7 +114,7 @@ export default {
         },
         {
           id: 7,
-          orderId: "#VZ2107",
+          orderId: "#MP2107",
           customer: "Nancy Martino",
           product: "Funky Prints T-shirt",
           orderDate: "31 Oct, 2021",
@@ -125,7 +125,7 @@ export default {
         },
         {
           id: 8,
-          orderId: "#VZ2108",
+          orderId: "#MP2108",
           customer: "Alexis Clarke",
           product: "USB Flash Drive Personalized with 3D Print",
           orderDate: "25 Oct, 2021",
@@ -136,7 +136,7 @@ export default {
         },
         {
           id: 9,
-          orderId: "#VZ2109",
+          orderId: "#MP2109",
           customer: "Donald Palmer",
           product: "Oxford Button-Down Shirt",
           orderDate: "19 Oct, 2021",
@@ -147,7 +147,7 @@ export default {
         },
         {
           id: 10,
-          orderId: "#VZ2110",
+          orderId: "#MP2110",
           customer: "Henry Baird",
           product: "Classic Short Sleeve Shirt",
           orderDate: "13 Oct, 2021",
@@ -158,7 +158,7 @@ export default {
         },
         {
           id: 11,
-          orderId: "#VZ2111",
+          orderId: "#MP2111",
           customer: "Diana Kohler",
           product: "Half Sleeve T-Shirts (Blue)",
           orderDate: "01 Oct, 2021",
@@ -169,7 +169,7 @@ export default {
         },
         {
           id: 12,
-          orderId: "#VZ2112",
+          orderId: "#MP2112",
           customer: "Alexis Clarke",
           product: "Noise Evolve Smartwatch",
           orderDate: "29 Sep, 2021",
@@ -198,9 +198,6 @@ export default {
       if (this.searchQuery) {
         const search = this.searchQuery.toLowerCase();
         return this.displayedPosts.filter((data) => {
-          console.log(data.product.toLowerCase())
-          console.log(data.product.toLowerCase().includes(search))
-
           return (
               data.orderId.toLowerCase().includes(search) ||
               data.customer.toLowerCase().includes(search) ||
@@ -456,7 +453,7 @@ export default {
           payment != null && delivered != null) {
         var data = {
           id: 'x',
-          orderId: "#VZ2" + orderId,
+          orderId: "#MP2" + orderId,
           customer: customername,
           product: productname,
           orderDate: orderdate,
@@ -477,13 +474,11 @@ export default {
       document.getElementById("addform").reset();
     },
     SearchData() {
-      console.log(this.resultQuery);
       this.resultQuery;
       // var isstatus = document.getElementById("idStatus").value;
       //   var payment = document.getElementById("idPayment").value;
     },
     changecategory(data) {
-      console.log(data)
       this.statuscategory = data;
     }
   },
@@ -637,6 +632,7 @@ export default {
                 </li>
               </ul>
 
+              {{displayedPosts}}
               <div class="table-responsive table-card mb-1">
                 <table class="table table-nowrap align-middle" id="orderTable">
                   <thead class="text-muted table-light">
@@ -677,6 +673,7 @@ export default {
                     <td class="amount">${{ data.amount }}</td>
                     <td class="payment">{{ data.payment }}</td>
                     <td class="status">
+                      {{data.status}}
                         <span class="badge text-uppercase" :class="{
                           'badge-soft-primary': data.status == 'На сборке',
                           'badge-soft-info': data.status == 'Pickups',
