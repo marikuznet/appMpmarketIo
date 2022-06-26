@@ -14,7 +14,7 @@ import Lottie from "@/components/widgets/lottie.vue";
 
 export default {
   page: {
-    title: "Заказы",
+    title: "Orders",
     meta: [{
       name: "description",
       content: appConfig.description,
@@ -631,10 +631,8 @@ export default {
                   </a>
                 </li>
               </ul>
-
-              {{displayedPosts}}
               <div class="table-responsive table-card mb-1">
-                <table class="table table-nowrap align-middle" id="orderTable">
+                <table class="table table-nowrap align-middle table_sort" id="orderTable">
                   <thead class="text-muted table-light">
                   <tr class="text-uppercase">
                     <th scope="col" style="width: 25px">
@@ -673,7 +671,6 @@ export default {
                     <td class="amount">${{ data.amount }}</td>
                     <td class="payment">{{ data.payment }}</td>
                     <td class="status">
-                      {{data.status}}
                         <span class="badge text-uppercase" :class="{
                           'badge-soft-primary': data.status == 'На сборке',
                           'badge-soft-info': data.status == 'Pickups',
