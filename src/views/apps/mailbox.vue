@@ -1101,6 +1101,7 @@
                                     <div class="simplebar-height-auto-observer"></div>
                                 </div>
                                 <div class="simplebar-mask" style="overflow: visible !important;">
+
                                     <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
                                         <div class="simplebar-content-wrapper" tabindex="0" role="region"
                                             aria-label="scrollable content"

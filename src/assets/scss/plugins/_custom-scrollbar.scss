@@ -22,7 +22,7 @@
 .simplebar-mask {
   direction: inherit;
   position: absolute;
-  overflow: hidden;
+  overflow: visible !important;
   padding: 0;
   margin: 0;
   left: 0;
@@ -47,7 +47,9 @@
   margin: 0;
   -webkit-overflow-scrolling: touch;
 }
-
+.main-scrollbar .simplebar-content-wrapper {
+  overflow: visible !important;
+}
 .simplebar-content-wrapper {
   direction: inherit;
   box-sizing: border-box !important;
