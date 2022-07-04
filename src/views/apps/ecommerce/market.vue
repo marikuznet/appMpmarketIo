@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import Layout from "../../../layouts/main.vue";
 import appConfig from "../../../../app.config";
 import "@vueform/multiselect/themes/default.css";
-import PageHeader from "@/components/page-header";
+// import PageHeader from "@/components/page-header";
 import axios from 'axios';
 import animationData from "@/components/widgets/msoeawqm.json";
 import Lottie from "@/components/widgets/lottie.vue";
@@ -364,7 +364,7 @@ export default {
 
   components: {
     Layout,
-    PageHeader,
+    // PageHeader,
     lottie: Lottie,
     Slider,
     Multiselect,
@@ -374,7 +374,7 @@ export default {
 
 <template>
   <Layout>
-    <PageHeader :title="title"/>
+<!--    <PageHeader :title="title"/>-->
     <div class="row">
       <div class="col-xl-3 col-lg-4">
         <div class="card">

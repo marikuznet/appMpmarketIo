@@ -48,61 +48,61 @@ export default {
         />
       </div>
     </div>
-    <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
-      <div class="row g-4">
-        <div class="col-auto">
-          <div class="avatar-lg">
-            <img
-                src="@/assets/images/users/avatar-1.jpg"
-                alt="user-img"
-                class="img-thumbnail rounded-circle"
-            />
-          </div>
-        </div>
-        <!--end col-->
-        <div class="col">
-          <div class="p-2">
-            <h3 class="text-white mb-1">Anna Adame</h3>
-            <p class="text-white-75">Owner & Founder</p>
-            <div class="hstack text-white-50 gap-1">
-              <div class="me-2">
-                <i
-                    class="ri-map-pin-user-line me-1 text-white-75 fs-16 align-middle"
-                ></i
-                >California, United States
-              </div>
-              <div>
-                <i
-                    class="ri-building-line me-1 text-white-75 fs-16 align-middle"
-                ></i
-                >Themesbrand
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--end col-->
-        <div class="col-12 col-lg-auto order-last order-lg-0">
-          <div class="row text text-white-50 text-center">
-            <div class="col-lg-6 col-4">
-              <div class="p-2">
-                <h4 class="text-white mb-1">24.3K</h4>
-                <p class="fs-14 mb-0">{{ $t("t-followers") }}</p>
-              </div>
-            </div>
-            <div class="col-lg-6 col-4">
-              <div class="p-2">
-                <h4 class="text-white mb-1">1.3K</h4>
-                <p class="fs-14 mb-0">{{ $t("t-following") }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--end col-->
-      </div>
-      <!--end row-->
-    </div>
+<!--    <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">-->
+<!--      <div class="row g-4">-->
+<!--        <div class="col-auto">-->
+<!--          <div class="avatar-lg">-->
+<!--            <img-->
+<!--                src="@/assets/images/users/avatar-1.jpg"-->
+<!--                alt="user-img"-->
+<!--                class="img-thumbnail rounded-circle"-->
+<!--            />-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;end col&ndash;&gt;-->
+<!--        <div class="col">-->
+<!--          <div class="p-2">-->
+<!--            <h3 class="text-white mb-1">Anna Adame</h3>-->
+<!--            <p class="text-white-75">Owner & Founder</p>-->
+<!--            <div class="hstack text-white-50 gap-1">-->
+<!--              <div class="me-2">-->
+<!--                <i-->
+<!--                    class="ri-map-pin-user-line me-1 text-white-75 fs-16 align-middle"-->
+<!--                ></i-->
+<!--                >California, United States-->
+<!--              </div>-->
+<!--              <div>-->
+<!--                <i-->
+<!--                    class="ri-building-line me-1 text-white-75 fs-16 align-middle"-->
+<!--                ></i-->
+<!--                >Themesbrand-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;end col&ndash;&gt;-->
+<!--        <div class="col-12 col-lg-auto order-last order-lg-0">-->
+<!--          <div class="row text text-white-50 text-center">-->
+<!--            <div class="col-lg-6 col-4">-->
+<!--              <div class="p-2">-->
+<!--                <h4 class="text-white mb-1">24.3K</h4>-->
+<!--                <p class="fs-14 mb-0">{{ $t("t-followers") }}</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-6 col-4">-->
+<!--              <div class="p-2">-->
+<!--                <h4 class="text-white mb-1">1.3K</h4>-->
+<!--                <p class="fs-14 mb-0">{{ $t("t-following") }}</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;end col&ndash;&gt;-->
+<!--      </div>-->
+<!--      &lt;!&ndash;end row&ndash;&gt;-->
+<!--    </div>-->
 
-    <div class="row">
+    <div class="row pt-5">
       <div class="col-lg-12">
         <div>
           <div class="d-flex">
@@ -119,7 +119,7 @@ export default {
                     role="tab"
                 >
                   <i class="ri-airplay-fill d-inline-block d-md-none"></i>
-                  <span class="d-none d-md-inline-block">{{ $t("t-overview") }}</span>
+                  <span class="d-none d-md-inline-block">Профиль</span>
                 </a>
               </li>
               <li class="nav-item">
@@ -130,7 +130,7 @@ export default {
                     role="tab"
                 >
                   <i class="ri-list-unordered d-inline-block d-md-none"></i>
-                  <span class="d-none d-md-inline-block">{{ $t("t-activities") }}</span>
+                  <span class="d-none d-md-inline-block">Реквизиты</span>
                 </a>
               </li>
               <li class="nav-item">
@@ -141,7 +141,7 @@ export default {
                     role="tab"
                 >
                   <i class="ri-price-tag-line d-inline-block d-md-none"></i>
-                  <span class="d-none d-md-inline-block">{{ $t("t-projects") }}</span>
+                  <span class="d-none d-md-inline-block">Сотрудники</span>
                 </a>
               </li>
               <li class="nav-item">
@@ -152,7 +152,7 @@ export default {
                     role="tab"
                 >
                   <i class="ri-folder-4-line d-inline-block d-md-none"></i>
-                  <span class="d-none d-md-inline-block">{{ $t("t-documents") }}</span>
+                  <span class="d-none d-md-inline-block">Кабинеты</span>
                 </a>
               </li>
             </ul>

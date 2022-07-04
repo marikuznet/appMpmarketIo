@@ -11,7 +11,7 @@ import flatPickr from "vue-flatpickr-component";
 import "flatpickr/dist/flatpickr.css";
 
 import Layout from "../../../layouts/main.vue";
-import PageHeader from "@/components/page-header";
+// import PageHeader from "@/components/page-header";
 import appConfig from "../../../../app.config";
 import Swal from "sweetalert2";
 import axios from 'axios';
@@ -264,7 +264,7 @@ export default {
   },
   components: {
     Layout,
-    PageHeader,
+    // PageHeader,
     Multiselect,
     lottie: Lottie,
     flatPickr,
@@ -435,7 +435,7 @@ export default {
 
 <template>
   <Layout>
-    <PageHeader :title="title"/>
+<!--    <PageHeader :title="title"/>-->
     <div class="row">
       <div class="col-xl-3 col-md-6" v-for="(item, index) of invoiceWidgets" :key="index">
         <!-- card -->

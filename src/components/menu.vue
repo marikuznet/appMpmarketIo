@@ -1184,7 +1184,7 @@ export default {
         </li>
         <li class="nav-item">
           <router-link class="nav-link menu-link" to="/products">
-            <span data-key="">Товары</span>
+            <span data-key="">Товар</span>
           </router-link>
         </li>
         <li class="nav-item">
