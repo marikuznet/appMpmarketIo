@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import Layout from "../../../layouts/main.vue";
 import appConfig from "../../../../app.config";
 import "@vueform/multiselect/themes/default.css";
-import PageHeader from "@/components/page-header";
+// import PageHeader from "@/components/page-header";
 import axios from 'axios';
 import animationData from "@/components/widgets/msoeawqm.json";
 import Lottie from "@/components/widgets/lottie.vue";
@@ -370,7 +370,7 @@ export default {
 
   components: {
     Layout,
-    PageHeader,
+    // PageHeader,
     lottie: Lottie,
     // Slider,
     // Multiselect,
@@ -380,7 +380,7 @@ export default {
 
 <template>
   <Layout>
-    <PageHeader :title="title"/>
+<!--    <PageHeader :title="title"/>-->
     <div class="row">
       <!--      <div class="col-xl-3 col-lg-4">-->
       <!--        <div class="card">-->
@@ -792,32 +792,32 @@ export default {
               <!--              </div>-->
             </div>
 
-            <div class="card-header">
-              <div class="row align-items-center">
-                <div class="col">
-                  <ul class="nav nav-tabs-custom card-header-tabs border-bottom-0" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active fw-semibold" data-bs-toggle="tab" href="#productnav-all" role="tab">
-                        All
-                        <span class="badge badge-soft-danger align-middle rounded-pill ms-1">12</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-auto">
-                  <div id="selection-element">
-                    <div class="my-n1 d-flex align-items-center text-muted">
-                      Select
-                      <div id="select-content" class="text-body fw-semibold px-1"></div>
-                      Result
-                      <button type="button" class="btn btn-link link-danger p-0 ms-3" @click="deleteMultiple">
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+<!--            <div class="card-header">-->
+<!--              <div class="row align-items-center">-->
+<!--                <div class="col">-->
+<!--                  <ul class="nav nav-tabs-custom card-header-tabs border-bottom-0" role="tablist">-->
+<!--                    <li class="nav-item">-->
+<!--                      <a class="nav-link active fw-semibold" data-bs-toggle="tab" href="#productnav-all" role="tab">-->
+<!--                        All-->
+<!--                        <span class="badge badge-soft-danger align-middle rounded-pill ms-1">12</span>-->
+<!--                      </a>-->
+<!--                    </li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+<!--                <div class="col-auto">-->
+<!--                  <div id="selection-element">-->
+<!--                    <div class="my-n1 d-flex align-items-center text-muted">-->
+<!--                      Select-->
+<!--                      <div id="select-content" class="text-body fw-semibold px-1"></div>-->
+<!--                      Result-->
+<!--                      <button type="button" class="btn btn-link link-danger p-0 ms-3" @click="deleteMultiple">-->
+<!--                        Remove-->
+<!--                      </button>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
             <!-- end card header -->
             <div class="card-body">
               <div class="tab-content text-muted">
@@ -829,12 +829,12 @@ export default {
 <!--                        <th scope="col" style="width: 50px">-->
 <!--                          <input class="form-check-input" type="checkbox" id="checkAll" value="option"/>-->
 <!--                        </th>-->
-                        <th>Product</th>
-                        <th>Stock</th>
-                        <th>Price</th>
-                        <th>Orders</th>
-                        <th>Rating</th>
-                        <th>Published</th>
+                        <th>Продукты</th>
+                        <th>Остаток</th>
+                        <th>Закупка</th>
+                        <th>Цена</th>
+                        <th>Сколько ещё необходимо</th>
+<!--                        <th>Published</th>-->
                         <!--                        <th scope="col">Action</th>-->
                       </tr>
                       </thead>
@@ -879,17 +879,21 @@ export default {
                           {{ data.orders }}
                         </td>
                         <td data-column-id="rating" class="gridjs-td">
-                            <span><span class="badge bg-light text-body fs-12 fw-medium"><i
-                                class="mdi mdi-star text-warning me-1"></i>{{ data.rating }}</span></span>
+                          <div class="ms-2 row" style="flex-wrap: nowrap">
+                            <input style="max-width: 75%; width: fit-content;" type="text" class="form-control" placeholder="Введите..."/>
+                            <button style="display: flex; align-items: center; justify-content: center; width: fit-content; border: none; background: none;" type="submit">
+                              <i style="font-size: 2rem;" class="bx bx-check-square text-success"></i>
+                            </button>
+                          </div>
                         </td>
-                        <td data-column-id="published" class="gridjs-td">
-                            <span>
-                              {{data.publishedDate}}
-                              <small class="text-muted ms-1">
-                                {{data.publishedtime }}
-                              </small>
-                            </span>
-                        </td>
+<!--                        <td data-column-id="published" class="gridjs-td">-->
+<!--                            <span>-->
+<!--                              {{data.publishedDate}}-->
+<!--                              <small class="text-muted ms-1">-->
+<!--                                {{data.publishedtime }}-->
+<!--                              </small>-->
+<!--                            </span>-->
+<!--                        </td>-->
                         <!--                        <td data-column-id="action" class="gridjs-td">-->
                         <!--                            <span>-->
                         <!--                              <div class="dropdown">-->

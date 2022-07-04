@@ -39,7 +39,7 @@
   } from "vue3-count-to";
 
   import Layout from "../../../layouts/main.vue";
-  import PageHeader from "@/components/page-header";
+  // import PageHeader from "@/components/page-header";
 
   import Revenue from "./revenue";
   import SalesLocation from "./sales-location";
@@ -50,7 +50,7 @@
       Layout,
       Swiper,
       SwiperSlide,
-      PageHeader,
+      // PageHeader,
       flatPickr,
       SimpleBar,
       Revenue,
@@ -109,7 +109,7 @@
 
 <template>
   <Layout>
-    <PageHeader :title="title" :items="items" />
+<!--    <PageHeader :title="title" :items="items" />-->
     <div class="row">
       <div class="col">
         <div class="h-100">

@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 import Layout from "../../../layouts/main.vue";
 import appConfig from "../../../../app.config";
-import PageHeader from "@/components/page-header";
+// import PageHeader from "@/components/page-header";
 import axios from 'axios';
 import animationData from "@/components/widgets/msoeawqm.json";
 import Lottie from "@/components/widgets/lottie.vue";
@@ -185,7 +185,7 @@ export default {
   },
   components: {
     Layout,
-    PageHeader,
+    // PageHeader,
     lottie: Lottie,
     Multiselect,
     flatPickr,
@@ -487,7 +487,7 @@ export default {
 
 <template>
   <Layout>
-    <PageHeader :title="title" :items="items"/>
+<!--    <PageHeader :title="title" :items="items"/>-->
     <div class="row">
       <div class="col-lg-12">
         <div class="card" id="orderList">
