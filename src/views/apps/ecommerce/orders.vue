@@ -699,7 +699,7 @@ export default {
                         <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover"
                             data-bs-placement="top" title="Remove">
                           <a class="text-danger d-inline-block remove-item-btn" @click="deletedata(data)">
-                            <i class="ri-delete-bin-5-fill fs-16"></i>
+                            <i class="bx bxs-x-circle fs-16"></i>
                           </a>
                         </li>
                       </ul>
