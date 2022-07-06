@@ -95,7 +95,7 @@ export default {
                                     </tr>
                                     <tr>
                                         <td class="fw-medium">Project Name</td>
-                                        <td>Velzon - Admin Dashboard</td>
+                                        <td>MPMARKET - Admin Dashboard</td>
                                     </tr>
                                     <tr>
                                         <td class="fw-medium">Priority</td>
@@ -115,7 +115,7 @@ export default {
                     </div>
                 </div><!--end card-->
                 <div class="card mb-3">
-                    <div class="card-body"> 
+                    <div class="card-body">
                         <div class="d-flex mb-3">
                             <h6 class="card-title mb-0 flex-grow-1">Assigned To</h6>
                             <div class="flex-shrink-0">
@@ -360,7 +360,7 @@ export default {
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-bs-toggle="tab" href="#messages-1" role="tab">
-                                        Attachments File (4)  
+                                        Attachments File (4)
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -446,7 +446,7 @@ export default {
                                             <a href="javascript:void(0);" class="btn btn-success">Post Comments</a>
                                         </div>
                                     </div><!--end row-->
-                                </form>                                                
+                                </form>
                             </div><!--end tab-pane-->
                             <div class="tab-pane" id="messages-1" role="tabpanel">
                                 <div class="table-responsive table-card">
@@ -643,7 +643,7 @@ export default {
                                     </table><!--end table-->
                                 </div>
                             </div><!--edn tab-pane-->
-                            
+
                         </div><!--end tab-content-->
                     </div>
                 </div><!--end card-->

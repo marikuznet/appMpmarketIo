@@ -6,7 +6,7 @@ export default {
   methods: {
       toggleFavourite(ele) {
         ele.target.closest('.favourite-btn').classList.toggle("active");
-     } 
+     }
   },
   page: {
     title: "Overview",
@@ -30,13 +30,13 @@ export default {
   components: {
     Layout
   },
-  
+
 };
 </script>
 
 <template>
   <Layout>
-    
+
      <div class="row">
         <div class="col-lg-12">
             <div class="card mt-n4 mx-n4">
@@ -136,7 +136,7 @@ export default {
                                             <li>Four Dashboards : Ecommerce, Analytics, Project,etc.</li>
                                             <li>Create calendar, chat and email app pages.</li>
                                             <li>Add authentication pages.</li>
-                                            <li>Content listing.</li>   
+                                            <li>Content listing.</li>
                                         </ul>
 
                                         <div>
@@ -145,7 +145,7 @@ export default {
 
                                         <div class="pt-3 border-top border-top-dashed mt-4">
                                             <div class="row">
-                                                
+
                                                 <div class="col-lg-3 col-sm-6">
                                                     <div>
                                                         <p class="mb-2 text-uppercase fw-medium">Create Date :</p>
@@ -267,7 +267,7 @@ export default {
                                 </div><!-- end card header -->
 
                                 <div class="card-body">
-                                    
+
                                     <div data-simplebar style="height: 300px;" class="px-3 mx-n3 mb-2">
                                         <div class="d-flex mb-4">
                                             <div class="flex-shrink-0">
@@ -540,7 +540,7 @@ export default {
                                 </div>
 
                                 <div class="card-body">
-                                    
+
                                     <div class="vstack gap-2">
                                         <div class="border rounded border-dashed p-2">
                                             <div class="d-flex align-items-center">

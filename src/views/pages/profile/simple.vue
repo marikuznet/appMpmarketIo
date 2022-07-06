@@ -2,6 +2,8 @@
 import SwiperCore, {Thumbs, Navigation, Pagination} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/vue";
 import "swiper/swiper-bundle.css";
+import useVuelidate from "@vuelidate/core";
+import {required} from '@vuelidate/validators';
 
 SwiperCore.use([Thumbs, Navigation, Pagination]);
 
@@ -9,6 +11,9 @@ import Layout from "../../../layouts/main.vue";
 import appConfig from "../../../../app.config";
 
 export default {
+  setup() {
+    return {v$: useVuelidate()}
+  },
   page: {
     title: "Profile",
     meta: [{name: "description", content: appConfig.description}],
@@ -27,7 +32,13 @@ export default {
         },
       ],
       thumbsSwiper: null,
+      full_name: '',
     };
+  },
+  validations() {
+    return {
+      full_name: {required}
+    }
   },
   components: {
     Layout,
@@ -48,59 +59,59 @@ export default {
         />
       </div>
     </div>
-<!--    <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">-->
-<!--      <div class="row g-4">-->
-<!--        <div class="col-auto">-->
-<!--          <div class="avatar-lg">-->
-<!--            <img-->
-<!--                src="@/assets/images/users/avatar-1.jpg"-->
-<!--                alt="user-img"-->
-<!--                class="img-thumbnail rounded-circle"-->
-<!--            />-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash;end col&ndash;&gt;-->
-<!--        <div class="col">-->
-<!--          <div class="p-2">-->
-<!--            <h3 class="text-white mb-1">Anna Adame</h3>-->
-<!--            <p class="text-white-75">Owner & Founder</p>-->
-<!--            <div class="hstack text-white-50 gap-1">-->
-<!--              <div class="me-2">-->
-<!--                <i-->
-<!--                    class="ri-map-pin-user-line me-1 text-white-75 fs-16 align-middle"-->
-<!--                ></i-->
-<!--                >California, United States-->
-<!--              </div>-->
-<!--              <div>-->
-<!--                <i-->
-<!--                    class="ri-building-line me-1 text-white-75 fs-16 align-middle"-->
-<!--                ></i-->
-<!--                >Themesbrand-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash;end col&ndash;&gt;-->
-<!--        <div class="col-12 col-lg-auto order-last order-lg-0">-->
-<!--          <div class="row text text-white-50 text-center">-->
-<!--            <div class="col-lg-6 col-4">-->
-<!--              <div class="p-2">-->
-<!--                <h4 class="text-white mb-1">24.3K</h4>-->
-<!--                <p class="fs-14 mb-0">{{ $t("t-followers") }}</p>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="col-lg-6 col-4">-->
-<!--              <div class="p-2">-->
-<!--                <h4 class="text-white mb-1">1.3K</h4>-->
-<!--                <p class="fs-14 mb-0">{{ $t("t-following") }}</p>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash;end col&ndash;&gt;-->
-<!--      </div>-->
-<!--      &lt;!&ndash;end row&ndash;&gt;-->
-<!--    </div>-->
+    <!--    <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">-->
+    <!--      <div class="row g-4">-->
+    <!--        <div class="col-auto">-->
+    <!--          <div class="avatar-lg">-->
+    <!--            <img-->
+    <!--                src="@/assets/images/users/avatar-1.jpg"-->
+    <!--                alt="user-img"-->
+    <!--                class="img-thumbnail rounded-circle"-->
+    <!--            />-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash;end col&ndash;&gt;-->
+    <!--        <div class="col">-->
+    <!--          <div class="p-2">-->
+    <!--            <h3 class="text-white mb-1">Anna Adame</h3>-->
+    <!--            <p class="text-white-75">Owner & Founder</p>-->
+    <!--            <div class="hstack text-white-50 gap-1">-->
+    <!--              <div class="me-2">-->
+    <!--                <i-->
+    <!--                    class="ri-map-pin-user-line me-1 text-white-75 fs-16 align-middle"-->
+    <!--                ></i-->
+    <!--                >California, United States-->
+    <!--              </div>-->
+    <!--              <div>-->
+    <!--                <i-->
+    <!--                    class="ri-building-line me-1 text-white-75 fs-16 align-middle"-->
+    <!--                ></i-->
+    <!--                >Themesbrand-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash;end col&ndash;&gt;-->
+    <!--        <div class="col-12 col-lg-auto order-last order-lg-0">-->
+    <!--          <div class="row text text-white-50 text-center">-->
+    <!--            <div class="col-lg-6 col-4">-->
+    <!--              <div class="p-2">-->
+    <!--                <h4 class="text-white mb-1">24.3K</h4>-->
+    <!--                <p class="fs-14 mb-0">{{ $t("t-followers") }}</p>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-6 col-4">-->
+    <!--              <div class="p-2">-->
+    <!--                <h4 class="text-white mb-1">1.3K</h4>-->
+    <!--                <p class="fs-14 mb-0">{{ $t("t-following") }}</p>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash;end col&ndash;&gt;-->
+    <!--      </div>-->
+    <!--      &lt;!&ndash;end row&ndash;&gt;-->
+    <!--    </div>-->
 
     <div class="row pt-5">
       <div class="col-lg-12">
@@ -2006,9 +2017,74 @@ export default {
             </div>
             <div class="tab-pane fade" id="activities" role="tabpanel">
               <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title mb-3">{{ $t("t-activities") }}</h5>
-                  <div class="acitivity-timeline">
+                <div class="card-body requisites-payment">
+                  <form action="">
+                    <div class="row mb-2">
+                      <div class="form-group col-md-6">
+                        <label for="full_name">Полное наименование</label>
+                        <input class="form-control col-sm-6 col-xxl-6" type="text" id="full_name" v-model="full_name"
+                               placeholder="Общество с ограниченной ответственностью 'Петрович'">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="full_name">Краткое наименование</label>
+                        <input class="form-control col-sm-6 col-xxl-6" type="text" id="name"
+                               placeholder="ООО 'Петрович'">
+                      </div>
+                    </div>
+                    <div class="row mb-2">
+                      <div class="form-group col-md-6">
+                        <label for="inn">ИНН</label>
+                        <input class="form-control" type="text" id="inn" placeholder="Введите ИНН">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="kpp">КПП</label>
+                        <input class="form-control" type="text" id="kpp" placeholder="Введите КПП">
+                      </div>
+                    </div>
+                    <div class="row mb-2">
+                      <div class="form-group col-md-6">
+                        <label for="bic">БИК</label>
+                        <input class="form-control" type="text" id="bic" placeholder="Введите БИК">
+                      </div>
+                    </div>
+                    <div class="row mb-2">
+                      <div class="form-group col-md-6">
+                        <label for="bank">Банковские реквизиты</label>
+                        <input class="form-control" type="text" id="bank"
+                               placeholder="1234 5678 9102 3456    в Московский банк ПАО Сбербанк г.Москва">
+                      </div>
+                    </div>
+                    <div class="row mb-2">
+                      <div class="form-group col-md-6">
+                        <label for="kc">К/С</label>
+                        <input class="form-control" type="text" id="kc" placeholder="Введите К/С">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="okpo">ОКПО</label>
+                        <input class="form-control" type="text" id="okpo" placeholder="Введите ОКПО">
+                      </div>
+                    </div>
+                    <div class="row mb-2">
+                      <div class="form-group col-md-6">
+                        <label for="okato">ОКАТО</label>
+                        <input class="form-control" type="text" id="okato" placeholder="Введите ОКАТО">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="ogrn">ОГРН</label>
+                        <input class="form-control" type="text" id="ogrn" placeholder="Введите ОГРН">
+                      </div>
+                    </div>
+                    <div class="row mb-2">
+                      <div class="form-group col-md-6">
+                        <button class="btn btn-info">Сохранить</button>
+                      </div>
+                    </div>
+                  </form>
+                  <h5 v-if="false" class="card-title mb-3">{{ $t("t-activities") }}</h5>
+                  <div class="activity-timeline">
+
+                  </div>
+                  <div v-if="false" class="acitivity-timeline">
                     <div class="acitivity-item d-flex">
                       <div class="flex-shrink-0">
                         <img
@@ -2942,7 +3018,7 @@ export default {
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
                                       <img src="@/assets/images/users/avatar-7.jpg" alt=""
-                                          class="rounded-circle img-fluid"/>
+                                           class="rounded-circle img-fluid"/>
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
@@ -3621,3 +3697,10 @@ export default {
     <!--end row-->
   </Layout>
 </template>
+
+<style scoped>
+.requisites-payment label {
+  font-size: 14px;
+  font-weight: 600;
+}
+</style>

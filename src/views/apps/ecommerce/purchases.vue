@@ -182,10 +182,10 @@ export default {
           return (
               data.name.toLowerCase().includes(search) ||
               data.category.includes(search) ||
-              data.stock.toLowerCase().includes(search) ||
-              data.price.toLowerCase().includes(search) ||
-              data.orders.toLowerCase().includes(search) ||
-              data.rating.toLowerCase().includes(search) ||
+              data.stock == search ||
+              data.price == search ||
+              data.orders == search ||
+              //data.rating.toLowerCase().includes(search) ||
               data.publishedDate[0].toLowerCase().includes(search)
           );
         });
@@ -380,7 +380,7 @@ export default {
 
 <template>
   <Layout>
-<!--    <PageHeader :title="title"/>-->
+    <!--    <PageHeader :title="title"/>-->
     <div class="row">
       <!--      <div class="col-xl-3 col-lg-4">-->
       <!--        <div class="card">-->
@@ -792,32 +792,32 @@ export default {
               <!--              </div>-->
             </div>
 
-<!--            <div class="card-header">-->
-<!--              <div class="row align-items-center">-->
-<!--                <div class="col">-->
-<!--                  <ul class="nav nav-tabs-custom card-header-tabs border-bottom-0" role="tablist">-->
-<!--                    <li class="nav-item">-->
-<!--                      <a class="nav-link active fw-semibold" data-bs-toggle="tab" href="#productnav-all" role="tab">-->
-<!--                        All-->
-<!--                        <span class="badge badge-soft-danger align-middle rounded-pill ms-1">12</span>-->
-<!--                      </a>-->
-<!--                    </li>-->
-<!--                  </ul>-->
-<!--                </div>-->
-<!--                <div class="col-auto">-->
-<!--                  <div id="selection-element">-->
-<!--                    <div class="my-n1 d-flex align-items-center text-muted">-->
-<!--                      Select-->
-<!--                      <div id="select-content" class="text-body fw-semibold px-1"></div>-->
-<!--                      Result-->
-<!--                      <button type="button" class="btn btn-link link-danger p-0 ms-3" @click="deleteMultiple">-->
-<!--                        Remove-->
-<!--                      </button>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
+            <!--            <div class="card-header">-->
+            <!--              <div class="row align-items-center">-->
+            <!--                <div class="col">-->
+            <!--                  <ul class="nav nav-tabs-custom card-header-tabs border-bottom-0" role="tablist">-->
+            <!--                    <li class="nav-item">-->
+            <!--                      <a class="nav-link active fw-semibold" data-bs-toggle="tab" href="#productnav-all" role="tab">-->
+            <!--                        All-->
+            <!--                        <span class="badge badge-soft-danger align-middle rounded-pill ms-1">12</span>-->
+            <!--                      </a>-->
+            <!--                    </li>-->
+            <!--                  </ul>-->
+            <!--                </div>-->
+            <!--                <div class="col-auto">-->
+            <!--                  <div id="selection-element">-->
+            <!--                    <div class="my-n1 d-flex align-items-center text-muted">-->
+            <!--                      Select-->
+            <!--                      <div id="select-content" class="text-body fw-semibold px-1"></div>-->
+            <!--                      Result-->
+            <!--                      <button type="button" class="btn btn-link link-danger p-0 ms-3" @click="deleteMultiple">-->
+            <!--                        Remove-->
+            <!--                      </button>-->
+            <!--                    </div>-->
+            <!--                  </div>-->
+            <!--                </div>-->
+            <!--              </div>-->
+            <!--            </div>-->
             <!-- end card header -->
             <div class="card-body">
               <div class="tab-content text-muted">
@@ -826,23 +826,23 @@ export default {
                     <table class="table align-middle table-nowrap mb-0" id="customerTable">
                       <thead class="table-light">
                       <tr class="text-muted">
-<!--                        <th scope="col" style="width: 50px">-->
-<!--                          <input class="form-check-input" type="checkbox" id="checkAll" value="option"/>-->
-<!--                        </th>-->
+                        <!--                        <th scope="col" style="width: 50px">-->
+                        <!--                          <input class="form-check-input" type="checkbox" id="checkAll" value="option"/>-->
+                        <!--                        </th>-->
                         <th>Продукты</th>
                         <th>Остаток</th>
                         <th>Закупка</th>
                         <th>Цена</th>
                         <th>Сколько ещё необходимо</th>
-<!--                        <th>Published</th>-->
+                        <!--                        <th>Published</th>-->
                         <!--                        <th scope="col">Action</th>-->
                       </tr>
                       </thead>
                       <tbody class="list form-check-all">
                       <tr class="gridjs-tr" v-for="(data, index) of resultQuery" :key="index">
-<!--                        <td data-column-id="productListAllCheckbox" class="gridjs-td">-->
-<!--                          <input type="checkbox" name="chk_child" class="form-check-input"/>-->
-<!--                        </td>-->
+                        <!--                        <td data-column-id="productListAllCheckbox" class="gridjs-td">-->
+                        <!--                          <input type="checkbox" name="chk_child" class="form-check-input"/>-->
+                        <!--                        </td>-->
                         <td class="id" hidden>
                           <a href="">{{ data.id }}</a>
                         </td>
@@ -880,20 +880,23 @@ export default {
                         </td>
                         <td data-column-id="rating" class="gridjs-td">
                           <div class="ms-2 row" style="flex-wrap: nowrap">
-                            <input style="max-width: 75%; width: fit-content;" type="text" class="form-control" placeholder="Введите..."/>
-                            <button style="display: flex; align-items: center; justify-content: center; width: fit-content; border: none; background: none;" type="submit">
+                            <input style="max-width: 75%; width: fit-content;" type="text" class="form-control"
+                                   placeholder="Введите..."/>
+                            <button
+                                style="display: flex; align-items: center; justify-content: center; width: fit-content; border: none; background: none;"
+                                type="submit">
                               <i style="font-size: 2rem;" class="bx bx-check-square text-success"></i>
                             </button>
                           </div>
                         </td>
-<!--                        <td data-column-id="published" class="gridjs-td">-->
-<!--                            <span>-->
-<!--                              {{data.publishedDate}}-->
-<!--                              <small class="text-muted ms-1">-->
-<!--                                {{data.publishedtime }}-->
-<!--                              </small>-->
-<!--                            </span>-->
-<!--                        </td>-->
+                        <!--                        <td data-column-id="published" class="gridjs-td">-->
+                        <!--                            <span>-->
+                        <!--                              {{data.publishedDate}}-->
+                        <!--                              <small class="text-muted ms-1">-->
+                        <!--                                {{data.publishedtime }}-->
+                        <!--                              </small>-->
+                        <!--                            </span>-->
+                        <!--                        </td>-->
                         <!--                        <td data-column-id="action" class="gridjs-td">-->
                         <!--                            <span>-->
                         <!--                              <div class="dropdown">-->

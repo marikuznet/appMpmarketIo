@@ -303,6 +303,9 @@ export default {
         }
       };
     }
+
+    // eslint-disable-next-line no-self-assign
+    this.orders = this.orders;
   },
   methods: {
     onChangeStatus(e) {

@@ -50,7 +50,7 @@ export default {
           file: "2"
         },
         {
-          title: "Velzon - Admin Layout Design",
+          title: "MPMARKET - Admin Layout Design",
           description: "The dashboard is the front page of the Administration UI.",
           features: ["Layout", "Admin", "Dashboard"],
           users:[require("@/assets/images/users/avatar-7.jpg"), require("@/assets/images/users/avatar-6.jpg"), require("@/assets/images/users/avatar-1.jpg")],
@@ -160,7 +160,7 @@ export default {
         },
        ],
         enabled: true,
-        
+
         dragging: false
     };
   },
@@ -182,7 +182,7 @@ export default {
 <template>
     <Layout>
         <PageHeader :title="title" :items="items" />
-          
+
     <div class="card">
         <div class="card-body">
             <div class="row g-2">
@@ -798,7 +798,7 @@ export default {
                             </div><!--end col-->
                             <div class="col-lg-6">
                                 <label for="joiningdateInput" class="form-label">Joining Date</label>
-                              
+
                                 <flat-pickr
                                     v-model="date"
                                     :config="config"
@@ -890,7 +890,7 @@ export default {
                                                     </span>
                                                 </label>
                                             </div>
-                                        </li> 
+                                        </li>
                                         <li>
                                             <div class="form-check d-flex align-items-center">
                                                 <input class="form-check-input me-3" type="checkbox" value="" id="frank-hook">
@@ -903,7 +903,7 @@ export default {
                                                     </span>
                                                 </label>
                                             </div>
-                                        </li> 
+                                        </li>
                                         <li>
                                             <div class="form-check d-flex align-items-center">
                                                 <input class="form-check-input me-3" type="checkbox" value="" id="alexis-clarke">
@@ -916,7 +916,7 @@ export default {
                                                     </span>
                                                 </label>
                                             </div>
-                                        </li> 
+                                        </li>
                                         <li>
                                             <div class="form-check d-flex align-items-center">
                                                 <input class="form-check-input me-3" type="checkbox" value="" id="herbert-stokes">
@@ -929,7 +929,7 @@ export default {
                                                     </span>
                                                 </label>
                                             </div>
-                                        </li> 
+                                        </li>
                                         <li>
                                             <div class="form-check d-flex align-items-center">
                                                 <input class="form-check-input me-3" type="checkbox" value="" id="michael-morris">
@@ -942,7 +942,7 @@ export default {
                                                     </span>
                                                 </label>
                                             </div>
-                                        </li> 
+                                        </li>
                                         <li>
                                             <div class="form-check d-flex align-items-center">
                                                 <input class="form-check-input me-3" type="checkbox" value="" id="nancy-martino">
@@ -955,7 +955,7 @@ export default {
                                                     </span>
                                                 </label>
                                             </div>
-                                        </li> 
+                                        </li>
                                         <li>
                                             <div class="form-check d-flex align-items-center">
                                                 <input class="form-check-input me-3" type="checkbox" value="" id="thomas-taylor">
@@ -968,7 +968,7 @@ export default {
                                                     </span>
                                                 </label>
                                             </div>
-                                        </li> 
+                                        </li>
                                         <li>
                                             <div class="form-check d-flex align-items-center">
                                                 <input class="form-check-input me-3" type="checkbox" value="" id="tonya-noble">
@@ -981,13 +981,13 @@ export default {
                                                     </span>
                                                 </label>
                                             </div>
-                                        </li> 
+                                        </li>
                                     </ul>
                                 </div>
                             </div><!--end col-->
                             <div class="col-lg-4">
                                 <label for="due-date" class="form-label">Due Date</label>
-                              
+
                                  <flat-pickr
                       v-model="date1"
                       placeholder="Select date"
