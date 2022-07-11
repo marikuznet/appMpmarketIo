@@ -485,13 +485,13 @@ export default {
         <div class="card" id="invoiceList">
           <div class="card-header border-0">
             <div class="d-flex align-items-center">
-              <h5 class="card-title mb-0 flex-grow-1">Invoices</h5>
+              <h5 class="card-title mb-0 flex-grow-1"> {{ $t('t-invoices') }}</h5>
               <div class="flex-shrink-0">
                 <button class="btn btn-soft-danger me-1" @click="deleteMultiple">
                   <i class="ri-delete-bin-2-line"></i>
                 </button>
                 <router-link to="/invoices/create" class="btn btn-danger"><i class="ri-add-line align-bottom me-1"></i>
-                  Create Invoice
+                  {{ $t('t-create-invoices') }}
                 </router-link>
               </div>
             </div>
@@ -502,7 +502,7 @@ export default {
                 <div class="col-xxl-5 col-sm-12">
                   <div class="search-box">
                     <input type="text" class="form-control search bg-light border-light"
-                           placeholder="Search for customer, email, country, status or something...">
+                           placeholder="Поиск...">
                     <i class="ri-search-line search-icon"></i>
                   </div>
                 </div>
@@ -510,7 +510,7 @@ export default {
                 <div class="col-xxl-3 col-sm-4">
 
                   <flat-pickr v-model="date" :config="config" class="form-control bg-light border-light"
-                              placeholder="Select date"></flat-pickr>
+                              placeholder="Выбрать дату"></flat-pickr>
                 </div>
                 <!--end col-->
                 <div class="col-xxl-3 col-sm-4">
@@ -531,7 +531,7 @@ export default {
 
                 <div class="col-xxl-1 col-sm-4">
                   <button type="button" class="btn btn-primary w-100" onclick="SearchData();">
-                    <i class="ri-equalizer-fill me-1 align-bottom"></i> Filters
+                    <i class="ri-equalizer-fill me-1 align-bottom"></i> {{ $t('t-filter') }}
                   </button>
                 </div>
                 <!--end col-->
@@ -550,14 +550,14 @@ export default {
                         <input class="form-check-input" type="checkbox" id="checkAll" value="option">
                       </div>
                     </th>
-                    <th class="sort text-uppercase" data-sort="invoice_id">ID</th>
-                    <th class="sort text-uppercase" data-sort="customer_name">Customer</th>
-                    <th class="sort text-uppercase" data-sort="email">Email</th>
-                    <th class="sort text-uppercase" data-sort="country">Country</th>
-                    <th class="sort text-uppercase" data-sort="date">Date</th>
-                    <th class="sort text-uppercase" data-sort="invoice_amount">Amount</th>
-                    <th class="sort text-uppercase" data-sort="status">Payment Status</th>
-                    <th class="sort text-uppercase" data-sort="action">Action</th>
+                    <th class="sort text-uppercase" data-sort="invoice_id">{{ $t('t-table-finance-sort.id') }}</th>
+                    <th class="sort text-uppercase" data-sort="customer_name">{{ $t('t-table-finance-sort.customer') }}</th>
+                    <th class="sort text-uppercase" data-sort="email">{{ $t('t-table-finance-sort.email') }}</th>
+                    <th class="sort text-uppercase" data-sort="country">{{ $t('t-table-finance-sort.country') }}</th>
+                    <th class="sort text-uppercase" data-sort="date">{{ $t('t-table-finance-sort.date') }}</th>
+                    <th class="sort text-uppercase" data-sort="invoice_amount">{{ $t('t-table-finance-sort.amount') }}</th>
+                    <th class="sort text-uppercase" data-sort="status">{{ $t('t-table-finance-sort.payment-status') }}</th>
+                    <th class="sort text-uppercase" data-sort="action">{{ $t('t-table-finance-sort.action') }}</th>
                   </tr>
                   </thead>
                   <tbody class="list form-check-all">
@@ -606,17 +606,17 @@ export default {
                           <li>
 
                             <router-link class="dropdown-item" :to="'/invoices/detail/'+item._id">
-                              <i class="ri-eye-fill align-bottom me-2 text-muted"></i> View
+                              <i class="ri-eye-fill align-bottom me-2 text-muted"></i> {{ $t("t-action.view") }}
                             </router-link>
                           </li>
                           <li><a class="dropdown-item"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i>
-                            Edit</a></li>
+                            {{ $t("t-action.edit") }}</a></li>
                           <li><a class="dropdown-item" href="javascript:void(0);"><i
-                              class="ri-download-2-line align-bottom me-2 text-muted"></i> Download</a></li>
+                              class="ri-download-2-line align-bottom me-2 text-muted"></i> {{ $t("t-action.download") }}</a></li>
                           <li class="dropdown-divider"></li>
                           <li>
                             <a class="dropdown-item remove-item-btn" @click="deletedata(item)">
-                              <i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete
+                              <i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> {{ $t("t-action.delete") }}
                             </a>
                           </li>
                         </ul>
@@ -650,7 +650,7 @@ export default {
                     </li>
                   </ul>
                   <a class="page-item pagination-next" href="#" @click="page++" v-if="page < pages.length">
-                    Next
+                    {{ $t('t-next') }}
                   </a>
                 </div>
               </div>

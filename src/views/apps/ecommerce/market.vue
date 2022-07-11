@@ -766,15 +766,15 @@ export default {
                 <div class="col-sm-auto">
                   <div>
                     <router-link to="/ecommerce/add-product" class="btn btn-success"><i
-                        class="ri-add-line align-bottom me-1"></i> Add
-                      Product
+                        class="ri-add-line align-bottom me-1"></i>
+                      {{ $t('t-add-product') }}
                     </router-link>
                   </div>
                 </div>
                 <div class="col-sm">
                   <div class="d-flex justify-content-sm-end">
                     <div class="search-box ms-2">
-                      <input type="text" class="form-control" placeholder="Search Products..."/>
+                      <input type="text" class="form-control" placeholder="Поиск..."/>
                       <i class="ri-search-line search-icon"></i>
                     </div>
                   </div>
@@ -784,24 +784,24 @@ export default {
 
             <div class="card-header">
               <div class="row align-items-center">
-                <div class="col">
-                  <ul class="nav nav-tabs-custom card-header-tabs border-bottom-0" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active fw-semibold" data-bs-toggle="tab" href="#productnav-all" role="tab">
-                        All
-                        <span class="badge badge-soft-danger align-middle rounded-pill ms-1">12</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+<!--                <div class="col">-->
+<!--                  <ul class="nav nav-tabs-custom card-header-tabs border-bottom-0" role="tablist">-->
+<!--                    <li class="nav-item">-->
+<!--                      <a class="nav-link active fw-semibold" data-bs-toggle="tab" href="#productnav-all" role="tab">-->
+<!--                        All-->
+<!--                        <span class="badge badge-soft-danger align-middle rounded-pill ms-1">12</span>-->
+<!--                      </a>-->
+<!--                    </li>-->
+<!--                  </ul>-->
+<!--                </div>-->
                 <div class="col-auto">
                   <div id="selection-element">
                     <div class="my-n1 d-flex align-items-center text-muted">
-                      Select
+                      {{ $t('t-select') }}
                       <div id="select-content" class="text-body fw-semibold px-1"></div>
-                      Result
+<!--                      Result-->
                       <button type="button" class="btn btn-link link-danger p-0 ms-3" @click="deleteMultiple">
-                        Remove
+                        {{ $t('t-remove') }}
                       </button>
                     </div>
                   </div>
@@ -819,13 +819,13 @@ export default {
                         <th scope="col" style="width: 50px">
                           <input class="form-check-input" type="checkbox" id="checkAll" value="option"/>
                         </th>
-                        <th>Product</th>
-                        <th>Stock</th>
-                        <th>Price</th>
-                        <th>Orders</th>
-                        <th>Rating</th>
-                        <th>Published</th>
-                        <th scope="col">Action</th>
+                        <th>{{ $t('t-table-market-sort.product') }}</th>
+                        <th>{{ $t('t-table-market-sort.stock') }}</th>
+                        <th>{{ $t('t-table-market-sort.price') }}</th>
+                        <th>{{ $t('t-table-market-sort.orders') }}</th>
+                        <th>{{ $t('t-table-market-sort.rating') }}</th>
+                        <th>{{ $t('t-table-market-sort.published') }}</th>
+                        <th scope="col">{{ $t('t-table-market-sort.action') }}</th>
                       </tr>
                       </thead>
                       <tbody class="list form-check-all">
@@ -890,18 +890,18 @@ export default {
                                   <li>
                                     <router-link class="dropdown-item" to="/ecommerce/product-details"><i
                                         class="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                      View</router-link>
+                                      {{ $t("t-action.view") }}</router-link>
                                   </li>
                                   <li>
                                     <router-link class="dropdown-item" to="/ecommerce/add-product"><i
                                         class="ri-pencil-fill align-bottom me-2 text-muted"></i>
-                                      Edit</router-link>
+                                      {{ $t("t-action.edit") }}</router-link>
                                   </li>
                                   <li class="dropdown-divider"></li>
                                   <li>
                                     <a class="dropdown-item" @click="deletedata(data)">
                                       <i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
-                                      Delete</a>
+                                      {{ $t("t-action.delete") }}</a>
                                   </li>
                                 </ul>
                               </div>
@@ -927,7 +927,7 @@ export default {
                           </li>
                         </ul>
                         <a class="page-item pagination-next" href="#" @click="page++" v-if="page < pages.length">
-                          Next
+                          {{ $t('t-next') }}
                         </a>
                       </div>
                     </div>

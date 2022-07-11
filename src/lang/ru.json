@@ -52,6 +52,7 @@
     "t-ico-list": "Список ICO",
     "t-kyc-application": "Приложение ЗСК",
     "t-invoices": "Счета",
+    "t-create-invoices": "Создать счета",
     "t-details": "Подробности",
     "t-create-invoice": "Создать счет",
     "t-supprt-tickets": "Билеты в службу поддержки",
@@ -237,8 +238,53 @@
         "price": "Сумма",
         "orders": "Заказы",
         "rating": "Рейтинг",
-        "published": "Опубликовано"
+        "published": "Опубликовано",
+        "action": "Действия"
+    },
+    "t-table-finance-sort": {
+        "id": "ID",
+        "customer": "Покупатель",
+        "email": "Email",
+        "country": "Страна",
+        "date": "Дата",
+        "amount": "Сумма",
+        "payment-status": "Статус платежа",
+        "action": "Действия"
+    },
+    "t-table-market-sort": {
+        "product": "Товар",
+        "stock": "Запас",
+        "price": "Цена",
+        "orders": "Заказы",
+        "rating": "Рейтинг",
+        "published": "Опубликовано",
+        "action": "Действия"
+    },
+    "t-finance-payment-status": {
+        "all": "Все",
+        "unpaid": "Неоплачено",
+        "paid": "Оплачено",
+        "cancel": "Отмена",
+        "refund": "Возврат"
     },
     "t-next": "Следующая",
-    "t-prev": "Предыдущая"
+    "t-prev": "Предыдущая",
+    "t-add-product": "Добавить товар",
+    "t-select": "Выбрано",
+    "t-result": "Результат",
+    "t-remove": "Удалить",
+
+    "t-tickets": "Билеты",
+    "t-create-tickets": "Создать билеты",
+    "t-table-support-sort": {
+        "id": "ID",
+        "title": "Название",
+        "client": "Клиент",
+        "assigned-to": "Назначенный",
+        "create-date": "Дата создания",
+        "due-date": "Срок выполнения",
+        "status": "Статус",
+        "priority": "Приоритет",
+        "action": "Действие"
+    }
 }

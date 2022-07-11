@@ -833,7 +833,7 @@ export default {
                         <th>Остаток</th>
                         <th>Закупка</th>
                         <th>Цена</th>
-                        <th>Сколько ещё необходимо</th>
+                        <th>Куплено</th>
                         <!--                        <th>Published</th>-->
                         <!--                        <th scope="col">Action</th>-->
                       </tr>
@@ -945,7 +945,7 @@ export default {
                           </li>
                         </ul>
                         <a class="page-item pagination-next" href="#" @click="page++" v-if="page < pages.length">
-                          Next
+                          {{ $t('t-next') }}
                         </a>
                       </div>
                     </div>

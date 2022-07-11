@@ -955,10 +955,10 @@ export default {
                 <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
                 <span class="align-middle">Личный кабинет</span>
               </router-link>
-              <router-link class="dropdown-item" to="/pages/profile-setting">
-                <i class="bx bxs-cog text-muted fs-16 align-middle me-1"></i>
-                <span class="align-middle">Настройки</span>
-              </router-link>
+<!--              <router-link class="dropdown-item" to="/pages/profile-setting">-->
+<!--                <i class="bx bxs-cog text-muted fs-16 align-middle me-1"></i>-->
+<!--                <span class="align-middle">Настройки</span>-->
+<!--              </router-link>-->
               <router-link class="dropdown-item" to="/support">
                 <i class="bx bxs-group text-muted fs-16 align-middle me-1"></i>
                 <span class="align-middle">Поддержка</span>

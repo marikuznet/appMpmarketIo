@@ -764,15 +764,16 @@
               <div class="row g-4">
                 <div class="col-sm-auto">
                   <div>
-                    <router-link to="/ecommerce/add-product" class="btn btn-success"><i
-                        class="ri-add-line align-bottom me-1"></i> Add
-                      Product</router-link>
+                    <router-link to="/ecommerce/add-product" class="btn btn-success">
+                      <i class="ri-add-line align-bottom me-1"></i>
+                      {{ $t('t-add-product') }}
+                    </router-link>
                   </div>
                 </div>
                 <div class="col-sm">
                   <div class="d-flex justify-content-sm-end">
                     <div class="search-box ms-2">
-                      <input type="text" class="form-control" placeholder="Search Products..." />
+                      <input type="text" class="form-control" placeholder="Поиск..." />
                       <i class="ri-search-line search-icon"></i>
                     </div>
                   </div>
@@ -823,7 +824,7 @@
                           <th>{{ $t('t-table-products-sort.orders') }}</th>
                           <th>{{ $t('t-table-products-sort.rating') }}</th>
                           <th>{{ $t('t-table-products-sort.published') }}</th>
-                          <th scope="col">Action</th>
+                          <th scope="col">{{ $t('t-table-products-sort.action') }}</th>
                         </tr>
                       </thead>
                       <tbody class="list form-check-all">
@@ -887,18 +888,18 @@
                                   <li>
                                     <router-link class="dropdown-item" to="/ecommerce/product-details"><i
                                         class="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                      View</router-link>
+                                      {{ $t("t-action.view") }}</router-link>
                                   </li>
                                   <li>
                                     <router-link class="dropdown-item" to="/ecommerce/add-product"><i
                                         class="ri-pencil-fill align-bottom me-2 text-muted"></i>
-                                      Edit</router-link>
+                                      {{ $t("t-action.edit") }}</router-link>
                                   </li>
                                   <li class="dropdown-divider"></li>
                                   <li>
                                     <a class="dropdown-item" @click="deletedata(data)">
                                       <i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
-                                      Delete</a>
+                                      {{ $t("t-action.delete") }}</a>
                                   </li>
                                 </ul>
                               </div>
