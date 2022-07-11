@@ -27,7 +27,7 @@ export default {
       perPage: 8,
       pages: [],
       value: null,
-      statuscategory: 'All',
+      statuscategory: 'Все',
       value1: null,
       searchQuery: null,
       config: {
@@ -52,7 +52,7 @@ export default {
         customer: "Frank Hook",
         product: "Puma Tshirt",
         orderDate: "20 Dec, 2021",
-        amount: "$654",
+        amount: "654",
         payment: "Mastercard",
         status: "Ожидает",
         statusClass: "warning",
@@ -63,7 +63,7 @@ export default {
           customer: "Rickey Teran",
           product: "Adidas Sneakers",
           orderDate: "16 Dec, 2021",
-          amount: "$354",
+          amount: "354",
           payment: "Paypal",
           status: "Архив",
           statusClass: "danger",
@@ -74,7 +74,7 @@ export default {
           customer: "James Price",
           product: "350 ml Glass Grocery Container",
           orderDate: "28 Nov, 2021",
-          amount: "$829",
+          amount: "829",
           payment: "Visa",
           status: "На сборке",
           statusClass: "secondary",
@@ -85,7 +85,7 @@ export default {
           customer: "Nettie Deloatch",
           product: "American egale outfitters Shirt",
           orderDate: "22 Nov, 2021",
-          amount: "$142",
+          amount: "142",
           payment: "COD",
           status: "Ожидает",
           statusClass: "warning",
@@ -96,7 +96,7 @@ export default {
           customer: "Thomas Taylor",
           product: "Galaxy Watch4",
           orderDate: "12 Nov, 2021",
-          amount: "$408",
+          amount: "408",
           payment: "Mastercard",
           status: "Pickups",
           statusClass: "info",
@@ -107,7 +107,7 @@ export default {
           customer: "James Price",
           product: "Apple iPhone 12",
           orderDate: "05 Nov, 2021",
-          amount: "$1240",
+          amount: "1240",
           payment: "Visa",
           status: "На сборке",
           statusClass: "secondary",
@@ -118,7 +118,7 @@ export default {
           customer: "Nancy Martino",
           product: "Funky Prints T-shirt",
           orderDate: "31 Oct, 2021",
-          amount: "$180",
+          amount: "180",
           payment: "COD",
           status: "Returns",
           statusClass: "primary",
@@ -129,7 +129,7 @@ export default {
           customer: "Alexis Clarke",
           product: "USB Flash Drive Personalized with 3D Print",
           orderDate: "25 Oct, 2021",
-          amount: "$247",
+          amount: "247",
           payment: "Paypal",
           status: "Собрано",
           statusClass: "success",
@@ -140,7 +140,7 @@ export default {
           customer: "Donald Palmer",
           product: "Oxford Button-Down Shirt",
           orderDate: "19 Oct, 2021",
-          amount: "$373",
+          amount: "373",
           payment: "Visa",
           status: "Pickups",
           statusClass: "info",
@@ -151,7 +151,7 @@ export default {
           customer: "Henry Baird",
           product: "Classic Short Sleeve Shirt",
           orderDate: "13 Oct, 2021",
-          amount: "$342",
+          amount: "342",
           payment: "Mastercard",
           status: "На сборке",
           statusClass: "secondary",
@@ -162,7 +162,7 @@ export default {
           customer: "Diana Kohler",
           product: "Half Sleeve T-Shirts (Blue)",
           orderDate: "01 Oct, 2021",
-          amount: "$874",
+          amount: "874",
           payment: "Visa",
           status: "Собрано",
           statusClass: "success",
@@ -173,7 +173,7 @@ export default {
           customer: "Alexis Clarke",
           product: "Noise Evolve Smartwatch",
           orderDate: "29 Sep, 2021",
-          amount: "$1021",
+          amount: "1021",
           payment: "Mastercard",
           status: "Архив",
           statusClass: "danger",
@@ -267,7 +267,7 @@ export default {
     },
   },
   beforeMount() {
-    axios.get('https://api-node.themesbrand.website/apps/order').then((data) => {
+    /*axios.get('https://api-node.themesbrand.website/apps/order').then((data) => {
       const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
         "Oct", "Nov", "Dec"
       ];
@@ -279,7 +279,7 @@ export default {
       })
     }).catch((er) => {
       console.log(er)
-    });
+    });*/
 
   },
 
@@ -371,13 +371,14 @@ export default {
     },
     deletedata(event) {
       Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
+        title: "Вы уверены?",
+        text: "Вы не сможете отменить!",
         icon: "warning",
         showCancelButton: true,
         cancelButtonColor: "#f46a6a",
         confirmButtonColor: "#34c38f",
-        confirmButtonText: "Yes, delete it!",
+        confirmButtonText: "Да, удалить!",
+        cancelButtonText: "Отмена"
       }).then((result) => {
         if (result.value) {
           this.orders.splice(this.orders.indexOf(event), 1);
@@ -387,7 +388,7 @@ export default {
               }).catch((er) => {
             console.log(er)
           });
-          Swal.fire("Deleted!", "Your file has been deleted.", "success");
+          Swal.fire("Удалено!", "Запись была удалена.", "success");
         }
       });
     },
@@ -402,7 +403,7 @@ export default {
         }
       });
       if (typeof ids_array !== "undefined" && ids_array.length > 0) {
-        if (confirm("Are you sure you want to delete this?")) {
+        if (confirm("Вы действительно хотите удалить?")) {
           var cusList = this.orders;
           ids_array.forEach(function (id) {
             cusList = cusList.filter(function (orders) {
@@ -423,7 +424,7 @@ export default {
         }
       } else {
         Swal.fire({
-          title: "Please select at least one checkbox",
+          title: "Пожалуйста, выберите хотя бы один флажок",
           confirmButtonClass: "btn btn-info",
           buttonsStyling: false,
           showCloseButton: true,
@@ -544,8 +545,8 @@ export default {
                   <div>
                     <Multiselect class="form-control" v-model="value" :close-on-select="true" :searchable="true"
                                  :create-option="true" @input="onChangePayment" :options="[
-                        { value: '', label: 'Status' },
-                        { value: 'All', label: 'All' },
+                        { value: '', label: 'Статус' },
+                        { value: 'Все', label: 'Все' },
                         { value: 'Ожидает', label: 'Ожидает' },
                         { value: 'На сборке', label: 'На сборке' },
                         { value: 'Архив', label: 'Архив' },
@@ -560,8 +561,8 @@ export default {
                   <div>
                     <Multiselect class="form-control" v-model="value1" :close-on-select="true" :searchable="true"
                                  :create-option="true" @input="onChangeStatus" :options="[
-                        { value: '', label: 'Select Payment' },
-                        { value: 'All', label: 'All' },
+                        { value: '', label: 'Выбрать карту' },
+                        { value: 'Все', label: 'Все' },
                         { value: 'Mastercard', label: 'Mastercard' },
                         { value: 'Paypal', label: 'Paypal' },
                         { value: 'Visa', label: 'Visa' },
@@ -588,33 +589,33 @@ export default {
               <ul class="nav nav-tabs nav-tabs-custom nav-success mb-3" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link active All py-3" data-bs-toggle="tab" id="All" href="#home1" role="tab"
-                     @click="changecategory('All')" aria-selected="true">
+                     @click="changecategory('Все')" aria-selected="true">
                     <i class="ri-store-2-fill me-1 align-bottom"></i> {{ $t('t-orders-status.all-orders') }}
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link py-3 Assembling" data-bs-toggle="tab" id="Assembling" href="#assembling" role="tab"
-                     @click="changecategory('Assembling')" aria-selected="false">
+                     @click="changecategory('На сборке')" aria-selected="false">
                     <i class="ri-checkbox-circle-line me-1 align-bottom"></i>
                     {{ $t('t-orders-status.assembling') }}
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link py-3 Collected" data-bs-toggle="tab" id="Collected" href="#collected" role="tab"
-                     @click="changecategory('Collected')" aria-selected="false">
+                     @click="changecategory('Собрано')" aria-selected="false">
                     <i class="ri-checkbox-circle-line me-1 align-bottom"></i>
                     {{ $t('t-orders-status.collected') }}
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link py-3 Archive" data-bs-toggle="tab" id="Archive" href="#archive" role="tab"
-                     @click="changecategory('Archive')" aria-selected="false">
+                     @click="changecategory('Архив')" aria-selected="false">
                     <i class="ri-checkbox-circle-line me-1 align-bottom"></i>
                     {{ $t('t-orders-status.archive') }}
                   </a>
                 </li>
                 <li class="nav-item" v-if="false">
-                  <a class="nav-link py-3 Собрано" data-bs-toggle="tab" id="Собрано" href="#delivered" role="tab"
+                  <a class="nav-link py-3 Delivered" data-bs-toggle="tab" id="Delivered" href="#delivered" role="tab"
                      @click="changecategory('Собрано')" aria-selected="false">
                     <i class="ri-checkbox-circle-line me-1 align-bottom"></i>
                     Собрано
@@ -662,7 +663,7 @@ export default {
                   </tr>
                   </thead>
                   <tbody class="list form-check-all" v-for="(data, index) of resultQuery" :key="index">
-                  <tr v-if="statuscategory=='All' || statuscategory==data.status">
+                  <tr v-if="statuscategory=='Все' || statuscategory==data.status">
                     <!-- <div v-if="statuscategory=='All' || statuscategory==data.status"> -->
                     <th scope="row">
                       <div class="form-check">
@@ -757,7 +758,7 @@ export default {
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header bg-light p-3">
-                    <h5 class="modal-title" id="exampleModalLabel">Add Order</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Добавить Заказ</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                             id="close-modal"></button>
                   </div>
@@ -772,12 +773,12 @@ export default {
                       </div>
 
                       <div class="mb-3">
-                        <label for="customername-field" class="form-label">Customer Name</label>
-                        <input type="text" id="customername" class="form-control" placeholder="Enter Name" required/>
+                        <label for="customername-field" class="form-label">Заказчик</label>
+                        <input type="text" id="customername" class="form-control" placeholder="Введите имя заказчика" required/>
                       </div>
 
                       <div class="mb-3">
-                        <label for="productname" class="form-label">Product</label>
+                        <label for="productname" class="form-label">Товар</label>
                         <select class="form-control" data-trigger name="productname-field" id="productname">
                           <option value="">Product</option>
                           <option value="Puma Tshirt">Puma Tshirt</option>
@@ -816,7 +817,7 @@ export default {
                       </div>
 
                       <div class="mb-3">
-                        <label for="date-field" class="form-label">Order Date</label>
+                        <label for="date-field" class="form-label">Дата заказа</label>
                         <flat-pickr placeholder="Выберите дату" v-model="date2" :config="timeConfig"
                                     class="form-control flatpickr-input" id="orderdate"></flat-pickr>
                       </div>
@@ -824,15 +825,14 @@ export default {
                       <div class="row gy-4 mb-3">
                         <div class="col-md-6">
                           <div>
-                            <label for="amount-field" class="form-label">Amount</label>
-                            <input type="text" id="amount" class="form-control" placeholder="Total amount" required/>
+                            <label for="amount-field" class="form-label">Сумма</label>
+                            <input type="text" id="amount" class="form-control" placeholder="Общая сумма" required/>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div>
-                            <label for="payment-field" class="form-label">Payment Method</label>
+                            <label for="payment-field" class="form-label">Метод оплаты</label>
                             <select class="form-control" data-trigger name="payment-method" id="payment">
-                              <option value="">Payment Method</option>
                               <option value="Mastercard">Mastercard</option>
                               <option value="Visa">Visa</option>
                               <option value="COD">COD</option>
@@ -847,7 +847,6 @@ export default {
                             $t('t-table-orders-sort.delivery-status')
                           }}</label>
                         <select class="form-control" data-trigger name="delivered-status" id="delivered">
-                          <option value="">{{ $t('t-table-orders-sort.delivery-status') }}</option>
                           <option value="Ожидает">Ожидает</option>
                           <option value="На сборке">На сборке</option>
                           <option value="Архив">Архив</option>
@@ -860,10 +859,10 @@ export default {
                     <div class="modal-footer">
                       <div class="hstack gap-2 justify-content-end">
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal" id="closemodal">
-                          Close
+                          Закрыть
                         </button>
                         <button type="button" class="btn btn-success" id="add-btn" @click="addorder">
-                          Add Order
+                          Добавить
                         </button>
                       </div>
                     </div>
@@ -952,9 +951,9 @@ export default {
                         </div>
                         <div class="col-md-6">
                           <div>
-                            <label for="edtpayment" class="form-label">Payment Method</label>
+                            <label for="edtpayment" class="form-label">Метод оплаты</label>
                             <select class="form-control" data-trigger name="payment-method" id="edtpayment">
-                              <option value="">Payment Method</option>
+                              <option value="">Метод оплаты</option>
                               <option value="Mastercard">Mastercard</option>
                               <option value="Visa">Visa</option>
                               <option value="COD">COD</option>
