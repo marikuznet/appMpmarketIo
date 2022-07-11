@@ -490,7 +490,7 @@ export default {
 
 <template>
   <Layout>
-<!--    <PageHeader :title="title" :items="items"/>-->
+    <!--    <PageHeader :title="title" :items="items"/>-->
     <div class="row">
       <div class="col-lg-12">
         <div class="card" id="orderList">
@@ -525,10 +525,18 @@ export default {
                   </div>
                 </div>
                 <!--end col-->
+                <!--                <div class="col-xxl-2 col-sm-6">-->
+                <!--                  <div>-->
+                <!--                    <flat-pickr placeholder="Select date" v-model="date" :config="config"-->
+                <!--                                class="form-control flatpickr-input" id="demo-datepicker"></flat-pickr>-->
+                <!--                  </div>-->
+                <!--                </div>-->
                 <div class="col-xxl-2 col-sm-6">
                   <div>
-                    <flat-pickr placeholder="Select date" v-model="date" :config="config"
-                                class="form-control flatpickr-input" id="demo-datepicker"></flat-pickr>
+                    <input type="date"
+                           v-model="date" :config="config"
+                           class="form-control"
+                           id="exampleInputdate">
                   </div>
                 </div>
                 <!--end col-->
@@ -809,7 +817,7 @@ export default {
 
                       <div class="mb-3">
                         <label for="date-field" class="form-label">Order Date</label>
-                        <flat-pickr placeholder="Select date" v-model="date2" :config="timeConfig"
+                        <flat-pickr placeholder="Выберите дату" v-model="date2" :config="timeConfig"
                                     class="form-control flatpickr-input" id="orderdate"></flat-pickr>
                       </div>
 

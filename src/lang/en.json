@@ -52,6 +52,7 @@
   "t-ico-list": "ICO List",
   "t-kyc-application": "KYC Application",
   "t-invoices": "Invoices",
+  "t-create-invoices": "Create Invoice",
   "t-details": "Details",
   "t-create-invoice": "Create Invoice",
   "t-supprt-tickets": "Support Tickets",
@@ -237,8 +238,53 @@
     "price": "Price",
     "orders": "Orders",
     "rating": "Rating",
-    "published": "Published"
+    "published": "Published",
+    "action": "Action"
+  },
+  "t-table-finance-sort": {
+    "id": "ID",
+    "customer": "Customer",
+    "email": "Email",
+    "country": "Country",
+    "date": "Date",
+    "amount": "Amount",
+    "payment-status": "Payment Status",
+    "action": "Action"
+  },
+  "t-table-market-sort": {
+    "product": "Product",
+    "stock": "Stock",
+    "price": "Price",
+    "orders": "Orders",
+    "rating": "Rating",
+    "published": "Published",
+    "action": "Action"
+  },
+  "t-finance-payment-status": {
+    "all": "All",
+    "unpaid": "Unpaid",
+    "paid": "Paid",
+    "cancel": "Cancel",
+    "refund": "Refund"
   },
   "t-next": "Next",
-  "t-prev": "Previous"
+  "t-prev": "Previous",
+  "t-add-product": "Add Product",
+  "t-select": "Select",
+  "t-result": "Result",
+  "t-remove": "Remove",
+
+  "t-tickets": "Tickets",
+  "t-create-tickets": "Create Tickets",
+  "t-table-support-sort": {
+    "id": "ID",
+    "title": "Title",
+    "client": "Client",
+    "assigned-to": "Assigned To",
+    "create-date": "Create Date",
+    "due-date": "Due Date",
+    "status": "Status",
+    "priority": "Priority",
+    "action": "Action"
+  }
 }
