@@ -286,5 +286,19 @@
     "status": "Status",
     "priority": "Priority",
     "action": "Action"
-  }
+  },
+  "t-profile-settings": "Profile settings",
+  "t-change-password": "Change password",
+  "t-privacy-policy": "Privacy Policy",
+  "t-first-name": "First Name",
+  "t-last-name": "Last Name",
+  "t-phone-number": "Phone Number",
+  "t-email-address": "Email Address",
+  "t-telegram": "Telegram",
+  "t-updates": "Updates",
+  "t-cancel": "Cancel",
+
+  "t-old-password": "Old Password*",
+  "t-new-password": "New Password*",
+  "t-confirm-password": "Confirm Password*"
 }

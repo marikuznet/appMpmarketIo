@@ -286,5 +286,19 @@
         "status": "Статус",
         "priority": "Приоритет",
         "action": "Действие"
-    }
+    },
+
+    "t-profile-settings": "Настройки профиля",
+    "t-change-password": "Поменять пароль",
+    "t-privacy-policy":  "Политика конфиденциальности",
+    "t-first-name": "Имя",
+    "t-last-name": "Фамилия",
+    "t-phone-number": "Номер телефона",
+    "t-email-address": "Адрес электронной почты",
+    "t-telegram": "Telegram",
+    "t-updates": "Обновить",
+    "t-cancel": "Отмена",
+    "t-old-password": "Старый пароль*",
+    "t-new-password": "Новый пароль*",
+    "t-confirm-password": "Подтвердите пароль*"
 }
