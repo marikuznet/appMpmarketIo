@@ -913,7 +913,7 @@ export default {
                     <div class="d-flex justify-content-end m-3">
                       <div class="pagination-wrap hstack gap-2">
                         <a class="page-item pagination-prev disabled" href="#" v-if="page != 1" @click="page--">
-                          Previous
+                          {{ $t('t-prev') }}
                         </a>
                         <ul class="pagination listjs-pagination mb-0">
                           <li v-for="(pageNumber, index) in pages.slice(

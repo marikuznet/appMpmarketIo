@@ -223,13 +223,19 @@
         "archive": "Архив"
     },
     "t-table-orders-sort": {
-        "order-id": "#",
-        "customer": "Заказчик",
-        "product": "Товар",
-        "order-date": "Дата заказа",
-        "amount": "Сумма",
-        "payment-method": "Способ оплаты",
-        "delivery-status": "Статус заказа",
+        "order-id": "Номер Заказа",
+        "cabinet": "Кабинет",
+        "photo": "Фото",
+        "product-name": "Название товара",
+        "color": "Цвет",
+        "size": "Размер",
+        "barcode": "Штрихкод",
+        "amount": "Сумма, руб",
+        "warehouse": "Склад",
+        "created": "Создано",
+        "deliver-during": "Доставить в течении",
+        "time-since-order": "Время с момента заказа",
+        "delivery-status": "Статус доставки",
         "action": "Действия"
     },
     "t-table-products-sort": {
@@ -243,12 +249,14 @@
     },
     "t-table-finance-sort": {
         "id": "ID",
-        "customer": "Покупатель",
-        "email": "Email",
-        "country": "Страна",
-        "date": "Дата",
+        "transaction": "Транзакция",
         "amount": "Сумма",
-        "payment-status": "Статус платежа",
+        "balance": "Баланс",
+        "cabinet": "Кабинет",
+        "product": "Товар",
+        "order": "Заказ",
+        "status": "Статус",
+        "comments": "Комментарии",
         "action": "Действия"
     },
     "t-table-market-sort": {

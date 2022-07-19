@@ -9,7 +9,7 @@ import Layout from "../../../layouts/main.vue";
 import appConfig from "../../../../app.config";
 // import PageHeader from "@/components/page-header";
 import axios from 'axios';
-import animationData from "@/components/widgets/msoeawqm.json";
+// import animationData from "@/components/widgets/msoeawqm.json";
 import Lottie from "@/components/widgets/lottie.vue";
 
 export default {
@@ -43,141 +43,61 @@ export default {
       },
       date: null,
       date2: null,
-      defaultOptions: {
-        animationData: animationData
-      },
-      orders: [{
-        id: 1,
-        orderId: "#MP2101",
-        customer: "Frank Hook",
-        product: "Puma Tshirt",
-        orderDate: "20 Dec, 2021",
-        amount: "$654",
-        payment: "Mastercard",
-        status: "Ожидает",
-        statusClass: "warning",
-      },
+      // defaultOptions: {
+      //   animationData: animationData
+      // },
+      orders: [
+        {
+          id: 1,
+          orderId: "#MP2101",
+          order_id: "360160139",
+          cabinet: "Деграунд WB",
+          img: "https://picsum.photos/200",
+          product_name: "Футболка",
+          color: "Белый",
+          size: "M",
+          barcode: "8903338567483",
+          amount: "990",
+          warehouse: "Склад Поставщик 287289",
+          created: "12.07.2022 16:17",
+          deliver_during: "48 ч.",
+          time_since_order: "1 ч. 40 мин.",
+          status: "Отменить"
+        },
         {
           id: 2,
-          orderId: "#MP2102",
-          customer: "Rickey Teran",
-          product: "Adidas Sneakers",
-          orderDate: "16 Dec, 2021",
-          amount: "$354",
-          payment: "Paypal",
-          status: "Архив",
-          statusClass: "danger",
+          orderId: "#MP2101",
+          order_id: "360160143",
+          cabinet: "Tekkon WB",
+          img: "https://picsum.photos/200",
+          product_name: "Костюм спортивный",
+          color: "Оранжевый",
+          size: "XL",
+          barcode: "8903338567481",
+          amount: "3990",
+          warehouse: "Склад Поставщик 287289",
+          created: "12.07.2022 16:17",
+          deliver_during: "52 ч.",
+          time_since_order: "5 ч. 40 мин.",
+          status: "Отменить"
         },
         {
           id: 3,
-          orderId: "#MP2103",
-          customer: "James Price",
-          product: "350 ml Glass Grocery Container",
-          orderDate: "28 Nov, 2021",
-          amount: "$829",
-          payment: "Visa",
-          status: "На сборке",
-          statusClass: "secondary",
-        },
-        {
-          id: 4,
-          orderId: "#MP2104",
-          customer: "Nettie Deloatch",
-          product: "American egale outfitters Shirt",
-          orderDate: "22 Nov, 2021",
-          amount: "$142",
-          payment: "COD",
-          status: "Ожидает",
-          statusClass: "warning",
-        },
-        {
-          id: 5,
-          orderId: "#MP2105",
-          customer: "Thomas Taylor",
-          product: "Galaxy Watch4",
-          orderDate: "12 Nov, 2021",
-          amount: "$408",
-          payment: "Mastercard",
-          status: "Pickups",
-          statusClass: "info",
-        },
-        {
-          id: 6,
-          orderId: "#MP2106",
-          customer: "James Price",
-          product: "Apple iPhone 12",
-          orderDate: "05 Nov, 2021",
-          amount: "$1240",
-          payment: "Visa",
-          status: "На сборке",
-          statusClass: "secondary",
-        },
-        {
-          id: 7,
-          orderId: "#MP2107",
-          customer: "Nancy Martino",
-          product: "Funky Prints T-shirt",
-          orderDate: "31 Oct, 2021",
-          amount: "$180",
-          payment: "COD",
-          status: "Returns",
-          statusClass: "primary",
-        },
-        {
-          id: 8,
-          orderId: "#MP2108",
-          customer: "Alexis Clarke",
-          product: "USB Flash Drive Personalized with 3D Print",
-          orderDate: "25 Oct, 2021",
-          amount: "$247",
-          payment: "Paypal",
-          status: "Собрано",
-          statusClass: "success",
-        },
-        {
-          id: 9,
-          orderId: "#MP2109",
-          customer: "Donald Palmer",
-          product: "Oxford Button-Down Shirt",
-          orderDate: "19 Oct, 2021",
-          amount: "$373",
-          payment: "Visa",
-          status: "Pickups",
-          statusClass: "info",
-        },
-        {
-          id: 10,
-          orderId: "#MP2110",
-          customer: "Henry Baird",
-          product: "Classic Short Sleeve Shirt",
-          orderDate: "13 Oct, 2021",
-          amount: "$342",
-          payment: "Mastercard",
-          status: "На сборке",
-          statusClass: "secondary",
-        },
-        {
-          id: 11,
-          orderId: "#MP2111",
-          customer: "Diana Kohler",
-          product: "Half Sleeve T-Shirts (Blue)",
-          orderDate: "01 Oct, 2021",
-          amount: "$874",
-          payment: "Visa",
-          status: "Собрано",
-          statusClass: "success",
-        },
-        {
-          id: 12,
-          orderId: "#MP2112",
-          customer: "Alexis Clarke",
-          product: "Noise Evolve Smartwatch",
-          orderDate: "29 Sep, 2021",
-          amount: "$1021",
-          payment: "Mastercard",
-          status: "Архив",
-          statusClass: "danger",
-        },
+          orderId: "#MP2101",
+          order_id: "360160140",
+          cabinet: "Деграунд WB",
+          img: "https://picsum.photos/200",
+          product_name: "Рубашка",
+          color: "Черный",
+          size: "44",
+          barcode: "8903338567414",
+          amount: "1560",
+          warehouse: "Склад Поставщик 287289",
+          created: "12.07.2022 16:17",
+          deliver_during: "49 ч.",
+          time_since_order: "2 ч. 40 мин.",
+          status: "Отменить"
+        }
       ],
       isStatus: null,
       isPayment: null,
@@ -200,11 +120,17 @@ export default {
         return this.displayedPosts.filter((data) => {
           return (
               data.orderId.toLowerCase().includes(search) ||
-              data.customer.toLowerCase().includes(search) ||
-              data.product.toLowerCase().includes(search) ||
-              data.orderDate.toLowerCase().includes(search) ||
-              //data.amount.toLowerCase().includes(search) ||
-              data.payment.toLowerCase().includes(search) ||
+              data.cabinet.toLowerCase().includes(search) ||
+              data.photo.toLowerCase().includes(search) ||
+              data.product_name.toLowerCase().includes(search) ||
+              data.color.toLowerCase().includes(search) ||
+              data.size.toLowerCase().includes(search) ||
+              data.barcode.toLowerCase().includes(search) ||
+              data.amount.toLowerCase().includes(search) ||
+              data.warehouse.toLowerCase().includes(search) ||
+              data.created.toLowerCase().includes(search) ||
+              data.deliver_during.toLowerCase().includes(search) ||
+              data.time_since_order.toLowerCase().includes(search) ||
               data.status.toLowerCase().includes(search)
           );
         });
@@ -352,7 +278,7 @@ export default {
         this.orders[result].statusClass = 'secondary'
       } else if (this.orders[result].status == 'Архив') {
         this.orders[result].statusClass = 'danger'
-      } else if (this.orders[result].status == 'Pickups') {
+      } else if (this.orders[result].status == 'Отменено') {
         this.orders[result].statusClass = 'info'
       } else if (this.orders[result].status == 'Собрано') {
         this.orders[result].statusClass = 'success'
@@ -445,7 +371,7 @@ export default {
         statuscolor = 'secondary'
       } else if (delivered == 'Архив') {
         statuscolor = 'danger'
-      } else if (delivered == 'Pickups') {
+      } else if (delivered == 'Отменено') {
         statuscolor = 'info'
       } else if (delivered == 'Собрано') {
         statuscolor = 'success'
@@ -549,7 +475,7 @@ export default {
                         { value: 'Ожидает', label: 'Ожидает' },
                         { value: 'На сборке', label: 'На сборке' },
                         { value: 'Архив', label: 'Архив' },
-                        { value: 'Pickups', label: 'Pickups' },
+                        { value: 'Отменено', label: 'Отменено' },
                         { value: 'Returns', label: 'Returns' },
                         { value: 'Собрано', label: 'Собрано' },
                       ]"/>
@@ -621,9 +547,9 @@ export default {
                   </a>
                 </li>
                 <li class="nav-item" v-if="false">
-                  <a class="nav-link py-3 Pickups" data-bs-toggle="tab" id="Pickups" href="#pickups" role="tab"
-                     @click="changecategory('Pickups')" aria-selected="false">
-                    <i class="ri-truck-line me-1 align-bottom"></i> Pickups
+                  <a class="nav-link py-3 Отменено" data-bs-toggle="tab" id="Отменено" href="#Отменено" role="tab"
+                     @click="changecategory('Отменено')" aria-selected="false">
+                    <i class="ri-truck-line me-1 align-bottom"></i> Отменено
                     <span class="badge bg-danger align-middle ms-1">2</span>
                   </a>
                 </li>
@@ -651,14 +577,21 @@ export default {
                         <input class="form-check-input" type="checkbox" id="checkAll" value="option"/>
                       </div>
                     </th>
+                    <th class="sort" data-sort="id">ID</th>
                     <th class="sort" data-sort="id">{{ $t('t-table-orders-sort.order-id') }}</th>
-                    <th class="sort" data-sort="customer_name">{{ $t('t-table-orders-sort.customer') }}</th>
-                    <th class="sort" data-sort="product_name">{{ $t('t-table-orders-sort.product') }}</th>
-                    <th class="sort" data-sort="date">{{ $t('t-table-orders-sort.order-date') }}</th>
+                    <th class="sort" data-sort="cabinet">{{ $t('t-table-orders-sort.cabinet') }}</th>
+                    <th class="sort" data-sort="photo">{{ $t('t-table-orders-sort.photo') }}</th>
+                    <th class="sort" data-sort="product_name'">{{ $t('t-table-orders-sort.product-name') }}</th>
+                    <th class="sort" data-sort="color">{{ $t('t-table-orders-sort.color') }}</th>
+                    <th class="sort" data-sort="size">{{ $t('t-table-orders-sort.size') }}</th>
+                    <th class="sort" data-sort="barcode">{{ $t('t-table-orders-sort.barcode') }}</th>
                     <th class="sort" data-sort="amount">{{ $t('t-table-orders-sort.amount') }}</th>
-                    <th class="sort" data-sort="payment">{{ $t('t-table-orders-sort.payment-method') }}</th>
+                    <th class="sort" data-sort="warehouse">{{ $t('t-table-orders-sort.warehouse') }}</th>
+                    <th class="sort" data-sort="created">{{ $t('t-table-orders-sort.created') }}</th>
+                    <th class="sort" data-sort="deliver_during">{{ $t('t-table-orders-sort.deliver-during') }}</th>
+                    <th class="sort" data-sort="time_since_order">{{ $t('t-table-orders-sort.time-since-order') }}</th>
                     <th class="sort" data-sort="status">{{ $t('t-table-orders-sort.delivery-status') }}</th>
-                    <th class="sort" data-sort="city">{{ $t('t-table-orders-sort.action') }}</th>
+                    <th class="sort" data-sort="action">{{ $t('t-table-orders-sort.action') }}</th>
                   </tr>
                   </thead>
                   <tbody class="list form-check-all" v-for="(data, index) of resultQuery" :key="index">
@@ -673,24 +606,31 @@ export default {
                       <router-link to="/ecommerce/order-details" class="fw-medium link-primary">{{ data.orderId }}
                       </router-link>
                     </td>
-                    <td class="customer_name">{{ data.customer }}</td>
-                    <td class="product_name">{{ data.product }}</td>
-                    <td class="date">
-                      {{ data.orderDate }}
-                      <small class="text-muted">02:21 AM</small>
+                    <td class="product_name">{{ data.order_id }}</td>
+                    <td class="customer_name">{{ data.cabinet }}</td>
+                    <td class="customer_name">
+                      <div class="d-flex align-items-center" v-if="data.img">
+                        <img :src="data.img" alt="" class="avatar-xs rounded-circle me-2"/>
+                      </div>
                     </td>
-                    <td class="amount">${{ data.amount }}</td>
-                    <td class="payment">{{ data.payment }}</td>
+                    <td class="product_name">{{ data.product_name }}</td>
+                    <td class="color">{{ data.color }}</td>
+                    <td class="size">{{ data.size }}</td>
+                    <td class="barcode">{{ data.barcode }}</td>
+                    <td class="amount">{{ data.amount }}</td>
+                    <td class="warehouse">{{ data.warehouse }}</td>
+                    <td class="created">{{ data.created }}</td>
+                    <td class="deliver_during">{{ data.deliver_during }}</td>
+                    <td class="time_since_order">{{ data.time_since_order }}</td>
                     <td class="status">
                         <span class="badge text-uppercase" :class="{
                           'badge-soft-primary': data.status == 'На сборке',
-                          'badge-soft-info': data.status == 'Pickups',
+                          'badge-soft-info': data.status == 'Отменено',
                           'badge-soft-success': data.status == 'Собрано',
                           'badge-soft-danger': data.status == 'Архив',
                           'badge-soft-secondary': data.status == 'Returns',
                           'badge-soft-warning': data.status == 'Ожидает',
                         }">{{ data.status }}</span>
-
                     </td>
                     <td>
                       <ul class="list-inline hstack gap-2 mb-0">
@@ -715,7 +655,6 @@ export default {
                         </li>
                       </ul>
                     </td>
-                    <!-- </div> -->
                   </tr>
                   </tbody>
                 </table>
@@ -851,7 +790,7 @@ export default {
                           <option value="Ожидает">Ожидает</option>
                           <option value="На сборке">На сборке</option>
                           <option value="Архив">Архив</option>
-                          <option value="Pickups">Pickups</option>
+                          <option value="Отменено">Отменено</option>
                           <option value="Собрано">Собрано</option>
                           <option value="Returns">Returns</option>
                         </select>
@@ -973,7 +912,7 @@ export default {
                           <option value="Ожидает">Ожидает</option>
                           <option value="На сборке">На сборке</option>
                           <option value="Архив">Архив</option>
-                          <option value="Pickups">Pickups</option>
+                          <option value="Отменено">Отменено</option>
                           <option value="Собрано">Собрано</option>
                           <option value="Returns">Returns</option>
                         </select>
