@@ -239,12 +239,19 @@
     "action": "Action"
   },
   "t-table-products-sort": {
-    "product": "Product",
-    "stock": "Stock",
-    "price": "Price",
-    "orders": "Orders",
-    "rating": "Rating",
-    "published": "Published",
+    "title": "Title",
+    "brand": "Brand",
+    "item": "Item",
+    "size-code": "Size Code (chrt_id)",
+    "supplier-article": "Supplier Article",
+    "wb-article": "WB Article",
+    "color": "Color",
+    "size": "Size",
+    "barcode": "Barcode",
+    "retail-price": "Retail price, rub",
+    "purchase-price": "Purchase Price",
+    "supplier": "Supplier",
+    "remainder": "Remainder",
     "action": "Action"
   },
   "t-table-finance-sort": {

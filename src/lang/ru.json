@@ -239,12 +239,19 @@
         "action": "Действия"
     },
     "t-table-products-sort": {
-        "product": "Товар",
-        "stock": "Склад",
-        "price": "Сумма",
-        "orders": "Заказы",
-        "rating": "Рейтинг",
-        "published": "Опубликовано",
+        "title": "Название",
+        "brand": "Бренд",
+        "item": "Предмет",
+        "size-code": "Код размера (chrt_id)",
+        "supplier-article": "Артикул поставщика",
+        "wb-article": "Артикул WB",
+        "color": "Цвет",
+        "size": "Размер",
+        "barcode": "Баркод",
+        "retail-price": "Розничная цена, руб",
+        "purchase-price": "Цена Закупки",
+        "supplier": "Поставщик",
+        "remainder": "Остаток",
         "action": "Действия"
     },
     "t-table-finance-sort": {

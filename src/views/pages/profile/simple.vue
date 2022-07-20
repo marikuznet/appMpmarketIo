@@ -33,6 +33,117 @@ export default {
       ],
       thumbsSwiper: null,
       full_name: '',
+      employees: [
+        {
+          id: '13E2FEBA',
+          user_surname: 'Ефимов',
+          user_name: 'Назарий',
+          user_patronymic: 'Георгиевич',
+          user_role: 'Администратор',
+          user_email: 'n.efimov@mpmarket.io',
+          user_phone: '79095557189',
+          user_telegram: 'Nomadiction',
+          user_avatar: 'https://picsum.photos/200',
+          user_backgroundphoto: 'https://picsum.photos/1300/320',
+          status: 'Активен'
+        },
+        {
+          id: '28E7BF17',
+          user_surname: 'Романова',
+          user_name: 'Таира',
+          user_patronymic: 'Тимуровна',
+          user_role: 'Модератор',
+          user_email: 't.romanova@mpmarket.io',
+          user_phone: '79095553481',
+          user_telegram: 'Midgeabean',
+          user_avatar: 'https://picsum.photos/201',
+          user_backgroundphoto: 'https://picsum.photos/1300/321',
+          status: 'Активен'
+        },
+        {
+          id: '3B40A664',
+          user_surname: 'Федотов',
+          user_name: 'Варлаам',
+          user_patronymic: 'Степанович',
+          user_role: 'Логист',
+          user_email: 'v.fedotov@mpmarket.io',
+          user_phone: '79035559334',
+          user_telegram: 'Explosssive',
+          user_avatar: 'https://picsum.photos/202',
+          user_backgroundphoto: 'https://picsum.photos/1300/322',
+          status: 'Активен'
+        },
+        {
+          id: '4EA5F19B',
+          user_surname: 'Ефимова',
+          user_name: 'Клара',
+          user_patronymic: 'Германовна',
+          user_role: 'Закупщик',
+          user_email: 'k.efimova@mpmarket.io',
+          user_phone: '79515551915',
+          user_telegram: 'Astropower',
+          user_avatar: 'https://picsum.photos/203',
+          user_backgroundphoto: 'https://picsum.photos/1300/323',
+          status: 'Активен'
+        },
+        {
+          id: '860322EE',
+          user_surname: 'Дорофеев',
+          user_name: 'Аввакум',
+          user_patronymic: 'Якунович',
+          user_role: 'Менеджер',
+          user_email: 'a.dorofeev@mpmarket.io',
+          user_phone: '79095556378',
+          user_telegram: 'MonteSuma',
+          user_avatar: 'https://picsum.photos/204',
+          user_backgroundphoto: 'https://picsum.photos/1300/324',
+          status: 'Активен'
+        },
+        {
+          id: 'ACAE72E6',
+          user_surname: 'Королёва',
+          user_name: 'Ирэна',
+          user_patronymic: 'Германовна',
+          user_role: 'Менеджер',
+          user_email: 'i.koroleva@mpmarket.io',
+          user_phone: '79035550178',
+          user_telegram: 'YeargLitch',
+          user_avatar: 'https://picsum.photos/205',
+          user_backgroundphoto: 'https://picsum.photos/1300/325',
+          status: 'Активен'
+        },
+        {
+          id: 'C200CF87',
+          user_surname: 'Кабанова',
+          user_name: 'Фрида',
+          user_patronymic: 'Васильевна',
+          user_role: 'Логист',
+          user_email: 'f.kabanova@mpmarket.io',
+          user_phone: '79515554750',
+          user_telegram: 'Regicide',
+          user_avatar: 'https://picsum.photos/206',
+          user_backgroundphoto: 'https://picsum.photos/1300/326',
+          status: 'Активен'
+        },
+        {
+          id: 'C8B2B65A',
+          user_surname: 'Тимофеев',
+          user_name: 'Тарас',
+          user_patronymic: 'Леонидович',
+          user_role: 'Менеджер',
+          user_email: 't.timofeev@mpmarket.io',
+          user_phone: '79155547189',
+          user_telegram: 'Dragontry',
+          user_avatar: 'https://picsum.photos/207',
+          user_backgroundphoto: 'https://picsum.photos/1300/327',
+          status: 'Активен'
+        }
+      ],
+      cabinets: [
+        {name: 'Деграунд WB', marketplace: 'Wildberries', api64: 'AD8P****', api256: 'DFGC****'},
+        {name: 'Tekkon WB', marketplace: 'Wildberries', api64: 'DF89****', api256: 'YU78****'},
+        {name: 'Deground Ozon', marketplace: 'Ozon', api64: 'GY67****', api256: 'TE19****'},
+      ]
     };
   },
   validations() {
@@ -2932,10 +3043,10 @@ export default {
             <div class="tab-pane fade" id="projects" role="tabpanel">
               <!-- Tables Without Borders -->
               <div class="card p-3">
-<!--                <div class="mb-3">-->
-<!--                  <a href="/pages/profile-setting" class="btn btn-success">-->
-<!--                    <i class="ri-add-line align-bottom me-1"></i>Добавить сотрудника</a>-->
-<!--                </div>-->
+                <!--                <div class="mb-3">-->
+                <!--                  <a href="/pages/profile-setting" class="btn btn-success">-->
+                <!--                    <i class="ri-add-line align-bottom me-1"></i>Добавить сотрудника</a>-->
+                <!--                </div>-->
                 <div class="mb-3">
                   <button type="button" class="btn btn-success" data-bs-toggle="modal" id="create-btn"
                           data-bs-target="#AddEmployee">
@@ -2997,12 +3108,12 @@ export default {
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>Annette Black</td>
-                    <td>ftgt@gmail.com</td>
+                  <tr v-for="employee in employees" :key="employee">
+                    <td>{{ employee.user_name + ' ' + employee.user_surname + ' ' + employee.user_patronymic }}</td>
+                    <td>{{ employee.user_email }}</td>
                     <td>12 из 24</td>
-                    <td>Админ</td>
-                    <td><span class="badge badge-soft-success">Active</span></td>
+                    <td>{{ employee.user_role }}</td>
+                    <td><span class="badge badge-soft-success">{{ employee.status }}</span></td>
                     <td>
                       <span>
                         <div class="dropdown">
@@ -3950,7 +4061,7 @@ export default {
                     </div>
                   </div>
                 </div>
-                <table class="table table-borderless table-nowrap">
+                <table v-if="false" class="table table-borderless table-nowrap">
                   <thead>
                   <tr>
                     <th scope="col">Имя и Фамилия</th>
@@ -3968,6 +4079,50 @@ export default {
                     <td>12 из 24</td>
                     <td>Админ</td>
                     <td><span class="badge badge-soft-success">Active</span></td>
+                    <td>
+                      <span>
+                        <div class="dropdown">
+                          <button class="btn btn-soft-secondary btn-sm dropdown" type="button"
+                                  data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="ri-more-fill"></i>
+                          </button>
+                          <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                              <router-link class="dropdown-item" to="/ecommerce/add-product"><i
+                                  class="ri-pencil-fill align-bottom me-2 text-muted"></i>
+                                {{ $t("t-action.edit") }}</router-link>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li>
+                              <a class="dropdown-item" @click="deletedata(data)">
+                                <i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
+                                {{ $t("t-action.delete") }}</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </span>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+                <table class="table table-borderless table-nowrap">
+                  <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Название Кабинета</th>
+                    <th scope="col">Маркетплейс</th>
+                    <th scope="col">API64</th>
+                    <th scope="col">API256</th>
+                    <th scope="col">Действия</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr v-for="(cabinet, index) in cabinets" :key="cabinet">
+                    <td>{{ index + 1 }}</td>
+                    <td>{{ cabinet.name }}</td>
+                    <td>{{ cabinet.marketplace }}</td>
+                    <td>{{ cabinet.api64 }}</td>
+                    <td>{{ cabinet.api256 }}</td>
                     <td>
                       <span>
                         <div class="dropdown">

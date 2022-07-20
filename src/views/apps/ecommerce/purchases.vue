@@ -35,8 +35,8 @@ export default {
       productsData: [{
         id: 1,
         image: require("@/assets/images/products/img-1.png"),
-        name: "Half Sleeve Round Neck T-Shirts",
-        category: "Clothes",
+        name: "Мужская водолазка с горлом/Стильная/теплая длинным воротником",
+        category: "Водолазки",
         stock: "12",
         price: "$ 115.00",
         orders: "48",
@@ -46,8 +46,8 @@ export default {
         {
           id: 2,
           image: require("@/assets/images/products/img-2.png"),
-          name: "Urban Ladder Pashe Chair",
-          category: "Furniture",
+          name: "Кардиган женский длинный вязаный кофта женская удлиненная весна свитер оверсайз для беременных",
+          category: "Кардиганы",
           stock: "06",
           price: "$ 160.00",
           orders: "30",
@@ -57,8 +57,8 @@ export default {
         {
           id: 3,
           image: require("@/assets/images/products/img-3.png"),
-          name: "350 ml Glass Grocery Container",
-          category: "Kitchen Storage & Containers",
+          name: "Мужской спортивный костюм тёплый с начесом на флисе оверсайз/с капюшоном/костюм для мальчика",
+          category: "Костюмы спортивные",
           stock: "10",
           price: "$ 25.00",
           orders: "48",
@@ -137,7 +137,7 @@ export default {
           name: "Travel Carrying Pouch Bag",
           category: "Bags, Wallets and Luggage",
           stock: "20",
-          price: "$ 115.00",
+          price: "115.00",
           orders: "60",
           rating: "4.3",
           publishedDate: ["15 Jun, 2021", "03:51 Pm"],
@@ -213,7 +213,7 @@ export default {
     },
   },
   beforeMount() {
-    axios.get('https://api-node.themesbrand.website/apps/product').then((data) => {
+    /*axios.get('https://api-node.themesbrand.website/apps/product').then((data) => {
       this.productsData = [];
       const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
         "Oct", "Nov", "Dec"
@@ -236,7 +236,7 @@ export default {
       })
     }).catch((er) => {
       console.log(er)
-    });
+    });*/
 
   },
 
@@ -874,7 +874,7 @@ export default {
                           {{ data.stock }}
                         </td>
                         <td data-column-id="price" class="gridjs-td">
-                          $ {{ data.price }}.00
+                          {{ data.price }}.00
                         </td>
                         <td data-column-id="orders" class="gridjs-td">
                           {{ data.orders }}
