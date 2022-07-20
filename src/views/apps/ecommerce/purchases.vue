@@ -833,6 +833,7 @@ export default {
                         <th>Остаток</th>
                         <th>Закупка</th>
                         <th>Цена</th>
+                        <th>Докупить</th>
                         <th>Куплено</th>
                         <!--                        <th>Published</th>-->
                         <!--                        <th scope="col">Action</th>-->
@@ -877,6 +878,9 @@ export default {
                         </td>
                         <td data-column-id="orders" class="gridjs-td">
                           {{ data.orders }}
+                        </td>
+                        <td data-column-id="price" class="gridjs-td">
+                          {{ data.price }}
                         </td>
                         <td data-column-id="rating" class="gridjs-td">
                           <div class="ms-2 row" style="flex-wrap: nowrap">
@@ -931,7 +935,7 @@ export default {
                     <div class="d-flex justify-content-end m-3">
                       <div class="pagination-wrap hstack gap-2">
                         <a class="page-item pagination-prev disabled" href="#" v-if="page != 1" @click="page--">
-                          Previous
+                          {{ $t('t-prev') }}
                         </a>
                         <ul class="pagination listjs-pagination mb-0">
                           <li v-for="(pageNumber, index) in pages.slice(

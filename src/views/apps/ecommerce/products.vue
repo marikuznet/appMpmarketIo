@@ -1,380 +1,306 @@
 <script>
-  import Slider from "@vueform/slider";
-  import Multiselect from "@vueform/multiselect";
-  import Swal from "sweetalert2";
-  import Layout from "../../../layouts/main.vue";
-  import appConfig from "../../../../app.config";
-  import "@vueform/multiselect/themes/default.css";
-  // import PageHeader from "@/components/page-header";
-  import axios from 'axios';
-  import animationData from "@/components/widgets/msoeawqm.json";
-  import Lottie from "@/components/widgets/lottie.vue";
+import Slider from "@vueform/slider";
+import Multiselect from "@vueform/multiselect";
+import Swal from "sweetalert2";
+import Layout from "../../../layouts/main.vue";
+import appConfig from "../../../../app.config";
+import "@vueform/multiselect/themes/default.css";
+// import PageHeader from "@/components/page-header";
+import axios from 'axios';
+// import animationData from "@/components/widgets/msoeawqm.json";
+import Lottie from "@/components/widgets/lottie.vue";
 
-  export default {
-    page: {
+export default {
+  page: {
+    title: "Products",
+    meta: [{
+      name: "description",
+      content: appConfig.description,
+    },],
+  },
+  data() {
+    return {
       title: "Products",
-      meta: [{
-        name: "description",
-        content: appConfig.description,
-      }, ],
-    },
-    data() {
-      return {
-        title: "Products",
-        searchQuery: null,
-        defaultOptions: {
-          animationData: animationData
+      searchQuery: null,
+      // defaultOptions: {
+      //   animationData: animationData
+      // },
+      sliderCustomzie: [1000, 3000],
+      productsData: [
+        {
+          id: 1,
+          image: require("@/assets/images/products/img-1.png"),
+          title: "Half Sleeve Round Neck T-Shirts",
+          brand: "Banzaron",
+          item: "Футболки-поло",
+          size_code: "125748800",
+          supplier_article: "ban-futb-poloбелый",
+          wb_article: "74499707",
+          color: "Белый",
+          size: "48",
+          barcode: "2028360865624",
+          retail_price: "1870",
+          purchase_price: "350",
+          supplier: " ",
+          remainder: " ",
         },
-        sliderCustomzie: [1000, 3000],
-        productsData: [{
-            id: 1,
-            image: require("@/assets/images/products/img-1.png"),
-            name: "Half Sleeve Round Neck T-Shirts",
-            category: "Clothes",
-            stock: "12",
-            price: "$ 115.00",
-            orders: "48",
-            rating: "4.2",
-            publishedDate: ["12 Oct, 2021", "10:05 AM"],
-          },
-          {
-            id: 2,
-            image: require("@/assets/images/products/img-2.png"),
-            name: "Urban Ladder Pashe Chair",
-            category: "Furniture",
-            stock: "06",
-            price: "$ 160.00",
-            orders: "30",
-            rating: "4.3",
-            publishedDate: ["06 Jan, 2021", "01:31 PM"],
-          },
-          {
-            id: 3,
-            image: require("@/assets/images/products/img-3.png"),
-            name: "350 ml Glass Grocery Container",
-            category: "Kitchen Storage & Containers",
-            stock: "10",
-            price: "$ 25.00",
-            orders: "48",
-            rating: "4.5",
-            publishedDate: ["26 Mar, 2021", "11:40 AM"],
-          },
-          {
-            id: 4,
-            image: require("@/assets/images/products/img-4.png"),
-            name: "Fabric Dual Tone Living Room Chair",
-            category: "Furniture",
-            stock: "15",
-            price: "$ 140.00",
-            orders: "40",
-            rating: "4.2",
-            publishedDate: ["19 Apr, 2021", "02:51 PM"],
-          },
-          {
-            id: 5,
-            image: require("@/assets/images/products/img-5.png"),
-            name: "Crux Motorsports Helmet",
-            category: "Bike Accessories",
-            stock: "08",
-            price: "$ 135.00",
-            orders: "55",
-            rating: "4.4",
-            publishedDate: ["30 Mar, 2021", "09:42 AM"],
-          },
-          {
-            id: 6,
-            image: require("@/assets/images/products/img-6.png"),
-            name: "Half Sleeve T-Shirts (Blue)",
-            category: "Clothes",
-            stock: "15",
-            price: "$ 125.00",
-            orders: "48",
-            rating: "4.2",
-            publishedDate: ["12 Oct, 2021", "04:55 PM"],
-          },
-          {
-            id: 7,
-            image: require("@/assets/images/products/img-7.png"),
-            name: "Noise Evolve Smartwatch",
-            category: "Watches",
-            stock: "12",
-            price: "$ 95.00",
-            orders: "45",
-            rating: "4.3",
-            publishedDate: ["15 May, 2021", "03:40 PM"],
-          },
-          {
-            id: 8,
-            image: require("@/assets/images/products/img-8.png"),
-            name: "Sweatshirt for Men (Pink)",
-            category: "Clothes",
-            stock: "20",
-            price: "$ 120.00",
-            orders: "48",
-            rating: "4.2",
-            publishedDate: ["21 Jun, 2021", "12:18 PM"],
-          },
-          {
-            id: 9,
-            image: require("@/assets/images/products/img-9.png"),
-            name: "Reusable Ecological Coffee Cup",
-            category: "Tableware & Dinnerware",
-            stock: "14",
-            price: "$ 125.00",
-            orders: "55",
-            rating: "4.3",
-            publishedDate: ["15 Jan, 2021", "10:29 AM"],
-          },
-          {
-            id: 10,
-            image: require("@/assets/images/products/img-10.png"),
-            name: "Travel Carrying Pouch Bag",
-            category: "Bags, Wallets and Luggage",
-            stock: "20",
-            price: "$ 115.00",
-            orders: "60",
-            rating: "4.3",
-            publishedDate: ["15 Jun, 2021", "03:51 Pm"],
-          },
-          {
-            id: 11,
-            image: require("@/assets/images/products/img-1.png"),
-            name: "Half Sleeve Round Neck T-Shirts",
-            category: "Clothes",
-            stock: "12",
-            price: "$ 115.00",
-            orders: "48",
-            rating: "4.2",
-            publishedDate: ["12 Oct, 2021", "10:05 AM"],
-          },
-          {
-            id: 12,
-            image: require("@/assets/images/products/img-2.png"),
-            name: "Urban Ladder Pashe Chair",
-            category: "Furniture",
-            stock: "06",
-            price: "$ 160.00",
-            orders: "30",
-            rating: "4.3",
-            publishedDate: ["06 Jan, 2021", "01:31 PM"],
-          },
-        ],
-        pages: [],
-        page: 1,
-        perPage: 10,
-        value: ["Watches", "Headset"],
-      };
+        {
+          id: 2,
+          image: require("@/assets/images/products/img-1.png"),
+          title: "Half Sleeve Round Neck T-Shirts",
+          brand: "Banzaron",
+          item: "Футболки-поло",
+          size_code: "125748801",
+          supplier_article: "ban-futb-poloбелый",
+          wb_article: "74499707",
+          color: "Белый",
+          size: "50",
+          barcode: "2028360865631",
+          retail_price: "1870",
+          purchase_price: "350",
+          supplier: " ",
+          remainder: " ",
+        },
+        {
+          id: 3,
+          image: require("@/assets/images/products/img-1.png"),
+          title: "Half Sleeve Round Neck T-Shirts",
+          brand: "Banzaron",
+          item: "Футболки-поло",
+          size_code: "125748802",
+          supplier_article: "ban-futb-poloбелый",
+          wb_article: "74499707",
+          color: "Белый",
+          size: "52",
+          barcode: "2028360865648",
+          retail_price: "1870",
+          purchase_price: "350",
+          supplier: " ",
+          remainder: " ",
+        },
+      ],
+      pages: [],
+      page: 1,
+      perPage: 10,
+      value: ["Watches", "Headset"],
+    };
+  },
+  computed: {
+    displayedPosts() {
+      return this.paginate(this.productsData);
     },
-    computed: {
-      displayedPosts() {
-        return this.paginate(this.productsData);
-      },
-      resultQuery() {
-        if (this.searchQuery) {
-          const search = this.searchQuery.toLowerCase();
-          return this.displayedPosts.filter((data) => {
-            return (
-              data.name.toLowerCase().includes(search) ||
-              data.category.includes(search) ||
-              data.stock.toLowerCase().includes(search) ||
-              data.price.toLowerCase().includes(search) ||
-              data.orders.toLowerCase().includes(search) ||
-              data.rating.toLowerCase().includes(search) ||
-              data.publishedDate[0].toLowerCase().includes(search)
-            );
-          });
-        } else {
-          return this.displayedPosts;
-        }
-      },
-    },
-    watch: {
-      productsData(newValue) {
-        this.setPages(newValue);
-      },
-      resultQuery() {
-        if (this.searchQuery) this.setPages(this.displayedPosts);
-        else this.setPages(this.productsData);
-      },
-    },
-    created() {
-      this.setPages(this.productsData);
-
-    },
-    filters: {
-      trimWords(value) {
-        return value.split(" ").splice(0, 20).join(" ") + "...";
-      },
-    },
-    beforeMount() {
-      axios.get('https://api-node.themesbrand.website/apps/product').then((data) => {
-        this.productsData = [];
-        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
-          "Oct", "Nov", "Dec"
-        ];
-        data.data.data.forEach(row => {
-          var dd = new Date(row.publishedDate)
-          row.publishedDate = dd.getDate() + " " + monthNames[dd.getMonth()] + ", " + dd.getFullYear();
-          var hours = dd.getHours();
-          var minutes = dd.getMinutes();
-          var ampm = hours >= 12 ? 'PM' : 'AM';
-          hours = hours % 12;
-          hours = hours ? hours : 12; // the hour '0' should be '12'
-          hours = hours < 10 ? '0' + hours : hours;
-          minutes = minutes < 10 ? '0' + minutes : minutes;
-          var strTime = hours + ':' + minutes + ' ' + ampm;
-          row.publishedtime = strTime;
-          row.image_src = 'https://api-node.themesbrand.website/fileupload/product_bucket/' + row.image;
-          // row.image_src = `@/assets/images/products/img-8.png`;
-          this.productsData.push(row);
-        })
-      }).catch((er) => {
-        console.log(er)
-      });
-
-    },
-
-    methods: {
-      deleteMultiple() {
-        let ids_array = [];
-        var items = document.getElementsByName("chk_child");
-        items.forEach(function (ele) {
-          if (ele.checked == true) {
-            var trNode = ele.parentNode.parentNode;
-            var id = trNode.querySelector(".id a").innerHTML;
-            ids_array.push(id);
-          }
+    resultQuery() {
+      if (this.searchQuery) {
+        const search = this.searchQuery.toLowerCase();
+        return this.displayedPosts.filter((data) => {
+          return (
+              data.title.toLowerCase().includes(search) ||
+              data.brand.includes(search) ||
+              data.item.includes(search) ||
+              data.size_code.includes(search) ||
+              data.supplier_article.includes(search) ||
+              data.wb_article.includes(search) ||
+              data.color.toLowerCase().includes(search) ||
+              data.size.toLowerCase().includes(search) ||
+              data.barcode.toLowerCase().includes(search) ||
+              data.retail_price.toLowerCase().includes(search) ||
+              data.purchase_price.toLowerCase().includes(search) ||
+              data.supplier.toLowerCase().includes(search) ||
+              data.remainder.toLowerCase().includes(search)
+          );
         });
-        if (typeof ids_array !== "undefined" && ids_array.length > 0) {
-          if (confirm("Are you sure you want to delete this?")) {
-            var cusList = this.productsData;
-            ids_array.forEach(function (id) {
-              cusList = cusList.filter(function (orders) {
-                return orders.id != id;
-              });
+      } else {
+        return this.displayedPosts;
+      }
+    },
+  },
+  watch: {
+    productsData(newValue) {
+      this.setPages(newValue);
+    },
+    resultQuery() {
+      if (this.searchQuery) this.setPages(this.displayedPosts);
+      else this.setPages(this.productsData);
+    },
+  },
+  created() {
+    this.setPages(this.productsData);
+
+  },
+  filters: {
+    trimWords(value) {
+      return value.split(" ").splice(0, 20).join(" ") + "...";
+    },
+  },
+  beforeMount() {
+    axios.get('https://api-node.themesbrand.website/apps/product').then((data) => {
+      this.productsData = [];
+      const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
+        "Oct", "Nov", "Dec"
+      ];
+      data.data.data.forEach(row => {
+        var dd = new Date(row.publishedDate)
+        row.publishedDate = dd.getDate() + " " + monthNames[dd.getMonth()] + ", " + dd.getFullYear();
+        var hours = dd.getHours();
+        var minutes = dd.getMinutes();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        var strTime = hours + ':' + minutes + ' ' + ampm;
+        row.publishedtime = strTime;
+        row.image_src = 'https://api-node.themesbrand.website/fileupload/product_bucket/' + row.image;
+        // row.image_src = `@/assets/images/products/img-8.png`;
+        this.productsData.push(row);
+      })
+    }).catch((er) => {
+      console.log(er)
+    });
+
+  },
+
+  methods: {
+    deleteMultiple() {
+      let ids_array = [];
+      var items = document.getElementsByName("chk_child");
+      items.forEach(function (ele) {
+        if (ele.checked == true) {
+          var trNode = ele.parentNode.parentNode;
+          var id = trNode.querySelector(".id a").innerHTML;
+          ids_array.push(id);
+        }
+      });
+      if (typeof ids_array !== "undefined" && ids_array.length > 0) {
+        if (confirm("Are you sure you want to delete this?")) {
+          var cusList = this.productsData;
+          ids_array.forEach(function (id) {
+            cusList = cusList.filter(function (orders) {
+              return orders.id != id;
             });
-            this.productsData = cusList;
-            document.getElementById("checkAll").checked = false;
-            var itemss = document.getElementsByName("chk_child");
-            itemss.forEach(function (ele) {
-              if (ele.checked == true) {
-                ele.checked = false
-                ele.closest("tr").classList.remove("table-active");
-                document.getElementById('selection-element').style.display = 'none'
-              }
-            });
-          } else {
-            return false;
-          }
-        } else {
-          Swal.fire({
-            title: "Please select at least one checkbox",
-            confirmButtonClass: "btn btn-info",
-            buttonsStyling: false,
-            showCloseButton: true,
           });
+          this.productsData = cusList;
+          document.getElementById("checkAll").checked = false;
+          var itemss = document.getElementsByName("chk_child");
+          itemss.forEach(function (ele) {
+            if (ele.checked == true) {
+              ele.checked = false
+              ele.closest("tr").classList.remove("table-active");
+              document.getElementById('selection-element').style.display = 'none'
+            }
+          });
+        } else {
+          return false;
         }
-      },
-      setPages(data) {
-        this.pages = [];
-        let numberOfPages = Math.ceil(data.length / this.perPage);
-        this.pages = [];
-        for (let index = 1; index <= numberOfPages; index++) {
-          this.pages.push(index);
-        }
-      },
-      deletedata(event) {
+      } else {
         Swal.fire({
-          title: "Are you sure?",
-          text: "You won't be able to revert this!",
-          icon: "warning",
-          showCancelButton: true,
-          cancelButtonColor: "#f46a6a",
-          confirmButtonColor: "#34c38f",
-          confirmButtonText: "Yes, delete it!",
-        }).then((result) => {
-          if (result.value) {
-            this.productsData.splice(this.productsData.indexOf(event), 1);
-            axios.delete(`https://api-node.themesbrand.website/apps/product/${event._id}`)
+          title: "Please select at least one checkbox",
+          confirmButtonClass: "btn btn-info",
+          buttonsStyling: false,
+          showCloseButton: true,
+        });
+      }
+    },
+    setPages(data) {
+      this.pages = [];
+      let numberOfPages = Math.ceil(data.length / this.perPage);
+      this.pages = [];
+      for (let index = 1; index <= numberOfPages; index++) {
+        this.pages.push(index);
+      }
+    },
+    deletedata(event) {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        cancelButtonColor: "#f46a6a",
+        confirmButtonColor: "#34c38f",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.value) {
+          this.productsData.splice(this.productsData.indexOf(event), 1);
+          axios.delete(`https://api-node.themesbrand.website/apps/product/${event._id}`)
               .then(() => {
 
               }).catch((er) => {
-                console.log(er)
-              });
-            Swal.fire("Deleted!", "Your file has been deleted.", "success");
-          }
-        });
-
-      },
-      paginate(productsData) {
-        let page = this.page;
-        let perPage = this.perPage;
-        let from = page * perPage - perPage;
-        let to = page * perPage;
-        return productsData.slice(from, to);
-      },
-    },
-    mounted() {
-      var total = 0;
-      var checkchild = document.querySelectorAll('.form-check-all input[type="checkbox"]');
-      checkchild.forEach(function (checkbox) {
-        checkbox.onclick = function () {
-          total = 0
-          checkchild.forEach(function (box) {
-            if (box.checked == true) {
-              total++;
-            }
-          })
-          if (checkbox.checked == true) {
-            checkbox.closest("tr").classList.add("table-active");
-            document.getElementById('selection-element').style.display = 'block'
-            document.getElementById('select-content').innerHTML = total;
-          } else {
-            if (total <= 0) {
-              document.getElementById('selection-element').style.display = 'none'
-            }
-            checkbox.closest("tr").classList.remove("table-active");
-            document.getElementById('select-content').innerHTML = total;
-          }
+            console.log(er)
+          });
+          Swal.fire("Deleted!", "Your file has been deleted.", "success");
         }
-      })
-      var checkAll = document.getElementById("checkAll");
-      if (checkAll) {
-        checkAll.onclick = function () {
-          var checkboxes = document.querySelectorAll(
-            '.form-check-all input[type="checkbox"]'
-          );
-          if (checkAll.checked == true) {
-            checkboxes.forEach(function (checkbox) {
-              checkbox.checked = true;
-              document.getElementById('selection-element').style.display = 'block'
-              document.getElementById('select-content').innerHTML = checkboxes.length;
-              checkbox.closest("tr").classList.add("table-active");
-            });
-          } else {
-            checkboxes.forEach(function (checkbox) {
-              checkbox.checked = false;
-              document.getElementById('selection-element').style.display = 'none'
-              checkbox.closest("tr").classList.remove("table-active");
-            });
-          }
-        };
-      }
-    },
+      });
 
-    components: {
-      Layout,
-      // PageHeader,
-      lottie: Lottie,
-      Slider,
-      Multiselect,
     },
-  };
+    paginate(productsData) {
+      let page = this.page;
+      let perPage = this.perPage;
+      let from = page * perPage - perPage;
+      let to = page * perPage;
+      return productsData.slice(from, to);
+    },
+  },
+  mounted() {
+    var total = 0;
+    var checkchild = document.querySelectorAll('.form-check-all input[type="checkbox"]');
+    checkchild.forEach(function (checkbox) {
+      checkbox.onclick = function () {
+        total = 0
+        checkchild.forEach(function (box) {
+          if (box.checked == true) {
+            total++;
+          }
+        })
+        if (checkbox.checked == true) {
+          checkbox.closest("tr").classList.add("table-active");
+          document.getElementById('selection-element').style.display = 'block'
+          document.getElementById('select-content').innerHTML = total;
+        } else {
+          if (total <= 0) {
+            document.getElementById('selection-element').style.display = 'none'
+          }
+          checkbox.closest("tr").classList.remove("table-active");
+          document.getElementById('select-content').innerHTML = total;
+        }
+      }
+    })
+    var checkAll = document.getElementById("checkAll");
+    if (checkAll) {
+      checkAll.onclick = function () {
+        var checkboxes = document.querySelectorAll(
+            '.form-check-all input[type="checkbox"]'
+        );
+        if (checkAll.checked == true) {
+          checkboxes.forEach(function (checkbox) {
+            checkbox.checked = true;
+            document.getElementById('selection-element').style.display = 'block'
+            document.getElementById('select-content').innerHTML = checkboxes.length;
+            checkbox.closest("tr").classList.add("table-active");
+          });
+        } else {
+          checkboxes.forEach(function (checkbox) {
+            checkbox.checked = false;
+            document.getElementById('selection-element').style.display = 'none'
+            checkbox.closest("tr").classList.remove("table-active");
+          });
+        }
+      };
+    }
+  },
+
+  components: {
+    Layout,
+    // PageHeader,
+    lottie: Lottie,
+    Slider,
+    Multiselect,
+  },
+};
 </script>
 
 <template>
   <Layout>
-<!--    <PageHeader :title="title"/>-->
+    <!--    <PageHeader :title="title"/>-->
     <div class="row">
       <div class="col-xl-3 col-lg-4">
         <div class="card">
@@ -390,13 +316,13 @@
 
             <div class="filter-choices-input">
               <Multiselect v-model="value" mode="tags" :close-on-select="true" :searchable="true" :create-option="true"
-                :options="[
+                           :options="[
                   { value: 'Watches', label: 'Watches' },
                   { value: 'Headset', label: 'Headset' },
                   { value: 'Sweatshirt', label: 'Sweatshirt' },
                   { value: '20% Off', label: '20% Off' },
                   { value: '4 Star', label: '4 Star' },
-                ]" />
+                ]"/>
             </div>
           </div>
 
@@ -416,7 +342,7 @@
                   </li>
                   <li>
                     <a class="d-flex py-1" data-bs-toggle="collapse" href="#filterlist-fashion" role="button"
-                      aria-expanded="true" aria-controls="filterlist-fashion">
+                       aria-expanded="true" aria-controls="filterlist-fashion">
                       <div class="flex-grow-1">
                         <h5 class="fs-13 mb-0">Fashion</h5>
                       </div>
@@ -454,7 +380,7 @@
                   </li>
                   <li>
                     <a class="d-flex py-1" data-bs-toggle="collapse" href="#filterlist-electronics" role="button"
-                      aria-expanded="false" aria-controls="filterlist-electronics">
+                       aria-expanded="false" aria-controls="filterlist-electronics">
                       <div class="flex-grow-1">
                         <h5 class="fs-13 mb-0">Electronics</h5>
                       </div>
@@ -486,7 +412,7 @@
 
                   <li>
                     <a class="d-flex py-1" data-bs-toggle="collapse" href="#filterlist-furniture" role="button"
-                      aria-expanded="false" aria-controls="filterlist-furniture">
+                       aria-expanded="false" aria-controls="filterlist-furniture">
                       <div class="flex-grow-1">
                         <h5 class="fs-13 mb-0">Home & Furniture</h5>
                       </div>
@@ -521,7 +447,7 @@
 
                   <li>
                     <a class="d-flex py-1" data-bs-toggle="collapse" href="#filterlist-appliances" role="button"
-                      aria-expanded="false" aria-controls="filterlist-appliances">
+                       aria-expanded="false" aria-controls="filterlist-appliances">
                       <div class="flex-grow-1">
                         <h5 class="fs-13 mb-0">Appliances</h5>
                       </div>
@@ -574,44 +500,45 @@
               </p>
 
               <div id="product-price-range"></div>
-              <Slider v-model="sliderCustomzie" :min="0" :max="5000" />
+              <Slider v-model="sliderCustomzie" :min="0" :max="5000"/>
             </div>
 
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingBrands">
                 <button class="accordion-button bg-transparent shadow-none" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseBrands" aria-expanded="true" aria-controls="flush-collapseBrands">
+                        data-bs-target="#flush-collapseBrands" aria-expanded="true"
+                        aria-controls="flush-collapseBrands">
                   <span class="text-muted text-uppercase fs-12 fw-medium">Brands</span>
                   <span class="badge bg-success rounded-pill align-middle ms-1">2</span>
                 </button>
               </h2>
 
               <div id="flush-collapseBrands" class="accordion-collapse collapse show"
-                aria-labelledby="flush-headingBrands">
+                   aria-labelledby="flush-headingBrands">
                 <div class="accordion-body text-body pt-0">
                   <div class="search-box search-box-sm">
-                    <input type="text" class="form-control bg-light border-0" placeholder="Search Brands..." />
+                    <input type="text" class="form-control bg-light border-0" placeholder="Search Brands..."/>
                     <i class="ri-search-line search-icon"></i>
                   </div>
                   <div class="d-flex flex-column gap-2 mt-3">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio5" checked />
+                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio5" checked/>
                       <label class="form-check-label" for="productBrandRadio5">Boat</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio4" />
+                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio4"/>
                       <label class="form-check-label" for="productBrandRadio4">OnePlus</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio3" />
+                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio3"/>
                       <label class="form-check-label" for="productBrandRadio3">Realme</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio2" />
+                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio2"/>
                       <label class="form-check-label" for="productBrandRadio2">Sony</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio1" checked />
+                      <input class="form-check-input" type="checkbox" value="" id="productBrandRadio1" checked/>
                       <label class="form-check-label" for="productBrandRadio1">JBL</label>
                     </div>
 
@@ -629,48 +556,48 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingDiscount">
                 <button class="accordion-button bg-transparent shadow-none collapsed" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#flush-collapseDiscount" aria-expanded="true"
-                  aria-controls="flush-collapseDiscount">
+                        data-bs-toggle="collapse" data-bs-target="#flush-collapseDiscount" aria-expanded="true"
+                        aria-controls="flush-collapseDiscount">
                   <span class="text-muted text-uppercase fs-12 fw-medium">Discount</span>
                   <span class="badge bg-success rounded-pill align-middle ms-1">1</span>
                 </button>
               </h2>
               <div id="flush-collapseDiscount" class="accordion-collapse collapse"
-                aria-labelledby="flush-headingDiscount">
+                   aria-labelledby="flush-headingDiscount">
                 <div class="accordion-body text-body pt-1">
                   <div class="d-flex flex-column gap-2">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio6" />
+                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio6"/>
                       <label class="form-check-label" for="productdiscountRadio6">
                         50% or more
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio5" />
+                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio5"/>
                       <label class="form-check-label" for="productdiscountRadio5">
                         40% or more
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio4" />
+                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio4"/>
                       <label class="form-check-label" for="productdiscountRadio4">
                         30% or more
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio3" checked />
+                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio3" checked/>
                       <label class="form-check-label" for="productdiscountRadio3">
                         20% or more
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio2" />
+                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio2"/>
                       <label class="form-check-label" for="productdiscountRadio2">
                         10% or more
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio1" />
+                      <input class="form-check-input" type="checkbox" value="" id="productdiscountRadio1"/>
                       <label class="form-check-label" for="productdiscountRadio1">
                         Less than 10%
                       </label>
@@ -684,8 +611,8 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingRating">
                 <button class="accordion-button bg-transparent shadow-none collapsed" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#flush-collapseRating" aria-expanded="false"
-                  aria-controls="flush-collapseRating">
+                        data-bs-toggle="collapse" data-bs-target="#flush-collapseRating" aria-expanded="false"
+                        aria-controls="flush-collapseRating">
                   <span class="text-muted text-uppercase fs-12 fw-medium">Rating</span>
                   <span class="badge bg-success rounded-pill align-middle ms-1">1</span>
                 </button>
@@ -695,7 +622,7 @@
                 <div class="accordion-body text-body">
                   <div class="d-flex flex-column gap-2">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio4" checked />
+                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio4" checked/>
                       <label class="form-check-label" for="productratingRadio4">
                         <span class="text-muted">
                           <i class="mdi mdi-star text-warning"></i>
@@ -708,7 +635,7 @@
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio3" />
+                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio3"/>
                       <label class="form-check-label" for="productratingRadio3">
                         <span class="text-muted">
                           <i class="mdi mdi-star text-warning"></i>
@@ -721,7 +648,7 @@
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio2" />
+                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio2"/>
                       <label class="form-check-label" for="productratingRadio2">
                         <span class="text-muted">
                           <i class="mdi mdi-star text-warning"></i>
@@ -734,7 +661,7 @@
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio1" />
+                      <input class="form-check-input" type="checkbox" value="" id="productratingRadio1"/>
                       <label class="form-check-label" for="productratingRadio1">
                         <span class="text-muted">
                           <i class="mdi mdi-star text-warning"></i>
@@ -773,7 +700,7 @@
                 <div class="col-sm">
                   <div class="d-flex justify-content-sm-end">
                     <div class="search-box ms-2">
-                      <input type="text" class="form-control" placeholder="Поиск..." />
+                      <input type="text" class="form-control" placeholder="Поиск..."/>
                       <i class="ri-search-line search-icon"></i>
                     </div>
                   </div>
@@ -814,74 +741,68 @@
                   <div id="table-product-list-all" class="table-card gridjs-border-none table-responsive">
                     <table class="table align-middle table-nowrap mb-0" id="customerTable">
                       <thead class="table-light">
-                        <tr class="text-muted">
-                          <th scope="col" style="width: 50px">
-                            <input class="form-check-input" type="checkbox" id="checkAll" value="option" />
-                          </th>
-                          <th>{{ $t('t-table-products-sort.product') }}</th>
-                          <th>{{ $t('t-table-products-sort.stock') }}</th>
-                          <th>{{ $t('t-table-products-sort.price') }}</th>
-                          <th>{{ $t('t-table-products-sort.orders') }}</th>
-                          <th>{{ $t('t-table-products-sort.rating') }}</th>
-                          <th>{{ $t('t-table-products-sort.published') }}</th>
-                          <th scope="col">{{ $t('t-table-products-sort.action') }}</th>
-                        </tr>
+                      <tr class="text-muted">
+                        <th scope="col" style="width: 50px">
+                          <input class="form-check-input" type="checkbox" id="checkAll" value="option"/>
+                        </th>
+                        <th>{{ $t('t-table-products-sort.title') }}</th>
+                        <th>{{ $t('t-table-products-sort.brand') }}</th>
+                        <th>{{ $t('t-table-products-sort.item') }}</th>
+                        <th>{{ $t('t-table-products-sort.size-code') }}</th>
+                        <th>{{ $t('t-table-products-sort.supplier-article') }}</th>
+                        <th>{{ $t('t-table-products-sort.wb-article') }}</th>
+                        <th>{{ $t('t-table-products-sort.color') }}</th>
+                        <th>{{ $t('t-table-products-sort.size') }}</th>
+                        <th>{{ $t('t-table-products-sort.barcode') }}</th>
+                        <th>{{ $t('t-table-products-sort.retail-price') }}</th>
+                        <th>{{ $t('t-table-products-sort.purchase-price') }}</th>
+                        <th>{{ $t('t-table-products-sort.supplier') }}</th>
+                        <th>{{ $t('t-table-products-sort.remainder') }}</th>
+                        <th scope="col">{{ $t('t-table-products-sort.action') }}</th>
+                      </tr>
                       </thead>
                       <tbody class="list form-check-all">
-                        <tr class="gridjs-tr" v-for="(data, index) of resultQuery" :key="index">
-                          <td data-column-id="productListAllCheckbox" class="gridjs-td">
-                            <input type="checkbox" name="chk_child" class="form-check-input" />
-                          </td>
-                          <td class="id" hidden>
-                            <a href="">{{data.id}}</a>
-                          </td>
-                          <td data-column-id="product" class="gridjs-td">
+                      <tr class="gridjs-tr" v-for="(data, index) of resultQuery" :key="index">
+                        <td data-column-id="productListAllCheckbox" class="gridjs-td">
+                          <input type="checkbox" name="chk_child" class="form-check-input"/>
+                        </td>
+                        <td class="id" hidden>
+                          <a href="">{{ data.id }}</a>
+                        </td>
+                        <td data-column-id="product" class="gridjs-td">
                             <span>
                               <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0 me-3">
                                   <div class="avatar-sm bg-light rounded p-1">
-                                    <img :src="data.image_src" alt="" class="img-fluid d-block" />
+                                    <img :src="data.image" alt="" class="img-fluid d-block"/>
                                   </div>
                                 </div>
                                 <div class="flex-grow-1">
                                   <h5 class="fs-14 mb-1">
-                                    <router-link to="/ecommerce/product-details" class="text-dark">{{ data.name }}
+                                    <router-link to="/ecommerce/product-details" class="text-dark">{{ data.title }}
                                     </router-link>
                                   </h5>
-                                  <p class="text-muted mb-0">
-                                    Category :
-                                    <span class="fw-medium">{{
-                                      data.category
-                                    }}</span>
-                                  </p>
                                 </div>
                               </div>
                             </span>
-                          </td>
-                          <td data-column-id="stock" class="gridjs-td">
-                            {{ data.stock }}
-                          </td>
-                          <td data-column-id="price" class="gridjs-td">
-                            $ {{ data.price }}.00
-                          </td>
-                          <td data-column-id="orders" class="gridjs-td">
-                            {{ data.orders }}
-                          </td>
-                          <td data-column-id="rating" class="gridjs-td">
-                            <span><span class="badge bg-light text-body fs-12 fw-medium"><i
-                                  class="mdi mdi-star text-warning me-1"></i>{{ data.rating }}</span></span>
-                          </td>
-                          <td data-column-id="published" class="gridjs-td">
-                            <span>{{ data.publishedDate
-                              }}<small class="text-muted ms-1">{{
-                                data.publishedtime
-                              }}</small></span>
-                          </td>
-                          <td data-column-id="action" class="gridjs-td">
+                        </td>
+                        <td data-column-id="brand" class="gridjs-td">{{ data.brand }}</td>
+                        <td data-column-id="item" class="gridjs-td">{{ data.item }}</td>
+                        <td data-column-id="size_code" class="gridjs-td">{{ data.size_code }}</td>
+                        <td data-column-id="supplier_article" class="gridjs-td">{{ data.supplier_article }}</td>
+                        <td data-column-id="wb_article" class="gridjs-td">{{ data.wb_article }}</td>
+                        <td data-column-id="color" class="gridjs-td">{{ data.color }}</td>
+                        <td data-column-id="size" class="gridjs-td">{{ data.size }}</td>
+                        <td data-column-id="barcode" class="gridjs-td">{{ data.barcode }}</td>
+                        <td data-column-id="retail_price" class="gridjs-td">{{ data.retail_price }}</td>
+                        <td data-column-id="purchase_price" class="gridjs-td">{{ data.purchase_price }}</td>
+                        <td data-column-id="supplier" class="gridjs-td">{{ data.supplier }}</td>
+                        <td data-column-id="remainder" class="gridjs-td">{{ data.remainder }}</td>
+                        <td data-column-id="action" class="gridjs-td">
                             <span>
                               <div class="dropdown">
                                 <button class="btn btn-soft-secondary btn-sm dropdown" type="button"
-                                  data-bs-toggle="dropdown" aria-expanded="false">
+                                        data-bs-toggle="dropdown" aria-expanded="false">
                                   <i class="ri-more-fill"></i>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end">
@@ -904,8 +825,8 @@
                                 </ul>
                               </div>
                             </span>
-                          </td>
-                        </tr>
+                        </td>
+                      </tr>
                       </tbody>
                     </table>
                     <div class="d-flex justify-content-end m-3">
@@ -937,12 +858,13 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                          id="btn-close"></button>
+                                id="btn-close"></button>
                       </div>
                       <div class="modal-body">
                         <div class="mt-2 text-center">
                           <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop"
-                            colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>
+                                     colors="primary:#f7b84b,secondary:#f06548"
+                                     style="width:100px;height:100px"></lord-icon>
                           <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
                             <h4>Are you Sure ?</h4>
                             <p class="text-muted mx-4 mb-0">Are you Sure You want to Remove this Product ?</p>
@@ -950,7 +872,8 @@
                         </div>
                         <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
                           <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal"
-                            id="btnNo">Close</button>
+                                  id="btnNo">Close
+                          </button>
                           <button type="button" class="btn w-sm btn-danger " id="delete-record">Yes, Delete It!</button>
                         </div>
                       </div>
@@ -967,7 +890,7 @@
                   <div class="py-4 text-center">
                     <div>
                       <lottie class="avatar-xl" colors="primary:#121331,secondary:#08a88a" :options="defaultOptions"
-                        :height="75" :width="75" />
+                              :height="75" :width="75"/>
                     </div>
 
                     <div class="mt-4">

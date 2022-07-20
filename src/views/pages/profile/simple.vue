@@ -335,13 +335,13 @@ export default {
                         <li class="nav-item">
                           <a class="nav-link active" data-bs-toggle="tab" href="#personalDetails" role="tab">
                             <i class="fas fa-home"></i>
-                            Personal Details
+                            {{ $t("t-profile-settings") }}
                           </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" data-bs-toggle="tab" href="#changePassword" role="tab">
                             <i class="far fa-user"></i>
-                            Change Password
+                            {{ $t("t-change-password") }}
                           </a>
                         </li>
                         <!--                        <li class="nav-item">-->
@@ -353,7 +353,7 @@ export default {
                         <li class="nav-item">
                           <a class="nav-link" data-bs-toggle="tab" href="#privacy" role="tab">
                             <i class="far fa-envelope"></i>
-                            Privacy Policy
+                            {{ $t("t-privacy-policy") }}
                           </a>
                         </li>
                       </ul>
@@ -365,7 +365,9 @@ export default {
                             <div class="row">
                               <div class="col-lg-6">
                                 <div class="mb-3">
-                                  <label for="firstnameInput" class="form-label">First Name</label>
+                                  <label for="firstnameInput" class="form-label">
+                                    {{ $t("t-first-name") }}
+                                  </label>
                                   <input type="text" class="form-control" id="firstnameInput"
                                          placeholder="Enter your firstname"
                                          value="Dave"/>
@@ -374,7 +376,7 @@ export default {
                               <!--end col-->
                               <div class="col-lg-6">
                                 <div class="mb-3">
-                                  <label for="lastnameInput" class="form-label">Last Name</label>
+                                  <label for="lastnameInput" class="form-label"> {{ $t("t-last-name") }}</label>
                                   <input type="text" class="form-control" id="lastnameInput"
                                          placeholder="Enter your lastname"
                                          value="Adame"/>
@@ -383,7 +385,7 @@ export default {
                               <!--end col-->
                               <div class="col-lg-6">
                                 <div class="mb-3">
-                                  <label for="phonenumberInput" class="form-label">Phone Number</label>
+                                  <label for="phonenumberInput" class="form-label">{{ $t("t-phone-number") }}</label>
                                   <input type="text" class="form-control" id="phonenumberInput"
                                          placeholder="Enter your phone number" value="+(1) 987 6543"/>
                                 </div>
@@ -391,7 +393,7 @@ export default {
                               <!--end col-->
                               <div class="col-lg-6">
                                 <div class="mb-3">
-                                  <label for="emailInput" class="form-label">Email Address</label>
+                                  <label for="emailInput" class="form-label">{{ $t("t-email-address") }}</label>
                                   <input type="email" class="form-control" id="emailInput"
                                          placeholder="Enter your email"
                                          value="daveadame@velzon.com"/>
@@ -399,7 +401,7 @@ export default {
                               </div>
                               <div class="col-lg-12">
                                 <div class="mb-3">
-                                  <label for="telegram" class="form-label">Telegram</label>
+                                  <label for="telegram" class="form-label">{{ $t("t-telegram") }}</label>
                                   <input type="text" class="form-control" id="telegram"
                                          placeholder="Enter your email"
                                          value="daveadame@velzon.com"/>
@@ -440,10 +442,10 @@ export default {
                               <div class="col-lg-12">
                                 <div class="hstack gap-2 justify-content-end">
                                   <button type="submit" class="btn btn-primary" @click="updatedata">
-                                    Updates
+                                    {{ $t("t-updates") }}
                                   </button>
                                   <button type="button" class="btn btn-soft-success">
-                                    Cancel
+                                    {{ $t("t-cancel") }}
                                   </button>
                                 </div>
                               </div>
@@ -458,25 +460,22 @@ export default {
                             <div class="row g-2">
                               <div class="col-lg-4">
                                 <div>
-                                  <label for="oldpasswordInput" class="form-label">Old Password*</label>
-                                  <input type="password" class="form-control" id="oldpasswordInput"
-                                         placeholder="Enter current password"/>
+                                  <label for="oldpasswordInput" class="form-label"> {{ $t("t-old-password") }}</label>
+                                  <input type="password" class="form-control" id="oldpasswordInput"/>
                                 </div>
                               </div>
                               <!--end col-->
                               <div class="col-lg-4">
                                 <div>
-                                  <label for="newpasswordInput" class="form-label">New Password*</label>
-                                  <input type="password" class="form-control" id="newpasswordInput"
-                                         placeholder="Enter new password"/>
+                                  <label for="newpasswordInput" class="form-label"> {{ $t("t-new-password") }}</label>
+                                  <input type="password" class="form-control" id="newpasswordInput"/>
                                 </div>
                               </div>
                               <!--end col-->
                               <div class="col-lg-4">
                                 <div>
-                                  <label for="confirmpasswordInput" class="form-label">Confirm Password*</label>
-                                  <input type="password" class="form-control" id="confirmpasswordInput"
-                                         placeholder="Confirm password"/>
+                                  <label for="confirmpasswordInput" class="form-label"> {{ $t("t-confirm-password") }}</label>
+                                  <input type="password" class="form-control" id="confirmpasswordInput"/>
                                 </div>
                               </div>
                               <!--end col-->
@@ -491,7 +490,7 @@ export default {
                               <div class="col-lg-12">
                                 <div class="text-end">
                                   <button type="submit" class="btn btn-success" @click="changepass">
-                                    Change Password
+                                    {{ $t("t-change-password") }}
                                   </button>
                                 </div>
                               </div>
