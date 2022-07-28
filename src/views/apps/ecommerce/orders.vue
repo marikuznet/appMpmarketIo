@@ -43,10 +43,6 @@ export default {
       },
       date: null,
       date2: null,
-<<<<<<< HEAD
-      // defaultOptions: {
-      //   animationData: animationData
-      // },
       orders: [
         {
           id: 1,
@@ -99,143 +95,6 @@ export default {
           time_since_order: "2 ч. 40 мин.",
           status: "Отменить"
         }
-=======
-      defaultOptions: {
-        animationData: animationData
-      },
-      orders: [{
-        id: 1,
-        orderId: "#MP2101",
-        customer: "Frank Hook",
-        product: "Puma Tshirt",
-        orderDate: "20 Dec, 2021",
-        amount: "654",
-        payment: "Mastercard",
-        status: "Ожидает",
-        statusClass: "warning",
-      },
-        {
-          id: 2,
-          orderId: "#MP2102",
-          customer: "Rickey Teran",
-          product: "Adidas Sneakers",
-          orderDate: "16 Dec, 2021",
-          amount: "354",
-          payment: "Paypal",
-          status: "Архив",
-          statusClass: "danger",
-        },
-        {
-          id: 3,
-          orderId: "#MP2103",
-          customer: "James Price",
-          product: "350 ml Glass Grocery Container",
-          orderDate: "28 Nov, 2021",
-          amount: "829",
-          payment: "Visa",
-          status: "На сборке",
-          statusClass: "secondary",
-        },
-        {
-          id: 4,
-          orderId: "#MP2104",
-          customer: "Nettie Deloatch",
-          product: "American egale outfitters Shirt",
-          orderDate: "22 Nov, 2021",
-          amount: "142",
-          payment: "COD",
-          status: "Ожидает",
-          statusClass: "warning",
-        },
-        {
-          id: 5,
-          orderId: "#MP2105",
-          customer: "Thomas Taylor",
-          product: "Galaxy Watch4",
-          orderDate: "12 Nov, 2021",
-          amount: "408",
-          payment: "Mastercard",
-          status: "Pickups",
-          statusClass: "info",
-        },
-        {
-          id: 6,
-          orderId: "#MP2106",
-          customer: "James Price",
-          product: "Apple iPhone 12",
-          orderDate: "05 Nov, 2021",
-          amount: "1240",
-          payment: "Visa",
-          status: "На сборке",
-          statusClass: "secondary",
-        },
-        {
-          id: 7,
-          orderId: "#MP2107",
-          customer: "Nancy Martino",
-          product: "Funky Prints T-shirt",
-          orderDate: "31 Oct, 2021",
-          amount: "180",
-          payment: "COD",
-          status: "Returns",
-          statusClass: "primary",
-        },
-        {
-          id: 8,
-          orderId: "#MP2108",
-          customer: "Alexis Clarke",
-          product: "USB Flash Drive Personalized with 3D Print",
-          orderDate: "25 Oct, 2021",
-          amount: "247",
-          payment: "Paypal",
-          status: "Собрано",
-          statusClass: "success",
-        },
-        {
-          id: 9,
-          orderId: "#MP2109",
-          customer: "Donald Palmer",
-          product: "Oxford Button-Down Shirt",
-          orderDate: "19 Oct, 2021",
-          amount: "373",
-          payment: "Visa",
-          status: "Pickups",
-          statusClass: "info",
-        },
-        {
-          id: 10,
-          orderId: "#MP2110",
-          customer: "Henry Baird",
-          product: "Classic Short Sleeve Shirt",
-          orderDate: "13 Oct, 2021",
-          amount: "342",
-          payment: "Mastercard",
-          status: "На сборке",
-          statusClass: "secondary",
-        },
-        {
-          id: 11,
-          orderId: "#MP2111",
-          customer: "Diana Kohler",
-          product: "Half Sleeve T-Shirts (Blue)",
-          orderDate: "01 Oct, 2021",
-          amount: "874",
-          payment: "Visa",
-          status: "Собрано",
-          statusClass: "success",
-        },
-        {
-          id: 12,
-          orderId: "#MP2112",
-          customer: "Alexis Clarke",
-          product: "Noise Evolve Smartwatch",
-          orderDate: "29 Sep, 2021",
-          amount: "1021",
-          payment: "Mastercard",
-          status: "Архив",
-          statusClass: "danger",
-        },
->>>>>>> eebde3b0d8c0c0c062107852d400f1d4efcf653d
       ],
       isStatus: null,
       isPayment: null,
@@ -851,7 +710,8 @@ export default {
 
                       <div class="mb-3">
                         <label for="customername-field" class="form-label">Заказчик</label>
-                        <input type="text" id="customername" class="form-control" placeholder="Введите имя заказчика" required/>
+                        <input type="text" id="customername" class="form-control" placeholder="Введите имя заказчика"
+                               required/>
                       </div>
 
                       <div class="mb-3">

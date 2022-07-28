@@ -207,30 +207,30 @@ export default {
     },
   },
   beforeMount() {
-    axios.get('https://api-node.themesbrand.website/apps/product').then((data) => {
-      this.productsData = [];
-      const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
-        "Oct", "Nov", "Dec"
-      ];
-      data.data.data.forEach(row => {
-        var dd = new Date(row.publishedDate)
-        row.publishedDate = dd.getDate() + " " + monthNames[dd.getMonth()] + ", " + dd.getFullYear();
-        var hours = dd.getHours();
-        var minutes = dd.getMinutes();
-        var ampm = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12;
-        hours = hours ? hours : 12; // the hour '0' should be '12'
-        hours = hours < 10 ? '0' + hours : hours;
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        var strTime = hours + ':' + minutes + ' ' + ampm;
-        row.publishedtime = strTime;
-        row.image_src = 'https://api-node.themesbrand.website/fileupload/product_bucket/' + row.image;
-        // row.image_src = `@/assets/images/products/img-8.png`;
-        this.productsData.push(row);
-      })
-    }).catch((er) => {
-      console.log(er)
-    });
+    // axios.get('https://api-node.themesbrand.website/apps/product').then((data) => {
+    //   this.productsData = [];
+    //   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
+    //     "Oct", "Nov", "Dec"
+    //   ];
+    //   data.data.data.forEach(row => {
+    //     var dd = new Date(row.publishedDate)
+    //     row.publishedDate = dd.getDate() + " " + monthNames[dd.getMonth()] + ", " + dd.getFullYear();
+    //     var hours = dd.getHours();
+    //     var minutes = dd.getMinutes();
+    //     var ampm = hours >= 12 ? 'PM' : 'AM';
+    //     hours = hours % 12;
+    //     hours = hours ? hours : 12; // the hour '0' should be '12'
+    //     hours = hours < 10 ? '0' + hours : hours;
+    //     minutes = minutes < 10 ? '0' + minutes : minutes;
+    //     var strTime = hours + ':' + minutes + ' ' + ampm;
+    //     row.publishedtime = strTime;
+    //     row.image_src = 'https://api-node.themesbrand.website/fileupload/product_bucket/' + row.image;
+    //     // row.image_src = `@/assets/images/products/img-8.png`;
+    //     this.productsData.push(row);
+    //   })
+    // }).catch((er) => {
+    //   console.log(er)
+    // });
 
   },
 
