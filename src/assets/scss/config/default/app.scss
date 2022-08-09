@@ -15,12 +15,12 @@ File: Main Css File
 //Core files
 @import "./node_modules/bootstrap/scss/functions";
 @import "./node_modules/bootstrap/scss/variables";
-@import "variables";
 @import "./node_modules/bootstrap/scss/mixins";
+
+//@import "variables";
 @import "bootstrap";
 @import "theme-light";
 @import "theme-dark";
-
 
 // Structure
 @import "../../structure/topbar";

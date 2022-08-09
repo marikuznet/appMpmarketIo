@@ -223,6 +223,13 @@ export default [
     },
 
     {
+        path: "/edit-product",
+        name: "edit-product",
+        meta: {title: "Products", authRequired: true},
+        component: () => import("../views/apps/ecommerce/edit-product"),
+    },
+
+    {
         path: "/products",
         name: "products",
         meta: {title: "Products", authRequired: true},

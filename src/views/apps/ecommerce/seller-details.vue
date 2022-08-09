@@ -14,7 +14,7 @@
 
   import Layout from "../../../layouts/main.vue";
   import appConfig from "../../../../app.config";
-  import PageHeader from "@/components/page-header";
+  // import PageHeader from "@/components/page-header";
 
   export default {
     page: {
@@ -27,7 +27,7 @@
     components: {
       CountTo,
       Layout,
-      PageHeader,
+      // PageHeader,
       Swiper,
       SwiperSlide
     },
@@ -359,7 +359,7 @@
 
 <template>
   <Layout>
-    <PageHeader :title="title" :items="items" />
+<!--    <PageHeader :title="title" :items="items" />-->
     <div class="row">
       <div class="col-xxl-3">
         <div class="card">
